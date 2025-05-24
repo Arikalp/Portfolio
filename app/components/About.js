@@ -85,6 +85,14 @@ const About = () => {
             </p>
           </div>
         </motion.div>
+        <div className='flex justify-center items-center'>
+           <button className="mt-8 flex ">
+          <a href="/assets/Sankalp_Saini_Resume_.pdf" download className="inline-block bg-blue-500 text-white px-4 py-2 rounded hover:bg-blue-600 transition gradient-btn">
+            Download Resume
+          </a>
+        </button>
+        </div>
+       
       </motion.div>
     </div>
   );

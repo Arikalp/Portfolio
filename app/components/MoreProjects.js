@@ -3,32 +3,32 @@ import Projectemp from './Projectemp'
 
 const moreProjects = [
   {
-    img: "/assets/Project1.png",
+    video: "/assets/TYPESTO.mp4",
     liveLink: "https://project1.live",
-    title: "Typestory - A Typing Game",
-    details: "Typestory is a typing game that helps users improve their typing skills in a fun and engaging way.",
-    tech: ["React", "Tailwind", "Node.js"]
+    title: "Typesto - A Typing Game",
+    details: "Typesto is a typing game that helps users improve their typing skills in a fun and engaging way.",
+    tech: ["HTML", "CSS", "JS"]
   },
   {
-    img: "/assets/Project2.png",
+    video: "/assets/WIZARDX.mp4",
     liveLink: "https://project2.live",
     title: "WizardX - A Wizarding World Experience",
     details: "WizardX is an immersive experience that brings the magic of the wizarding world to life.",
-    tech: ["Next.js", "MongoDB", "Express"]
+    tech: ["HTML", "CSS", "JS", "GSAP","LOCOMOTIVE.js"]
   },
   {
-    img: "/assets/Project3.png",
+    video: "/assets/AUTHENTIC.mp4",
     liveLink: "https://project3.live",
     title: "Authentic - A Modern Authentication System",
     details: "Authentic is a modern authentication system that uses cutting-edge technologies to provide a seamless user experience.",
-    tech: ["Vue", "Firebase", "Sass"]
+    tech: ["REACT", "Node.js", "Express", "MongoDB", "JWT"]
   },
   {
-    img: "/assets/Project4.png",
+    video: "/assets/NETFLIX.mp4",
     liveLink: "https://project4.live",
-    title: "Nextflix - A Netflix Clone",
-    details: "Nextflix clone is a streaming platform that allows users to watch their favorite shows and movies.",
-    tech: ["Angular", "TypeScript", "Bootstrap"]
+    title: "Netflix - A Netflix Clone",
+    details: "Netflix clone is a streaming platform that allows users to watch their favorite shows and movies.",
+    tech: ["HTML", "CSS", "JS"]
   }
 ]
 
@@ -38,7 +38,7 @@ const MoreProjects = () => {
       {moreProjects.map((proj, idx) => (
         <Projectemp
           key={idx}
-          img={proj.img}
+          video={proj.video}
           liveLink={proj.liveLink}
           title={proj.title}
           details={proj.details}

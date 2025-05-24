@@ -27,7 +27,7 @@ const Projects = ({ onNavigate }) => {
       >
         <Projectemp
           video="/assets/OCHI.mp4"
-          liveLink="https://ochi-live.vercel.app"
+          liveLink="https://ochi-murex.vercel.app/"
           title="OCHI - A Modern Web Experience"
           details="OCHI is a modern web experience designed to showcase clean design and interactive elements using advanced frontend techniques."
           tech={["React", "GSAP", "Framer Motion", "Tailwind CSS", "Locomotive Scroll"]}
