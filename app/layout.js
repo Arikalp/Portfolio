@@ -1,4 +1,3 @@
-import { GeistSans, GeistMono } from 'geist/font'
 import "./globals.css";
 
 export const metadata = {
@@ -9,7 +8,7 @@ export const metadata = {
 export default function RootLayout({ children }) {
   return (
     <html lang="en">
-      <body className={`${GeistSans.className} antialiased`}>
+      <body className="antialiased">
         {children}
       </body>
     </html>
