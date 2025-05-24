@@ -17,6 +17,7 @@ body {
   background-color: rgb(var(--background-start-rgb));
   min-height: 100vh;
   overflow-x: hidden;
+  font-family: var(--font-geist-sans);
 }
 
 #tsparticles {
