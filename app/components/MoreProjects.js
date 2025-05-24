@@ -5,29 +5,29 @@ const moreProjects = [
   {
     img: "/assets/Project1.png",
     liveLink: "https://project1.live",
-    title: "Project One",
-    details: "Description for Project One. This project demonstrates feature X and Y.",
+    title: "Typestory - A Typing Game",
+    details: "Typestory is a typing game that helps users improve their typing skills in a fun and engaging way.",
     tech: ["React", "Tailwind", "Node.js"]
   },
   {
     img: "/assets/Project2.png",
     liveLink: "https://project2.live",
-    title: "Project Two",
-    details: "Description for Project Two. This project is focused on Z and W.",
+    title: "WizardX - A Wizarding World Experience",
+    details: "WizardX is an immersive experience that brings the magic of the wizarding world to life.",
     tech: ["Next.js", "MongoDB", "Express"]
   },
   {
     img: "/assets/Project3.png",
     liveLink: "https://project3.live",
-    title: "Project Three",
-    details: "Description for Project Three. It uses modern UI/UX patterns.",
+    title: "Authentic - A Modern Authentication System",
+    details: "Authentic is a modern authentication system that uses cutting-edge technologies to provide a seamless user experience.",
     tech: ["Vue", "Firebase", "Sass"]
   },
   {
     img: "/assets/Project4.png",
     liveLink: "https://project4.live",
-    title: "Project Four",
-    details: "Description for Project Four. Built for performance and scalability.",
+    title: "Nextflix - A Netflix Clone",
+    details: "Nextflix clone is a streaming platform that allows users to watch their favorite shows and movies.",
     tech: ["Angular", "TypeScript", "Bootstrap"]
   }
 ]

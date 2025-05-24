@@ -1,9 +1,36 @@
-import React from 'react'
+import React, { useRef, useState } from 'react'
 
-const Projectemp = ({ img, liveLink, title, details, tech }) => {
+const Projectemp = ({ video, liveLink, title, details, tech }) => {
+  const videoRef = useRef(null);
+  const [isHovered, setIsHovered] = useState(false);
+
+  const handleMouseEnter = () => {
+    setIsHovered(true);
+    videoRef.current && videoRef.current.play();
+  };
+
+  const handleMouseLeave = () => {
+    setIsHovered(false);
+    videoRef.current && videoRef.current.pause();
+    videoRef.current && (videoRef.current.currentTime = 0);
+  };
+
   return (
-    <div className="bg-[rgba(255,255,255,0.03)] border border-gray-300 rounded-lg shadow-lg w-[35rem] h-[35rem] p-8 flex flex-col items-center">
-      <img src={img} alt={title} className="w-full h-60 object-cover rounded-md mb-4" />
+    <div
+      className="bg-[rgba(255,255,255,0.03)] border border-gray-300 rounded-lg shadow-lg w-[35rem] h-[35rem] p-8 flex flex-col items-center"
+      onMouseEnter={handleMouseEnter}
+      onMouseLeave={handleMouseLeave}
+    >
+      <video
+        ref={videoRef}
+        className={`w-full h-60 object-cover rounded-md mb-4 transition-transform duration-300 ${isHovered ? 'scale-150 z-10' : 'scale-100'}`}
+        muted
+        loop
+        preload="auto"
+      >
+        <source src={video} type="video/mp4" />
+        Your browser does not support the video tag.
+      </video>
       <h2 className="text-2xl font-bold mb-2">{title}</h2>
       <p className="text-gray-700 mb-4 text-center">{details}</p>
       <div className="flex flex-wrap gap-2 mb-4 justify-center">

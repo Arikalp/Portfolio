@@ -26,7 +26,7 @@ const Projects = ({ onNavigate }) => {
         transition={{ duration: 1 }}
       >
         <Projectemp
-          img="/assets/OChi.png"
+          video="/assets/OCHI.mp4"
           liveLink="https://ochi-live.vercel.app"
           title="OCHI - A Modern Web Experience"
           details="OCHI is a modern web experience designed to showcase clean design and interactive elements using advanced frontend techniques."
@@ -39,11 +39,11 @@ const Projects = ({ onNavigate }) => {
         transition={{ duration: 1 }}
       >
         <Projectemp
-          img="/assets/OChi.png"
+          video="/assets/Postify.mp4"
           liveLink="https://ochi-live.vercel.app"
-          title="OCHI - A Modern Web Experience"
-          details="OCHI is a modern web experience designed to showcase clean design and interactive elements using advanced frontend techniques."
-          tech={["React", "GSAP", "Framer Motion", "Tailwind CSS", "Locomotive Scroll"]}
+          title="Postify - A posting Platform"
+          details="Postify is a posting platform that allows users to share and discover content in a clean and modern interface."
+          tech={["EJS","Tailwind CSS", "Node.js", "Express", "MongoDB"]}
         />
       </motion.div>
     
@@ -54,11 +54,11 @@ const Projects = ({ onNavigate }) => {
         className="basis-1/2 flex justify-center"
       >
         <Projectemp
-          img="/assets/OChi.png"
+          video="/assets/GLANCER.mp4"
           liveLink="https://ochi-live.vercel.app"
-          title="OCHI - A Modern Web Experience"
-          details="OCHI is a modern web experience designed to showcase clean design and interactive elements using advanced frontend techniques."
-          tech={["React", "GSAP", "Framer Motion", "Tailwind CSS", "Locomotive Scroll"]}
+          title="Glancer - A Social Media Dashboard"
+          details="Glancer is a social media dashboard that provides insights and analytics for your social media accounts."
+          tech={["HTML", "GSAP", "CSS", "Tailwind CSS", "JavaScript" ,"API"]}
         />
       </motion.div>
       <motion.div
@@ -68,11 +68,11 @@ const Projects = ({ onNavigate }) => {
         className="basis-1/2 flex justify-center"
       >
         <Projectemp
-          img="/assets/OChi.png"
+          video="/assets/CHITCHAT.mp4"  
           liveLink="https://ochi-live.vercel.app"
-          title="OCHI - A Modern Web Experience"
-          details="OCHI is a modern web experience designed to showcase clean design and interactive elements using advanced frontend techniques."
-          tech={["React", "GSAP", "Framer Motion", "Tailwind CSS", "Locomotive Scroll"]}
+          title="ChitChat - A Chat Application"
+          details="ChitChat is a chat application that allows users to communicate in real-time with a sleek and modern interface."
+          tech={["HTML", "CSS", "Tailwind CSS", "JavaScript", "Socket.IO"]}
         />
       </motion.div>
       

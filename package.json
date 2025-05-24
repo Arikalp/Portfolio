@@ -13,6 +13,7 @@
     "@tsparticles/react": "^3.0.0",
     "@tsparticles/slim": "^3.8.1",
     "framer-motion": "^12.12.1",
+    "locomotive-scroll": "^4.1.4",
     "next": "15.3.2",
     "portfolio": "file:",
     "react": "^19.0.0",

@@ -24,7 +24,7 @@ const Skills = () => {
       <div className='overflow-hidden w-full py-15 flex justify-center items-center'>
         <motion.div
           className='flex gap-12 w-fit py-6 px-20'
-          animate={{ x: ['0%', '-162%'] }}
+          animate={{ x: ['0%', '-191.6%'] }}
           transition={{
             duration: 20,
             repeat: Infinity,

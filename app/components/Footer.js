@@ -1,5 +1,5 @@
 import React from 'react';
-import { FaGithub, FaLinkedin, FaTwitter } from 'react-icons/fa';
+import { FaGithub, FaInstagram, FaLinkedin, FaTwitter } from 'react-icons/fa';
 import { motion } from 'framer-motion';
 
 const Footer = () => {
@@ -30,7 +30,7 @@ const Footer = () => {
               <FaLinkedin />
             </motion.a>
             <motion.a
-              href="https://twitter.com/yourusername"
+              href="https://twitter.com/Arikalp_"
               target="_blank"
               rel="noopener noreferrer"
               whileHover={{ scale: 1.2 }}
@@ -38,6 +38,16 @@ const Footer = () => {
               className="text-2xl hover:text-blue-400 transition-colors"
             >
               <FaTwitter />
+            </motion.a>
+             <motion.a
+              href="https://instagram.com/_arikalp_"
+              target="_blank"
+              rel="noopener noreferrer"
+              whileHover={{ scale: 1.2 }}
+              whileTap={{ scale: 0.9 }}
+              className="text-2xl hover:text-blue-400 transition-colors"
+            >
+              <FaInstagram />
             </motion.a>
           </div>
 
