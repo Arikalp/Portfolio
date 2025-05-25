@@ -3,7 +3,10 @@ import { useEffect, useRef } from 'react'
 import { useState } from 'react'
 import { motion } from 'framer-motion'
 import { useInView } from 'framer-motion'
-const Hero = () => {
+import { useRouter } from 'next/navigation'
+
+const Hero = ({ onNavigate }) => {
+    const router = useRouter();
     const h1Ref = useRef(null);
 
   function getRandomColor() {
@@ -47,9 +50,12 @@ const Hero = () => {
             transition={{ duration: 2 }}
             className='text-xl mt-4'>I am a Full Stack Developer</motion.p>
             <div className="button-container relative mt-8">
-                <button className="gradient-btn">
-  Contact Me
-</button>
+                <button 
+                    className="gradient-btn"
+                    onClick={() => onNavigate('contact')}
+                >
+                    Contact Me
+                </button>
             </div>
         </div>
         

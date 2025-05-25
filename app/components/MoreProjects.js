@@ -4,14 +4,14 @@ import Projectemp from './Projectemp'
 const moreProjects = [
   {
     video: "/assets/TYPESTO.mp4",
-    liveLink: "https://project1.live",
+    liveLink: "https://typesto.vercel.app/",
     title: "Typesto - A Typing Game",
     details: "Typesto is a typing game that helps users improve their typing skills in a fun and engaging way.",
     tech: ["HTML", "CSS", "JS"]
   },
   {
     video: "/assets/WIZARDX.mp4",
-    liveLink: "https://project2.live",
+    liveLink: "https://wizard-x-gsap.vercel.app/",
     title: "WizardX - A Wizarding World Experience",
     details: "WizardX is an immersive experience that brings the magic of the wizarding world to life.",
     tech: ["HTML", "CSS", "JS", "GSAP","LOCOMOTIVE.js"]
@@ -25,7 +25,7 @@ const moreProjects = [
   },
   {
     video: "/assets/NETFLIX.mp4",
-    liveLink: "https://project4.live",
+    liveLink: "https://netflix-clone-six-lilac-47.vercel.app/",
     title: "Netflix - A Netflix Clone",
     details: "Netflix clone is a streaming platform that allows users to watch their favorite shows and movies.",
     tech: ["HTML", "CSS", "JS"]

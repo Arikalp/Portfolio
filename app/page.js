@@ -56,7 +56,7 @@ export default function Page() {
           <Navbar onNavigate={handleNavigation} />
           {currentSection === 'home' && (
             <>
-              <Hero />
+              <Hero onNavigate={handleNavigation} />
               <Skills />
               <Projects onNavigate={handleNavigation} />
             </>

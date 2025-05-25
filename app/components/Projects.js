@@ -55,7 +55,7 @@ const Projects = ({ onNavigate }) => {
       >
         <Projectemp
           video="/assets/GLANCER.mp4"
-          liveLink="https://ochi-live.vercel.app"
+          liveLink="https://glancer-omega.vercel.app/"
           title="Glancer - A Social Media Dashboard"
           details="Glancer is a social media dashboard that provides insights and analytics for your social media accounts."
           tech={["HTML", "GSAP", "CSS", "Tailwind CSS", "JavaScript" ,"API"]}
@@ -69,15 +69,12 @@ const Projects = ({ onNavigate }) => {
       >
         <Projectemp
           video="/assets/CHITCHAT.mp4"  
-          liveLink="https://ochi-live.vercel.app"
+          liveLink="https://chitchat-sepia.vercel.app/"
           title="ChitChat - A Chat Application"
           details="ChitChat is a chat application that allows users to communicate in real-time with a sleek and modern interface."
           tech={["HTML", "CSS", "Tailwind CSS", "JavaScript", "Socket.IO"]}
         />
       </motion.div>
-      
-
-      
 
     </div>
 
