@@ -6,7 +6,7 @@ import MoreProjects from './MoreProjects'
 const Projects = ({ onNavigate }) => {
   return (
     <>
-    <div className='projects flex flex-col justify-center py-[10vh] items-start text-white px-20 '>
+    <div className='projects flex flex-col justify-center py-[7vh] items-start text-white px-20 '>
         <motion.h1
           initial={{ opacity: 0, x: -100 }}
           whileInView={{ opacity: 1, x: 0 }}

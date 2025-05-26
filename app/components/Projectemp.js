@@ -23,7 +23,7 @@ const Projectemp = ({ video, liveLink, title, details, tech }) => {
     >
       <video
         ref={videoRef}
-        className={`w-full h-60 object-cover rounded-md mb-4 transition-transform duration-300 ${isHovered ? 'scale-150 z-10' : 'scale-100'}`}
+        className={`w-full h-60 object-cover rounded-md mb-4 transition-transform duration-300 ${isHovered ? 'scale-125 z-10' : 'scale-100'}`}
         muted
         loop
         preload="auto"

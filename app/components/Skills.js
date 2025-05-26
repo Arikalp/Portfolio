@@ -23,8 +23,8 @@ const Skills = () => {
 
       <div className='overflow-hidden w-full py-15 flex justify-center items-center'>
         <motion.div
-          className='flex gap-12 w-fit py-6 px-20'
-          animate={{ x: ['0%', '-191.6%'] }}
+          className='flex gap-12 w-fit py-6'
+          animate={{ x: ['0%', '-204.2%'] }}
           transition={{
             duration: 20,
             repeat: Infinity,
@@ -34,10 +34,9 @@ const Skills = () => {
           {[...techs, ...techs].map((tech, i) => (
             <motion.img
               key={`${tech}-${i}`}
-              width={150}
               src={`/assets/${tech}.png`}
               alt={`Logo of ${tech}`}
-              className="h-auto"
+              className="w-40 object-contain rounded-md transition-transform duration-300"
               whileHover={{ scale: 1.2 }}
               whileTap={{ scale: 0.8 }}
             />
