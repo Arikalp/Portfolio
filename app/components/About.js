@@ -30,7 +30,7 @@ const About = () => {
           className="space-y-6 text-gray-300"
         >
           <p className="text-lg leading-relaxed hero">
-            Hello! I'm Sankalp, a passionate Full Stack Developer with a keen interest in creating
+            Hello! I&apos;m Sankalp, a passionate Full Stack Developer with a keen interest in creating
             innovative and user-friendly web applications. My journey in web development has equipped
             me with a strong foundation in both frontend and backend technologies.
           </p>
@@ -79,7 +79,7 @@ const About = () => {
           <div className="mt-8">
             <h2 className="text-2xl font-semibold mb-4 hero">Personal Interests</h2>
             <p className="text-lg leading-relaxed hero">
-              When I'm not coding, you can find me exploring new technologies, contributing to open-source
+              When I&apos;m not coding, you can find me exploring new technologies, contributing to open-source
               projects, or learning about the latest trends in web development. I believe in continuous
               learning and staying updated with the ever-evolving tech landscape.
             </p>

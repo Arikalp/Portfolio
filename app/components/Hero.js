@@ -37,7 +37,7 @@ const Hero = ({ onNavigate }) => {
 
   return (
     <>
-        <div className='hero flex flex-col justify-center py-10 items-start h-screen text-white px-20'>
+        <div className='hero flex flex-col justify-center py-5 items-start h-[80vh] text-white px-20'>
             <motion.h1 
             initial={{ opacity: 0, x: -100 }}
             animate={{ opacity: 1, x: 0 }}
