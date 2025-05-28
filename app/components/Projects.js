@@ -19,7 +19,7 @@ const Projects = ({ onNavigate }) => {
           className='project-del text-gray-500 mt-2'>Here are some of the projects I&apos;ve worked on:</motion.p>
     </div>
 
-    <div className="grid grid-cols-1 md:grid-cols-2 gap-20 justify-items-center">
+    <div className="grid grid-cols-1 md:grid-cols-2 gap-10 md:gap-20 justify-items-center px-4 md:px-20">
       <motion.div
         initial={{ opacity: 0, x: -100 }}
         whileInView={{ opacity: 1, x: 0 }}

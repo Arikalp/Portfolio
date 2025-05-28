@@ -5,7 +5,7 @@ import { motion } from 'framer-motion';
 const Footer = () => {
   return (
     <footer className="bg-[rgba(0,0,0,0.3)] backdrop-blur-md text-white py-8 mt-20">
-      <div className="container mx-auto px-20">
+      <div className="container mx-auto px-4 md:px-20">
         <div className="flex flex-col items-center space-y-6">
           {/* Social Media Icons */}
           <div className="flex space-x-8">

@@ -34,7 +34,7 @@ const moreProjects = [
 
 const MoreProjects = () => {
   return (
-    <div className="grid grid-cols-1 md:grid-cols-2 gap-12 px-20 py-10 justify-items-center">
+    <div className="grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-12 px-4 md:px-20 py-10 justify-items-center">
       {moreProjects.map((proj, idx) => (
         <Projectemp
           key={idx}

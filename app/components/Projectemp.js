@@ -17,13 +17,13 @@ const Projectemp = ({ video, liveLink, title, details, tech }) => {
 
   return (
     <div
-      className="bg-[rgba(255,255,255,0.03)] border border-gray-300 rounded-lg shadow-lg w-[35rem] h-[35rem] p-8 flex flex-col items-center"
+      className="bg-[rgba(255,255,255,0.03)] border border-gray-300 rounded-lg shadow-lg w-full max-w-md md:max-w-xl h-auto p-4 md:p-8 flex flex-col items-center"
       onMouseEnter={handleMouseEnter}
       onMouseLeave={handleMouseLeave}
     >
       <video
         ref={videoRef}
-        className={`w-full h-60 object-cover rounded-md mb-4 transition-transform duration-300 ${isHovered ? 'scale-125 z-10' : 'scale-100'}`}
+        className={`w-full h-40 md:h-60 object-cover rounded-md mb-4 transition-transform duration-300 ${isHovered ? 'scale-150 z-10' : 'scale-100'}`}
         muted
         loop
         preload="auto"

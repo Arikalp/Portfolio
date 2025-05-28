@@ -39,11 +39,14 @@ const Hero = ({ onNavigate }) => {
     <>
         <div className='hero flex flex-col justify-center py-5 items-start h-[80vh] text-white px-20'>
             <motion.h1 
-            initial={{ opacity: 0, x: -100 }}
-            animate={{ opacity: 1, x: 0 }}
-            transition={{ duration: 2 }}
-
-            ref={h1Ref} className='text-5xl font-bold'>Welcome to My Portfolio</motion.h1>
+              initial={{ opacity: 0, x: -100 }}
+              animate={{ opacity: 1, x: 0 }}
+              transition={{ duration: 2 }}
+              ref={h1Ref}
+              className='text-xl sm:text-2xl md:text-5xl font-bold'
+            >
+              Welcome to My Portfolio
+            </motion.h1>
             <motion.p 
             initial={{ opacity: 0, x: 100 }}
             animate={{ opacity: 1, x: 0 }}
@@ -64,4 +67,3 @@ const Hero = ({ onNavigate }) => {
 }
 
 export default Hero
-
