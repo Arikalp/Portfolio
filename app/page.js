@@ -23,24 +23,44 @@ export default function Page() {
 
   useEffect(() => {
     let scroll;
-    // Only run on client
-    import('locomotive-scroll').then((LocomotiveScroll) => {
-      scroll = new LocomotiveScroll.default({
-        el: scrollRef.current,
-        smooth: true,
+    
+    // Only run on client and check if window exists
+    if (typeof window !== 'undefined') {
+      import('locomotive-scroll').then((LocomotiveScroll) => {
+        try {
+          scroll = new LocomotiveScroll.default({
+            el: scrollRef.current,
+            smooth: true,
+          });
+          setScrollInstance(scroll);
+        } catch (error) {
+          console.error('Error initializing Locomotive Scroll:', error);
+        }
+      }).catch((error) => {
+        console.error('Error loading Locomotive Scroll:', error);
       });
-      setScrollInstance(scroll);
-    });
+    }
+    
     return () => {
-      if (scroll) scroll.destroy();
+      if (scroll && typeof scroll.destroy === 'function') {
+        try {
+          scroll.destroy();
+        } catch (error) {
+          console.error('Error destroying Locomotive Scroll:', error);
+        }
+      }
     };
   }, []);
 
   // Update scroll when section changes
   useEffect(() => {
-    if (scrollInstance) {
+    if (scrollInstance && typeof scrollInstance.update === 'function') {
       setTimeout(() => {
-        scrollInstance.update();
+        try {
+          scrollInstance.update();
+        } catch (error) {
+          console.error('Error updating Locomotive Scroll:', error);
+        }
       }, 300); // slight delay to allow DOM update
     }
   }, [currentSection, scrollInstance]);

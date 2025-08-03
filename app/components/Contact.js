@@ -1,144 +1,71 @@
-// import React, { useState } from "react";
+import React, { useRef } from 'react';
+import emailjs from 'emailjs-com';
 
-// const Contact = () => {
-//   const [submitted, setSubmitted] = useState(false);
-//   const [loading, setLoading] = useState(false);
+export default function ContactForm() {
+  const form = useRef();
 
-//   const handleSubmit = async (e) => {
-//     e.preventDefault();
-//     setLoading(true);
+  const sendEmail = (e) => {
+    e.preventDefault();
 
-//     const formData = new FormData(e.target);
-//     const payload = new URLSearchParams(formData);
-//     console.log("Payload:", payload.toString()); // Log payload for debugging
+    emailjs.sendForm(
+      'service_uong3hl',     // e.g., 'service_gmail'
+      'template_ee4pcs8',    // e.g., 'template_abc123'
+      form.current,
+      '7boSM-HnKfz96im9e'      // e.g., 'DtzpAbc123456'
+    )
+    .then(
+      (result) => {
+        console.log(result.text);
+        alert("Message sent successfully!");
+        e.target.reset();
+      },
+      (error) => {
+        console.log(error.text);
+        alert("Failed to send message.");
+      }
+    );
+  };
 
-//     try {
-//       const response = await fetch(
-//         "https://script.google.com/macros/s/AKfycbwtkPnXXCAB2okuf_Vo2DKK4HuxRZ6wq22TlLA-l2nQrKNPkRtIf-zTguPM10objm6k_w/exec",
-//         {
-//           method: "POST",
-//           headers: {
-//             "Content-Type": "application/x-www-form-urlencoded",
-//           },
-//           body: payload,
-//         }
-//       );
-
-//       if (!response.ok) {
-//         throw new Error(`HTTP error! Status: ${response.status}, Message: ${await response.text()}`);
-//       }
-
-//       setSubmitted(true);
-//       e.target.reset(); // Reset form fields after successful submission
-//     } catch (error) {
-//       console.error("Submission error:", error);
-//       alert(`Submission failed: ${error.message}`);
-//     }
-
-//     setLoading(false);
-//   };
-
-//   return (
-//     <div className="min-h-screen flex items-center justify-center px-4" style={{
-//       background: "linear-gradient(to bottom right, #0f172a, #1e293b)",
-//     }}>
-//       {!submitted ? (
-//         <form
-//           onSubmit={handleSubmit}
-//           className="bg-white/5 backdrop-blur-lg text-white p-8 rounded-2xl shadow-lg w-full max-w-lg space-y-4"
-//         >
-//           <h2 className="text-2xl font-bold mb-4 text-center">Get in Touch</h2>
-
-//           <input
-//             name="name"
-//             placeholder="Your Name"
-//             required
-//             className="w-full p-3 rounded-md bg-white/10 border border-white/20"
-//           />
-//           <input
-//             name="email"
-//             type="email"
-//             placeholder="Your Email"
-//             required
-//             className="w-full p-3 rounded-md bg-white/10 border border-white/20"
-//           />
-//           <input
-//             name="phone"
-//             type="tel"
-//             placeholder="Your Phone Number"
-//             required
-//             className="w-full p-3 rounded-md bg-white/10 border border-white/20"
-//           />
-//           <textarea
-//             name="message"
-//             placeholder="Your Message"
-//             required
-//             className="w-full p-3 rounded-md bg-white/10 border border-white/20"
-//           ></textarea>
-
-//           <button
-//             type="submit"
-//             disabled={loading}
-//             className="w-full py-3 bg-blue-600 hover:bg-blue-700 rounded-md font-semibold flex items-center justify-center"
-//           >
-//             {loading ? (
-//               <>
-//                 <svg
-//                   className="animate-spin h-5 w-5 mr-2"
-//                   viewBox="0 0 24 24"
-//                 >
-//                   <circle
-//                     className="opacity-25"
-//                     cx="12"
-//                     cy="12"
-//                     r="10"
-//                     stroke="currentColor"
-//                     strokeWidth="4"
-//                   />
-//                   <path
-//                     className="opacity-75"
-//                     fill="currentColor"
-//                     d="M4 12a8 8 0 018-8v8z"
-//                   />
-//                 </svg>
-//                 Sending...
-//               </>
-//             ) : (
-//               "Send Message"
-//             )}
-//           </button>
-//         </form>
-//       ) : (
-//         <div className="text-white text-center p-10 bg-white/5 rounded-xl">
-//           <h2 className="text-2xl font-bold mb-2">Thank You!</h2>
-//           <p>Your response has been recorded.</p>
-//         </div>
-//       )}
-//     </div>
-//   );
-// };
-
-// export default Contact;
-
-
-import React from 'react'
-
-const Contact = () => {
   return (
-    <div className="flex justify-center py-10 h-auto px-4">
-      <iframe
-        src="https://docs.google.com/forms/d/e/1FAIpQLSd6_MQSvUhFUpJ6wf4dLdzMQRkXebvEVW09x7a5B7A6QYFKKw/viewform?embedded=true"
-        width="100%"
-        style={{ minHeight: "600px", maxWidth: "600px", height: "auto" }}
-        frameBorder="0"
-        marginHeight="0"
-        marginWidth="0"
-        title="Contact Form"
-      >
-        Loading…
-      </iframe>
+    <div className="min-h-screen py-10 sm:py-16 md:py-20 px-4 sm:px-8 md:px-20 flex flex-col justify-center items-center">
+      <div className="w-full max-w-md sm:max-w-lg md:max-w-xl">
+        <h1 className="text-2xl sm:text-3xl md:text-4xl font-bold text-white mb-4 sm:mb-6 text-center">
+          Get In Touch
+        </h1>
+        <p className="text-gray-400 text-sm sm:text-base text-center mb-6 sm:mb-8">
+          Feel free to reach out for collaborations or just a friendly hello
+        </p>
+        
+        <form ref={form} onSubmit={sendEmail} className="flex flex-col gap-4 sm:gap-6 p-4 sm:p-6 md:p-8 bg-[rgba(20,20,40,0.85)] rounded-xl shadow-lg">
+          <input
+            type="text"
+            name="from_name"
+            placeholder="Your Name"
+            required
+            className="px-3 sm:px-4 py-2 sm:py-3 rounded bg-[rgba(255,255,255,0.1)] text-white border border-gray-600 focus:outline-none focus:ring-2 focus:ring-[#3a0ca3] transition text-sm sm:text-base"
+          />
+          <input
+            type="email"
+            name="reply_to"
+            placeholder="Your Email"
+            required
+            className="px-3 sm:px-4 py-2 sm:py-3 rounded bg-[rgba(255,255,255,0.1)] text-white border border-gray-600 focus:outline-none focus:ring-2 focus:ring-[#3a0ca3] transition text-sm sm:text-base"
+          />
+          <textarea
+            name="message"
+            placeholder="Your Message"
+            required
+            rows={4}
+            className="px-3 sm:px-4 py-2 sm:py-3 rounded bg-[rgba(255,255,255,0.1)] text-white border border-gray-600 focus:outline-none focus:ring-2 focus:ring-[#3a0ca3] transition resize-none text-sm sm:text-base"
+          />
+          <button
+            type="submit"
+            className="gradient-btn w-full py-2 sm:py-3 mt-2 text-sm sm:text-base md:text-lg font-semibold"
+          >
+            Send Message
+          </button>
+        </form>
+      </div>
     </div>
-  )
+  );
 }
-
-export default Contact

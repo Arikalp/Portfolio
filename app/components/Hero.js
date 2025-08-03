@@ -37,13 +37,13 @@ const Hero = ({ onNavigate }) => {
 
   return (
     <>
-        <div className='hero flex flex-col justify-center py-5 items-start h-[80vh] text-white px-20'>
+        <div className='hero flex flex-col justify-center py-5 items-start h-[80vh] sm:h-[85vh] md:h-[90vh] text-white px-4 sm:px-8 md:px-20'>
             <motion.h1 
               initial={{ opacity: 0, x: -100 }}
               animate={{ opacity: 1, x: 0 }}
               transition={{ duration: 2 }}
               ref={h1Ref}
-              className='text-xl sm:text-2xl md:text-5xl font-bold'
+              className='text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold leading-tight'
             >
               Welcome to My Portfolio
             </motion.h1>
@@ -51,10 +51,10 @@ const Hero = ({ onNavigate }) => {
             initial={{ opacity: 0, x: 100 }}
             animate={{ opacity: 1, x: 0 }}
             transition={{ duration: 2 }}
-            className='text-xl mt-4'>I am a Full Stack Developer</motion.p>
-            <div className="button-container relative mt-8">
+            className='text-lg sm:text-xl md:text-2xl mt-4 sm:mt-6 text-gray-300'>I am a Full Stack Developer</motion.p>
+            <div className="button-container relative mt-6 sm:mt-8 md:mt-10">
                 <button 
-                    className="gradient-btn"
+                    className="gradient-btn text-sm sm:text-base md:text-lg px-6 sm:px-8 py-3 sm:py-4"
                     onClick={() => onNavigate('contact')}
                 >
                     Contact Me

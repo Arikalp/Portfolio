@@ -6,24 +6,25 @@ import MoreProjects from './MoreProjects'
 const Projects = ({ onNavigate }) => {
   return (
     <>
-    <div className='projects flex flex-col justify-center py-[7vh] items-start text-white px-20 '>
+    <div className='projects flex flex-col justify-center py-[5vh] sm:py-[6vh] md:py-[7vh] items-start text-white px-4 sm:px-8 md:px-20'>
         <motion.h1
           initial={{ opacity: 0, x: -100 }}
           whileInView={{ opacity: 1, x: 0 }}
           transition={{ duration: 1 }}
-          className='projects text-4xl font-bold'>My Projects</motion.h1>
+          className='projects text-2xl sm:text-3xl md:text-4xl font-bold'>My Projects</motion.h1>
         <motion.p
           initial={{ opacity: 0, x: 100 }}
           whileInView={{ opacity: 1, x: 0 }}
           transition={{ duration: 1 }}
-          className='project-del text-gray-500 mt-2'>Here are some of the projects I&apos;ve worked on:</motion.p>
+          className='project-del text-gray-500 mt-2 text-sm sm:text-base'>Here are some of the projects I&apos;ve worked on:</motion.p>
     </div>
 
-    <div className="grid grid-cols-1 md:grid-cols-2 gap-10 md:gap-20 justify-items-center px-4 md:px-20">
+    <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 sm:gap-8 md:gap-10 lg:gap-20 justify-items-center px-4 sm:px-6 md:px-20">
       <motion.div
         initial={{ opacity: 0, x: -100 }}
         whileInView={{ opacity: 1, x: 0 }}
         transition={{ duration: 1 }}
+        className="w-full max-w-md lg:max-w-none"
       >
         <Projectemp
           video="/assets/OCHI.mp4"
@@ -37,9 +38,10 @@ const Projects = ({ onNavigate }) => {
         initial={{ opacity: 0, x: 100 }}
         whileInView={{ opacity: 1, x: 0 }}
         transition={{ duration: 1 }}
+        className="w-full max-w-md lg:max-w-none"
       >
         <Projectemp
-          video="/assets/Postify.mp4"
+          video="/assets/POSTIFY.mp4"
           liveLink="https://ochi-live.vercel.app"
           title="Postify - A posting Platform"
           details="Postify is a posting platform that allows users to share and discover content in a clean and modern interface."
@@ -51,7 +53,7 @@ const Projects = ({ onNavigate }) => {
         initial={{ opacity: 0, x: -100 }}
         whileInView={{ opacity: 1, x: 0 }}
         transition={{ duration: 1 }}
-        className="basis-1/2 flex justify-center"
+        className="w-full max-w-md lg:max-w-none"
       >
         <Projectemp
           video="/assets/GLANCER.mp4"
@@ -65,7 +67,7 @@ const Projects = ({ onNavigate }) => {
         initial={{ opacity: 0, x: 100 }}
         whileInView={{ opacity: 1, x: 0 }}
         transition={{ duration: 1 }}
-        className="basis-1/2 flex justify-center"
+        className="w-full max-w-md lg:max-w-none"
       >
         <Projectemp
           video="/assets/CHITCHAT.mp4"  
@@ -78,12 +80,12 @@ const Projects = ({ onNavigate }) => {
 
     </div>
 
-    <div className='flex justify-center items-center py-10'>
+    <div className='flex justify-center items-center py-8 sm:py-10'>
       <motion.button
         initial={{ opacity: 0, y: 100 }}
         whileInView={{ opacity: 1, y: 0 }}
         transition={{ duration: 1 }}
-        className="gradient-btn text-white py-2 px-4 rounded hover:bg-blue-600 transition"
+        className="gradient-btn text-white py-2 sm:py-3 px-4 sm:px-6 rounded hover:bg-blue-600 transition text-sm sm:text-base"
         onClick={() => onNavigate && onNavigate('projects')}
       >
         View More Projects

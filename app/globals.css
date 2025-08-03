@@ -80,7 +80,7 @@ body {
   --bg-size: 400%;
   --color-one: #202040;
   --color-two: #602080;
-  font-size: clamp(3rem, 25vmin, 8rem);
+  font-size: clamp(2rem, 15vmin, 6rem);
   background: linear-gradient(
     90deg,
     var(--color-one),
@@ -103,7 +103,7 @@ body {
       --bg-size: 400%;
       --color-one: hsl(35, 26%, 9%);
       --color-two: hsl(0, 0%, 100%);
-      font-size: clamp(1rem, 5vmin, 2.5rem);
+      font-size: clamp(0.875rem, 4vmin, 2rem);
       background: linear-gradient(
                     90deg,
                     var(--color-one),
@@ -120,7 +120,7 @@ body {
       --bg-size: 400%;
       --color-one: hsl(35, 26%, 9%);
       --color-two: hsl(0, 0%, 100%);
-      font-size: clamp(1rem, 5vmin, 1.5rem);
+      font-size: clamp(0.75rem, 3vmin, 1.25rem);
       background: linear-gradient(
                     90deg,
                     var(--color-one),
@@ -165,7 +165,6 @@ body {
   z-index: 2;
 }
 
-
 .gradient-btn {
   position: relative;
   z-index: 10;
@@ -180,6 +179,10 @@ body {
   box-shadow: 0 4px 24px 0 rgba(32, 58, 67, 0.15);
   transition: background-position 0.5s, box-shadow 0.3s, transform 0.2s;
   cursor: pointer;
+  min-height: 44px; /* Better touch target for mobile */
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
 }
 
 .gradient-btn:hover, .gradient-btn:focus {
@@ -191,6 +194,26 @@ body {
 .gradient-btn:active {
   transform: scale(0.97);
   box-shadow: 0 2px 8px 0 rgba(32, 58, 67, 0.15);
+}
+
+/* Responsive improvements */
+@media (max-width: 640px) {
+  .gradient-btn {
+    padding: 0.875rem 1.5rem;
+    font-size: 0.875rem;
+  }
+  
+  .hero h1 {
+    font-size: clamp(1.5rem, 12vmin, 4rem);
+  }
+  
+  .hero p, .skills, .projects {
+    font-size: clamp(0.75rem, 3vmin, 1.5rem);
+  }
+  
+  .tech-stack, .project-del {
+    font-size: clamp(0.625rem, 2.5vmin, 1rem);
+  }
 }
 
 body, .container-every, .image-container, * {
