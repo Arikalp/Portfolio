@@ -4,6 +4,7 @@ import { useState } from 'react'
 import { motion } from 'framer-motion'
 import { useInView } from 'framer-motion'
 import { useRouter } from 'next/navigation'
+import { Cover } from "@/components/ui/cover"
 
 const Hero = ({ onNavigate }) => {
     const router = useRouter();
@@ -45,7 +46,7 @@ const Hero = ({ onNavigate }) => {
               ref={h1Ref}
               className='text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold leading-tight'
             >
-              Welcome to My Portfolio
+              Welcome to my Portfolio
             </motion.h1>
             <motion.p 
             initial={{ opacity: 0, x: 100 }}
