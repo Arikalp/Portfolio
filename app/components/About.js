@@ -18,7 +18,7 @@ const About = () => {
           initial={{ opacity: 0, x: -100 }}
           animate={{ opacity: 1, x: 0 }}
           transition={{ duration: 0.8 }}
-          className="text-2xl sm:text-3xl md:text-4xl font-bold mb-6 sm:mb-8 hero"
+          className="text-2xl sm:text-3xl md:text-4xl font-bold mb-6 sm:mb-8 hero text-gray-300"
         >
           About Me
         </motion.h1>

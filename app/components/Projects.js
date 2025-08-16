@@ -42,7 +42,7 @@ const Projects = ({ onNavigate }) => {
       >
         <Projectemp
           video="/assets/POSTIFY.mp4"
-          liveLink="https://ochi-live.vercel.app"
+          liveLink="https://postify-cefj.onrender.com"
           title="Postify - A posting Platform"
           details="Postify is a posting platform that allows users to share and discover content in a clean and modern interface."
           tech={["EJS","Tailwind CSS", "Node.js", "Express", "MongoDB"]}
