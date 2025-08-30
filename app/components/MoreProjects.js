@@ -29,6 +29,13 @@ const moreProjects = [
     title: "Netflix - A Netflix Clone",
     details: "Netflix clone is a streaming platform that allows users to watch their favorite shows and movies.",
     tech: ["HTML", "CSS", "JS"]
+  },
+  {
+    video: "/assets/CHITCHAT.mp4",
+    liveLink: "https://chitchat-sepia.vercel.app/",
+    title: "ChitChat - A Chat Application",
+    details: "ChitChat is a chat application that allows users to communicate in real-time with a sleek and modern interface.",
+    tech: ["HTML", "CSS", "Tailwind CSS", "JavaScript", "Socket.IO"]
   }
 ]
 
