@@ -68,19 +68,7 @@ export default function Page() {
 
   return (
     <>
-      <BackgroundGradientAnimation 
-        containerClassName="fixed inset-0 z-0"
-        gradientBackgroundStart="rgb(5, 5, 10)"
-        gradientBackgroundEnd="rgb(0, 0, 5)"
-        firstColor="10, 15, 30"
-        secondColor="15, 10, 35"
-        thirdColor="8, 12, 25"
-        fourthColor="12, 8, 20"
-        fifthColor="14, 10, 28"
-        pointerColor="18, 12, 40"
-        size="60%"
-        blendingValue="soft-light"
-      />
+      <BackgroundGradientAnimation containerClassName="fixed inset-0 z-0" />
       <div ref={scrollRef} data-scroll-container className="container-every relative min-h-screen z-10 pointer-events-none">
         <div className="absolute inset-0 z-0">
           <ParticlesBackground />
