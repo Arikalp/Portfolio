@@ -10,6 +10,7 @@ import Footer from "./components/Footer"
 import About from "./components/About"
 import MoreProjects from './components/MoreProjects'
 import Contact from './components/Contact'
+import { BackgroundGradientAnimation } from '@/components/ui/background-gradient-animation'
 import "locomotive-scroll/dist/locomotive-scroll.css";
 
 export default function Page() {
@@ -67,12 +68,24 @@ export default function Page() {
 
   return (
     <>
-      <div className="image-container"></div>
-      <div ref={scrollRef} data-scroll-container className="container-every relative min-h-screen">
+      <BackgroundGradientAnimation 
+        containerClassName="fixed inset-0 z-0"
+        gradientBackgroundStart="rgb(5, 5, 10)"
+        gradientBackgroundEnd="rgb(0, 0, 5)"
+        firstColor="10, 15, 30"
+        secondColor="15, 10, 35"
+        thirdColor="8, 12, 25"
+        fourthColor="12, 8, 20"
+        fifthColor="14, 10, 28"
+        pointerColor="18, 12, 40"
+        size="60%"
+        blendingValue="soft-light"
+      />
+      <div ref={scrollRef} data-scroll-container className="container-every relative min-h-screen z-10 pointer-events-none">
         <div className="absolute inset-0 z-0">
           <ParticlesBackground />
         </div>
-        <div className="relative z-10">
+        <div className="relative z-10 pointer-events-auto">
           <Navbar onNavigate={handleNavigation} />
           {currentSection === 'home' && (
             <>
