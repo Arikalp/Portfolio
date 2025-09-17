@@ -87,7 +87,7 @@ const About = () => {
         </motion.div>
         <div className='flex justify-center items-center mt-6 sm:mt-8'>
            <button className="flex">
-          <a href="/assets/Sankalp_Saini_Resume_.pdf" download className="inline-block bg-blue-500 text-white px-4 sm:px-6 py-2 sm:py-3 rounded hover:bg-blue-600 transition gradient-btn text-sm sm:text-base">
+          <a href="/assets/Sankalp_Saini_Resume.pdf" download className="inline-block bg-blue-500 text-white px-4 sm:px-6 py-2 sm:py-3 rounded hover:bg-blue-600 transition gradient-btn text-sm sm:text-base">
             Download Resume
           </a>
         </button>

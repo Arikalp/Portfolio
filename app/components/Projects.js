@@ -75,7 +75,7 @@ const Projects = ({ onNavigate }) => {
           liveLink="https://ochi-murex.vercel.app/"
           title="OCHI - A Modern Web Experience"
           details="OCHI is a modern web experience designed to showcase clean design and interactive elements using advanced frontend techniques."
-          tech={["React", "GSAP", "Framer Motion", "Tailwind CSS", "Locomotive Scroll"]}
+          tech={["React", "Framer Motion", "Tailwind CSS", "Locomotive Scroll"]}
         />
       </motion.div>
       <motion.div
@@ -127,7 +127,7 @@ const Projects = ({ onNavigate }) => {
           liveLink="https://chesso-ten.vercel.app/"
           title="Chesso - Chess Game"
           details="Chesso is an interactive chess game built with modern web technologies, featuring real-time gameplay and a clean interface."
-          tech={["HTML", "CSS", "Tailwind CSS","EJS", "JavaScript","Express.js","FireBase"]}
+          tech={["HTML","Tailwind CSS","JavaScript","Express.js","FireBase"]}
         />
       </motion.div>
 
