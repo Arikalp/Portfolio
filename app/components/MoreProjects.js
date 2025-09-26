@@ -3,9 +3,16 @@ import Projectemp from './Projectemp'
 
 const moreProjects = [
   {
+    video:"/assets/GLANCER.mp4",
+    liveLink:"https://glancer-omega.vercel.app/",
+    title:"Glancer - A Social Media Dashboard",
+    details:"Glancer is a social media dashboard that provides insights and analytics for your social media accounts.",
+    tech:["HTML", "GSAP", "CSS", "Tailwind CSS", "JavaScript" ,"API"]
+  },
+  {
     video: "/assets/TYPESTO.mp4",
     liveLink: "https://typesto.vercel.app/",
-    title: "Typesto - A Typing Game",
+    title: "Typesto-Beta - A Typing Game",
     details: "Typesto is a typing game that helps users improve their typing skills in a fun and engaging way.",
     tech: ["HTML", "CSS", "JS"]
   },

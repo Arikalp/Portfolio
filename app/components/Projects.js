@@ -106,13 +106,14 @@ const Projects = ({ onNavigate }) => {
         className="w-full max-w-md lg:max-w-none"
       >
         <Projectemp
-          video="/assets/GLANCER.mp4"
-          liveLink="https://glancer-omega.vercel.app/"
-          title="Glancer - A Social Media Dashboard"
-          details="Glancer is a social media dashboard that provides insights and analytics for your social media accounts."
-          tech={["HTML", "GSAP", "CSS", "Tailwind CSS", "JavaScript" ,"API"]}
+          video="/assets/TYPESTO_FULL.mp4"
+          liveLink="https://typesto-full.vercel.app/"
+          title="Typesto - A LLM based Typing game"
+          details="Typesto is a typing game that helps users improve their typing skills in a fun and engaging way with the help of LLM."
+          tech={["Tailwind CSS","Next.js","Express.js","MongoDB","LLM"]}
         />
       </motion.div>
+
       <motion.div
         variants={itemVariants}
         whileHover={{ 
