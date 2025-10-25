@@ -125,7 +125,7 @@ const Projects = ({ onNavigate }) => {
       >
         <Projectemp
           video="/assets/Chesso.mp4"  
-          liveLink="https://chesso-ten.vercel.app/"
+          liveLink="https://chesso-lake.vercel.app/"
           title="Chesso - Chess Game"
           details="Chesso is an interactive chess game built with modern web technologies, featuring real-time gameplay and a clean interface."
           tech={["HTML","Tailwind CSS","JavaScript","Express.js","FireBase"]}
