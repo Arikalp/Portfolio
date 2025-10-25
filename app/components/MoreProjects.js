@@ -6,9 +6,17 @@ const moreProjects = [
     video:"/assets/GLANCER.mp4",
     liveLink:"https://glancer-omega.vercel.app/",
     title:"Glancer - A Social Media Dashboard",
-    details:"Glancer is a social media dashboard that provides insights and analytics for your social media accounts.",
+    details:"Glancer is a content discovery platform that lets people explore trending articles, news, and insights all in one place — without searching for them one by one on Google",
     tech:["HTML", "GSAP", "CSS", "Tailwind CSS", "JavaScript" ,"API"]
   },
+  {
+    video: "/assets/SMARTREPORT.mp4",
+    liveLink: "https://arikalpmedicalreportgenerator.streamlit.app/",
+    title: "AI REPORT ANALYZER - Uses LLM to generate report for X-Rays etc",
+    details: " It uses advanced LLM technology to analyze X-rays and generate accurate, detailed medical reports instantly, helping doctors save time and improve diagnostic efficiency.",
+    tech: ["Streamlit", "Python", "LLM Integraion"]
+  },
+
   {
     video: "/assets/TYPESTO.mp4",
     liveLink: "https://typesto.vercel.app/",
