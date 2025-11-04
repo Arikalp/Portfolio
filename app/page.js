@@ -27,11 +27,34 @@ export default function Page() {
     
     // Only run on client and check if window exists
     if (typeof window !== 'undefined') {
+      // Detect device performance
+      const isLowEndDevice = () => {
+        const memory = navigator.deviceMemory || 4;
+        const cores = navigator.hardwareConcurrency || 4;
+        const isMobile = /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent);
+        return memory <= 4 || cores <= 4 || isMobile;
+      };
+
       import('locomotive-scroll').then((LocomotiveScroll) => {
         try {
+          const isLowEnd = isLowEndDevice();
           scroll = new LocomotiveScroll.default({
             el: scrollRef.current,
             smooth: true,
+            multiplier: isLowEnd ? 0.8 : 1,
+            class: 'is-reveal',
+            smoothMobile: !isLowEnd,
+            smartphone: {
+              smooth: !isLowEnd,
+              breakpoint: 767
+            },
+            tablet: {
+              smooth: true,
+              breakpoint: 1024
+            },
+            reloadOnContextChange: true,
+            touchMultiplier: isLowEnd ? 1.5 : 2,
+            firefoxMultiplier: isLowEnd ? 50 : 100
           });
           setScrollInstance(scroll);
         } catch (error) {
