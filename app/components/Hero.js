@@ -10,31 +10,34 @@ const Hero = ({ onNavigate }) => {
     const router = useRouter();
     const h1Ref = useRef(null);
 
-  function getRandomColor() {
-  // Use a tighter, more harmonious hue range (e.g., 240–280: indigo to purple)
-  const hue = 240 + Math.random() * 40; // 240 to 280
+    const aceternityColors = [
+    'rgb(18, 113, 255)',
+    'rgb(221, 74, 255)', 
+    'rgb(100, 220, 255)',
+    'rgb(200, 50, 50)',
+    'rgb(180, 180, 50)',
+    'rgb(140, 100, 255)',
+    'rgb(108, 0, 162)',
+    'rgb(0, 17, 82)'
+  ];
 
-  const saturation = 65 + Math.random() * 10; // 65% to 75%
-  const lightness = 50 + Math.random() * 10; // 50% to 60%
-
-  return `hsl(${hue}, ${saturation}%, ${lightness}%)`;
-}
-
-
+  const [colorIndex, setColorIndex] = useState(0);
 
   useEffect(() => {
     const interval = setInterval(() => {
-      const colorOne = getRandomColor();
-      const colorTwo = getRandomColor();
+      const colorOne = aceternityColors[colorIndex % aceternityColors.length];
+      const colorTwo = aceternityColors[(colorIndex + 1) % aceternityColors.length];
 
       if (h1Ref.current) {
         h1Ref.current.style.setProperty('--color-one', colorOne);
         h1Ref.current.style.setProperty('--color-two', colorTwo);
       }
-    }, 3000); // Change every 3 seconds
+      
+      setColorIndex(prev => (prev + 1) % aceternityColors.length);
+    }, 11000);
 
     return () => clearInterval(interval);
-  }, []);
+  }, [colorIndex]);
 
   return (
     <>
