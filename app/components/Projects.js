@@ -60,7 +60,7 @@ const Projects = ({ onNavigate }) => {
       initial="hidden"
       whileInView="visible"
       viewport={{ once: true, amount: 0.2 }}
-      className="grid grid-cols-1 lg:grid-cols-2 gap-6 sm:gap-8 md:gap-10 lg:gap-20 justify-items-center px-4 sm:px-6 md:px-20">
+      className="grid grid-cols-1 lg:grid-cols-2 gap-6 sm:gap-20 md:gap-30 lg:gap-45 justify-items-center px-4 sm:px-6 md:px-20">
       <motion.div
         variants={itemVariants}
         whileHover={{ 
