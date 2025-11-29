@@ -10,9 +10,16 @@ const moreProjects = [
     tech:["HTML", "GSAP", "CSS", "Tailwind CSS", "JavaScript" ,"API"]
   },
   {
+    video: "/assets/Smart-Tutor.mp4",
+    liveLink: "https://vercel.com/sankalp-sainis-projects/smart-tutor",
+    title: "AI Smart-Tutor - Uses LLM to Teach Students",
+    details: " An AI-powered tutor that leverages advanced LLM technology to provide personalized learning experiences, helping students grasp complex concepts with ease and efficiency.",
+    tech: ["React.js", "Firebase", "LLM Integraion"]
+  },
+  {
     video: "/assets/SMARTREPORT.mp4",
     liveLink: "https://arikalpmedicalreportgenerator.streamlit.app/",
-    title: "AI REPORT ANALYZER - Uses LLM to generate report for X-Rays etc",
+    title: "AI Report Analyzer - Uses LLM to generate report for X-Rays etc",
     details: " It uses advanced LLM technology to analyze X-rays and generate accurate, detailed medical reports instantly, helping doctors save time and improve diagnostic efficiency.",
     tech: ["Streamlit", "Python", "LLM Integraion"]
   },
