@@ -1,14 +1,26 @@
 import React, { useRef, useState, useEffect } from 'react'
 import { motion } from 'framer-motion'
 
-// Global cache to store loaded video URLs
+// Global cache to store loaded video URLs and animated components
 const videoCache = new Set();
+const animationCache = new Set();
 
 const Projectemp = ({ video, liveLink, title, details, tech }) => {
   const videoRef = useRef(null);
   const [isHovered, setIsHovered] = useState(false);
   const [isLoaded, setIsLoaded] = useState(videoCache.has(video));
+  const [hasAnimated, setHasAnimated] = useState(animationCache.has(video));
   const playPromiseRef = useRef(null);
+
+  useEffect(() => {
+    if (!hasAnimated) {
+      const timer = setTimeout(() => {
+        animationCache.add(video);
+        setHasAnimated(true);
+      }, 1000);
+      return () => clearTimeout(timer);
+    }
+  }, [video, hasAnimated]);
 
   useEffect(() => {
     if (videoRef.current) {
@@ -73,9 +85,9 @@ const Projectemp = ({ video, liveLink, title, details, tech }) => {
         background: "linear-gradient(135deg, rgba(255,255,255,0.12) 0%, rgba(255,255,255,0.04) 100%)",
         transition: { duration: 0.4, ease: "easeOut" }
       }}
-      initial={{ opacity: 0, y: 20 }}
+      initial={hasAnimated ? { opacity: 1, y: 0 } : { opacity: 0, y: 20 }}
       animate={{ opacity: 1, y: 0 }}
-      transition={{ duration: 0.6, ease: "easeOut" }}
+      transition={hasAnimated ? { duration: 0 } : { duration: 0.6, ease: "easeOut" }}
     >
       <div className="absolute inset-0 bg-gradient-to-br from-blue-500/5 to-purple-500/5 opacity-0 transition-opacity duration-500 hover:opacity-100" />
       
@@ -105,9 +117,9 @@ const Projectemp = ({ video, liveLink, title, details, tech }) => {
       
       <motion.h2 
         className="text-lg sm:text-xl md:text-2xl font-bold mb-2 text-center bg-gradient-to-r from-white to-gray-300 bg-clip-text text-transparent"
-        initial={{ opacity: 0, y: 20 }}
+        initial={hasAnimated ? { opacity: 1, y: 0 } : { opacity: 0, y: 20 }}
         animate={{ opacity: 1, y: 0 }}
-        transition={{ duration: 0.6, delay: 0.2 }}
+        transition={hasAnimated ? { duration: 0 } : { duration: 0.6, delay: 0.2 }}
         whileHover={{ scale: 1.05 }}
       >
         {title}
@@ -115,26 +127,26 @@ const Projectemp = ({ video, liveLink, title, details, tech }) => {
       
       <motion.p 
         className="text-gray-300 mb-3 sm:mb-4 text-center text-sm sm:text-base leading-relaxed"
-        initial={{ opacity: 0, y: 20 }}
+        initial={hasAnimated ? { opacity: 1, y: 0 } : { opacity: 0, y: 20 }}
         animate={{ opacity: 1, y: 0 }}
-        transition={{ duration: 0.6, delay: 0.3 }}
+        transition={hasAnimated ? { duration: 0 } : { duration: 0.6, delay: 0.3 }}
       >
         {details}
       </motion.p>
       
       <motion.div 
         className="flex flex-wrap gap-1 sm:gap-2 mb-3 sm:mb-4 justify-center"
-        initial={{ opacity: 0, scale: 0.8 }}
+        initial={hasAnimated ? { opacity: 1, scale: 1 } : { opacity: 0, scale: 0.8 }}
         animate={{ opacity: 1, scale: 1 }}
-        transition={{ duration: 0.6, delay: 0.4 }}
+        transition={hasAnimated ? { duration: 0 } : { duration: 0.6, delay: 0.4 }}
       >
         {tech.map((t, i) => (
           <motion.span 
             key={i} 
             className="bg-gradient-to-r from-blue-500/20 to-purple-500/20 text-blue-200 px-3 py-1.5 rounded-full text-xs sm:text-sm border border-blue-400/30 backdrop-blur-sm font-medium"
-            initial={{ opacity: 0, scale: 0 }}
+            initial={hasAnimated ? { opacity: 1, scale: 1 } : { opacity: 0, scale: 0 }}
             animate={{ opacity: 1, scale: 1 }}
-            transition={{ duration: 0.3, delay: 0.5 + i * 0.1 }}
+            transition={hasAnimated ? { duration: 0 } : { duration: 0.3, delay: 0.5 + i * 0.1 }}
             whileHover={{ 
               scale: 1.1, 
               background: "linear-gradient(135deg, rgba(59, 130, 246, 0.4) 0%, rgba(147, 51, 234, 0.4) 100%)",
@@ -153,9 +165,9 @@ const Projectemp = ({ video, liveLink, title, details, tech }) => {
         target="_blank"
         rel="noopener noreferrer"
         className="relative inline-block bg-gradient-to-r from-blue-600 to-purple-600 text-white px-4 sm:px-6 py-2.5 sm:py-3 rounded-full text-sm sm:text-base font-semibold overflow-hidden group"
-        initial={{ opacity: 0, y: 20 }}
+        initial={hasAnimated ? { opacity: 1, y: 0 } : { opacity: 0, y: 20 }}
         animate={{ opacity: 1, y: 0 }}
-        transition={{ duration: 0.6, delay: 0.6 }}
+        transition={hasAnimated ? { duration: 0 } : { duration: 0.6, delay: 0.6 }}
         whileHover={{ 
           scale: 1.05,
           boxShadow: "0 8px 25px rgba(59, 130, 246, 0.5)",
