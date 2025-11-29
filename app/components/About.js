@@ -77,6 +77,48 @@ const About = () => {
           </div>
 
           <div className="mt-6 sm:mt-8">
+            <h2 className="text-xl sm:text-2xl font-semibold mb-3 sm:mb-4 hero">Certifications & Achievements</h2>
+            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-3 sm:gap-4">
+              {[
+                { name: "AWS Cloud Practitioner", file: "/assets/Certificates/AWS/AWS Certificate.pdf", category: "Cloud" },
+                { name: "AWS EC2 Certification", file: "/assets/Certificates/AWS/AWS EC2.pdf", category: "Cloud" },
+                { name: "AWS VPC Certification", file: "/assets/Certificates/AWS/AWS VPC.pdf", category: "Cloud" },
+                { name: "AI Hackathon Winner", file: "/assets/Certificates/AI Hackathon certificate. .pdf", category: "AI/ML" },
+                { name: "AI Workshop", file: "/assets/Certificates/AI workshop.pdf", category: "AI/ML" },
+                { name: "Gen AI Certification", file: "/assets/Certificates/Gen AI.pdf", category: "AI/ML" },
+                { name: "DSA Certification", file: "/assets/Certificates/DSA certificate.pdf", category: "Programming" },
+                { name: "JavaScript Certification", file: "/assets/Certificates/Javascript_certificate.pdf", category: "Programming" },
+                { name: "MongoDB Certification", file: "/assets/Certificates/MongoDB.pdf", category: "Database" },
+                { name: "Data Engineering", file: "/assets/Certificates/Data Engineering_ Real-time Data_Processing for AIML.pdf", category: "Data" },
+                { name: "Internship Certificate", file: "/assets/Certificates/Cyberelevant_Internship_Completion_Certificate_Sankalp_Saini_Secured.pdf", category: "Security" }
+              ].map((cert, idx) => (
+                <motion.a
+                  key={idx}
+                  href={cert.file}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  whileHover={{ scale: 1.05, y: -5 }}
+                  whileTap={{ scale: 0.95 }}
+                  className="bg-gradient-to-br from-white/[0.08] to-white/[0.02] backdrop-blur-xl border border-white/20 rounded-lg p-3 sm:p-4 hover:border-blue-400/50 transition-all duration-300 group cursor-pointer"
+                >
+                  <div className="flex flex-col h-full">
+                    <span className="text-xs text-blue-400 mb-1 font-medium">{cert.category}</span>
+                    <h3 className="text-sm sm:text-base font-medium text-white mb-2 group-hover:text-blue-300 transition-colors">
+                      {cert.name}
+                    </h3>
+                    <div className="mt-auto flex items-center text-xs text-gray-400 group-hover:text-blue-400 transition-colors">
+                      <svg className="w-3 h-3 mr-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 10v6m0 0l-3-3m3 3l3-3m2 8H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z" />
+                      </svg>
+                      View Certificate
+                    </div>
+                  </div>
+                </motion.a>
+              ))}
+            </div>
+          </div>
+
+          <div className="mt-6 sm:mt-8">
             <h2 className="text-xl sm:text-2xl font-semibold mb-3 sm:mb-4 hero">Personal Interests</h2>
             <p className="text-base sm:text-lg leading-relaxed hero">
               When I&apos;m not coding, you can find me exploring new technologies, contributing to open-source
