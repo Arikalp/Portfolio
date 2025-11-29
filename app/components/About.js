@@ -14,14 +14,44 @@ const About = () => {
         transition={{ duration: 0.8 }}
         className="max-w-4xl mx-auto relative z-10"
       >
-        <motion.h1
-          initial={{ opacity: 0, x: -100 }}
-          animate={{ opacity: 1, x: 0 }}
-          transition={{ duration: 0.8 }}
-          className="text-2xl sm:text-3xl md:text-4xl font-bold mb-6 sm:mb-8 hero text-gray-300"
-        >
-          About Me
-        </motion.h1>
+        <div className="flex flex-col md:flex-row items-center md:items-start gap-6 sm:gap-8 mb-8 sm:mb-12">
+          <motion.div
+            initial={{ opacity: 0, scale: 0.8 }}
+            animate={{ opacity: 1, scale: 1 }}
+            transition={{ duration: 0.8 }}
+            className="flex-shrink-0"
+          >
+            <div className="relative">
+              <motion.img
+                src="/assets/Profile_Photo.jpg"
+                alt="Sankalp Saini"
+                className="w-32 h-32 sm:w-40 sm:h-40 md:w-48 md:h-48 rounded-full object-cover object-top border-4 border-white/20 shadow-2xl"
+                whileHover={{ scale: 1.05 }}
+                transition={{ duration: 0.3 }}
+              />
+              <div className="absolute inset-0 rounded-full bg-gradient-to-tr from-blue-500/20 to-purple-500/20 opacity-0 hover:opacity-100 transition-opacity duration-300" />
+            </div>
+          </motion.div>
+          
+          <div className="flex-1 text-center md:text-left">
+            <motion.h1
+              initial={{ opacity: 0, x: -100 }}
+              animate={{ opacity: 1, x: 0 }}
+              transition={{ duration: 0.8 }}
+              className="text-2xl sm:text-3xl md:text-4xl font-bold mb-3 sm:mb-4 hero text-gray-300"
+            >
+              About Me
+            </motion.h1>
+            <motion.p
+              initial={{ opacity: 0, x: -50 }}
+              animate={{ opacity: 1, x: 0 }}
+              transition={{ duration: 0.8, delay: 0.2 }}
+              className="text-lg sm:text-xl text-blue-400 font-medium"
+            >
+              Full Stack Developer
+            </motion.p>
+          </div>
+        </div>
 
         <motion.div
           initial={{ opacity: 0, y: 20 }}
