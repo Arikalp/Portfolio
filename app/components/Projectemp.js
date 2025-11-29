@@ -1,10 +1,36 @@
-import React, { useRef, useState } from 'react'
+import React, { useRef, useState, useEffect } from 'react'
 import { motion } from 'framer-motion'
+
+// Global cache to store loaded video URLs
+const videoCache = new Set();
 
 const Projectemp = ({ video, liveLink, title, details, tech }) => {
   const videoRef = useRef(null);
   const [isHovered, setIsHovered] = useState(false);
+  const [isLoaded, setIsLoaded] = useState(videoCache.has(video));
   const playPromiseRef = useRef(null);
+
+  useEffect(() => {
+    if (videoRef.current) {
+      if (!isLoaded) {
+        const handleLoadedData = () => {
+          videoCache.add(video);
+          setIsLoaded(true);
+        };
+        
+        videoRef.current.addEventListener('loadeddata', handleLoadedData);
+        
+        return () => {
+          if (videoRef.current) {
+            videoRef.current.removeEventListener('loadeddata', handleLoadedData);
+          }
+        };
+      } else {
+        // If video is cached, load it immediately
+        videoRef.current.load();
+      }
+    }
+  }, [video, isLoaded]);
 
   const handleMouseEnter = () => {
     setIsHovered(true);
@@ -59,7 +85,8 @@ const Projectemp = ({ video, liveLink, title, details, tech }) => {
         className="w-full h-32 sm:h-40 md:h-48 lg:h-60 object-cover rounded-md mb-3 sm:mb-4"
         muted
         loop
-        preload="auto"
+        preload={isLoaded ? "none" : "metadata"}
+        playsInline
         animate={{
           scale: isHovered ? 1.15 : 1,
           rotateY: isHovered ? 8 : 0,
