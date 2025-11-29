@@ -10,7 +10,18 @@ const Projectemp = ({ video, liveLink, title, details, tech }) => {
   const [isHovered, setIsHovered] = useState(false);
   const [isLoaded, setIsLoaded] = useState(videoCache.has(video));
   const [hasAnimated, setHasAnimated] = useState(animationCache.has(video));
+  const [isMobile, setIsMobile] = useState(false);
   const playPromiseRef = useRef(null);
+
+  useEffect(() => {
+    const checkMobile = () => {
+      const isMobileDevice = /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent) || window.innerWidth < 768;
+      setIsMobile(isMobileDevice);
+    };
+    checkMobile();
+    window.addEventListener('resize', checkMobile);
+    return () => window.removeEventListener('resize', checkMobile);
+  }, []);
 
   useEffect(() => {
     if (!hasAnimated) {
@@ -78,7 +89,7 @@ const Projectemp = ({ video, liveLink, title, details, tech }) => {
       className="relative bg-gradient-to-br from-white/[0.08] to-white/[0.02] backdrop-blur-xl border border-white/20 rounded-2xl shadow-2xl w-full max-w-sm sm:max-w-md md:max-w-xl min-h-[480px] sm:min-h-[500px] md:min-h-[520px] p-3 sm:p-4 md:p-6 lg:p-8 flex flex-col items-center justify-between"
       onMouseEnter={handleMouseEnter}
       onMouseLeave={handleMouseLeave}
-      whileHover={{
+      whileHover={isMobile ? {} : {
         y: -15,
         boxShadow: "0 25px 50px rgba(0,0,0,0.4), 0 0 0 1px rgba(59, 130, 246, 0.3)",
         borderColor: "rgba(59, 130, 246, 0.6)",
@@ -97,15 +108,15 @@ const Projectemp = ({ video, liveLink, title, details, tech }) => {
         className="w-full h-32 sm:h-40 md:h-48 lg:h-60 object-cover rounded-md mb-3 sm:mb-4"
         muted
         loop
-        preload={isLoaded ? "none" : "metadata"}
+        preload={isLoaded ? "none" : (isMobile ? "none" : "metadata")}
         playsInline
-        animate={{
+        animate={isMobile ? {} : {
           scale: isHovered ? 1.15 : 1,
           rotateY: isHovered ? 8 : 0,
           z: isHovered ? 50 : 0
         }}
-        transition={{ duration: 0.4, ease: "easeOut" }}
-        style={{
+        transition={isMobile ? {} : { duration: 0.4, ease: "easeOut" }}
+        style={isMobile ? {} : {
           transformStyle: "preserve-3d",
           zIndex: isHovered ? 10 : 1
         }}
@@ -120,7 +131,7 @@ const Projectemp = ({ video, liveLink, title, details, tech }) => {
         initial={hasAnimated ? { opacity: 1, y: 0 } : { opacity: 0, y: 20 }}
         animate={{ opacity: 1, y: 0 }}
         transition={hasAnimated ? { duration: 0 } : { duration: 0.6, delay: 0.2 }}
-        whileHover={{ scale: 1.05 }}
+        whileHover={isMobile ? {} : { scale: 1.05 }}
       >
         {title}
       </motion.h2>
@@ -147,7 +158,7 @@ const Projectemp = ({ video, liveLink, title, details, tech }) => {
             initial={hasAnimated ? { opacity: 1, scale: 1 } : { opacity: 0, scale: 0 }}
             animate={{ opacity: 1, scale: 1 }}
             transition={hasAnimated ? { duration: 0 } : { duration: 0.3, delay: 0.5 + i * 0.1 }}
-            whileHover={{ 
+            whileHover={isMobile ? {} : { 
               scale: 1.1, 
               background: "linear-gradient(135deg, rgba(59, 130, 246, 0.4) 0%, rgba(147, 51, 234, 0.4) 100%)",
               borderColor: "rgba(59, 130, 246, 0.6)",
@@ -168,12 +179,12 @@ const Projectemp = ({ video, liveLink, title, details, tech }) => {
         initial={hasAnimated ? { opacity: 1, y: 0 } : { opacity: 0, y: 20 }}
         animate={{ opacity: 1, y: 0 }}
         transition={hasAnimated ? { duration: 0 } : { duration: 0.6, delay: 0.6 }}
-        whileHover={{ 
+        whileHover={isMobile ? {} : { 
           scale: 1.05,
           boxShadow: "0 8px 25px rgba(59, 130, 246, 0.5)",
           transition: { duration: 0.2 }
         }}
-        whileTap={{ scale: 0.95 }}
+        whileTap={isMobile ? {} : { scale: 0.95 }}
       >
         <span className="relative z-10">Live View</span>
         <div className="absolute inset-0 bg-gradient-to-r from-purple-600 to-blue-600 opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
