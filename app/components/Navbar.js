@@ -25,9 +25,9 @@ const Navbar = ({ onNavigate }) => {
           <Image 
             src='/assets/Sankalp.png' 
             alt='logo' 
-            width={50} 
-            height={50} 
-            className='sm:w-[60px] sm:h-[60px] md:w-[70px] md:h-[70px] h-auto' 
+            width={100} 
+            height={100} 
+            className='sm:w-[100px] sm:h-[100px] md:w-[120px] md:h-[120px] h-auto' 
           />
         </div>
         
