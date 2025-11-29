@@ -91,7 +91,7 @@ export default function Page() {
 
   return (
     <>
-      <BackgroundGradientAnimation containerClassName="fixed inset-0 z-0" />
+      <BackgroundGradientAnimation containerClassName="fixed inset-0 z-0 blur-md" />
       <div ref={scrollRef} data-scroll-container className="container-every relative min-h-screen z-10 pointer-events-none">
         <div className="absolute inset-0 z-0">
           <ParticlesBackground />
