@@ -4,6 +4,15 @@ import React, { useRef, useState } from 'react';
 
 export default function ContactForm() {
   const form = useRef();
+  const [isLoading, setIsLoading] = useState(false);
+  const [notification, setNotification] = useState({ show: false, message: '', type: '' });
+
+  const showNotification = (message, type) => {
+    setNotification({ show: true, message, type });
+    setTimeout(() => {
+      setNotification({ show: false, message: '', type: '' });
+    }, 3000);
+  };
 
   // const sendEmail = (e) => {
   //   e.preventDefault();
@@ -30,6 +39,7 @@ export default function ContactForm() {
   // api/Contact/route.js is set up to handle email sending via nodemailer.
   const sendEmail = async (e) => {
     e.preventDefault();
+    setIsLoading(true);
     
     const formData = new FormData(form.current);
     const name = formData.get('name');
@@ -37,6 +47,12 @@ export default function ContactForm() {
     const message = formData.get('message');
 
     try {
+
+      if (!name || !email || !message) {
+        showNotification("Please fill in all fields.", "error");
+        return;
+      }
+
       const response = await fetch("/api/Contact", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
@@ -44,20 +60,31 @@ export default function ContactForm() {
       });
 
       if (response.ok) {
-        alert("Message sent successfully!");
+        showNotification("Message sent successfully!", "success");
         form.current.reset();
       } else {
-        alert("Failed to send message. Please try again.");
+        showNotification("Failed to send message. Please try again.", "error");
       }
     } catch (error) {
       console.error("Error:", error);
-      alert("Failed to send message. Please try again.");
+      showNotification("Failed to send message. Please try again.", "error");
+    } finally {
+      setIsLoading(false);
     }
   };
 
-
   return (
     <div className="min-h-screen py-10 sm:py-16 md:py-20 px-4 sm:px-8 md:px-20 flex flex-col justify-center items-center">
+      {/* Toast Notification */}
+      <div
+        className={`fixed right-4 px-6 py-3 rounded-lg shadow-lg text-white font-medium transition-all duration-300 z-50 ${
+          notification.show ? 'translate-x-0 opacity-100' : 'translate-x-full opacity-0'
+        } ${notification.type === 'success' ? 'bg-green-600' : 'bg-red-600'}`}
+        style={{ top: '35%' }}
+      >
+        {notification.message}
+      </div>
+
       <div className="w-full max-w-md sm:max-w-lg md:max-w-xl">
         <h1 className="text-2xl sm:text-3xl md:text-4xl font-bold text-white mb-4 sm:mb-6 text-center">
           Get In Touch
@@ -71,28 +98,29 @@ export default function ContactForm() {
             type="text"
             name="name"
             placeholder="Your Name"
-            required
+           
             className="px-3 sm:px-4 py-2 sm:py-3 rounded bg-[rgba(255,255,255,0.1)] text-white border border-gray-600 focus:outline-none focus:ring-2 focus:ring-[#3a0ca3] transition text-sm sm:text-base"
           />
           <input
             type="email"
             name="email"
             placeholder="Your Email"
-            required
+          
             className="px-3 sm:px-4 py-2 sm:py-3 rounded bg-[rgba(255,255,255,0.1)] text-white border border-gray-600 focus:outline-none focus:ring-2 focus:ring-[#3a0ca3] transition text-sm sm:text-base"
           />
           <textarea
             name="message"
             placeholder="Your Message"
-            required
+           
             rows={4}
             className="px-3 sm:px-4 py-2 sm:py-3 rounded bg-[rgba(255,255,255,0.1)] text-white border border-gray-600 focus:outline-none focus:ring-2 focus:ring-[#3a0ca3] transition resize-none text-sm sm:text-base"
           />
           <button
             type="submit"
-            className="gradient-btn w-full py-2 sm:py-3 mt-2 text-sm sm:text-base md:text-lg font-semibold"
+            disabled={isLoading}
+            className="gradient-btn w-full py-2 sm:py-3 mt-2 text-sm sm:text-base md:text-lg font-semibold disabled:opacity-50 disabled:cursor-not-allowed"
           >
-            Send Message
+            {isLoading ? "Sending..." : "Send Message"}
           </button>
         </form>
       </div>
