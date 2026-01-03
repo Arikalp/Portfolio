@@ -68,8 +68,13 @@ export const metadata = {
     images: ["/assets/Sankalp.png"],
     creator: "@Arikalp_",
   },
+};
+
+export const viewport = {
+  width: "device-width",
+  initialScale: 1,
+  maximumScale: 5,
   themeColor: "#0a0a0a",
-  viewport: { width: "device-width", initialScale: 1, maximumScale: 5 },
 };
 
 export default function RootLayout({ children }) {
