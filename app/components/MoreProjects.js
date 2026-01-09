@@ -23,6 +23,13 @@ const moreProjects = [
     details: " It uses advanced LLM technology to analyze X-rays and generate accurate, detailed medical reports instantly, helping doctors save time and improve diagnostic efficiency.",
     tech: ["Streamlit", "Python", "LLM Integraion"]
   },
+  {
+    video: "/assets/FILE_CONVERTER.mp4",
+    liveLink: "https://file-converter-psi-gold.vercel.app/",
+    title: "File Converter - Convert files to different formats",
+    details: "A versatile file conversion tool that allows users to easily convert documents, images, and videos into various formats, ensuring compatibility and convenience across different platforms.",
+    tech: ["Next.js", "Typescript", "Sharp Library"]
+  },
 
   {
     video: "/assets/TYPESTO.mp4",
