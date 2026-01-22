@@ -13,7 +13,7 @@ import Contact from './components/Contact'
 import { BackgroundGradientAnimation } from '@/components/ui/background-gradient-animation'
 import { DottedGlowBackground } from '@/components/ui/dotted-glow-background'
 import { AuroraBackground } from '@/components/ui/aurora-background'
-import { BackgroundBeams } from '@/components/ui/background-beams'
+import { WebcamPixelGrid } from '@/components/ui/webcam-pixel-grid'
 import { ThemeProvider, useTheme } from './contexts/ThemeContext'
 import "locomotive-scroll/dist/locomotive-scroll.css";
 
@@ -116,9 +116,9 @@ function PageContent() {
         </AuroraBackground>
       )}
       
-      {/* Theme 4: Background Beams */}
+      {/* Theme 4: Webcam Pixel Grid */}
       {currentTheme === 4 && (
-        <BackgroundBeams className="fixed inset-0 z-0" />
+        <WebcamPixelGrid className="fixed inset-0 z-0" />
       )}
       
       <div ref={scrollRef} data-scroll-container className="container-every relative min-h-screen z-10 pointer-events-none">
