@@ -13,6 +13,7 @@ import Contact from './components/Contact'
 import { BackgroundGradientAnimation } from '@/components/ui/background-gradient-animation'
 import { DottedGlowBackground } from '@/components/ui/dotted-glow-background'
 import { AuroraBackground } from '@/components/ui/aurora-background'
+import { BackgroundBeams } from '@/components/ui/background-beams'
 import { ThemeProvider, useTheme } from './contexts/ThemeContext'
 import "locomotive-scroll/dist/locomotive-scroll.css";
 
@@ -113,6 +114,11 @@ function PageContent() {
         >
           <div></div>
         </AuroraBackground>
+      )}
+      
+      {/* Theme 4: Background Beams */}
+      {currentTheme === 4 && (
+        <BackgroundBeams className="fixed inset-0 z-0" />
       )}
       
       <div ref={scrollRef} data-scroll-container className="container-every relative min-h-screen z-10 pointer-events-none">

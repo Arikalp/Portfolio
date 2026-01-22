@@ -18,7 +18,7 @@ export const ThemeProvider = ({ children }) => {
   }, [])
 
   const switchTheme = () => {
-    setCurrentTheme(prev => prev === 3 ? 1 : prev + 1)
+    setCurrentTheme(prev => prev === 4 ? 1 : prev + 1)
   }
 
   return (

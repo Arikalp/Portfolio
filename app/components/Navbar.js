@@ -2,7 +2,7 @@ import React, { useState } from 'react'
 import { motion } from 'framer-motion'
 import Image from 'next/image'
 import { useTheme } from '../contexts/ThemeContext'
-import { FaReact, FaDotCircle, FaSun } from 'react-icons/fa'
+import { FaReact, FaDotCircle, FaSun, FaBolt } from 'react-icons/fa'
 
 const Navbar = ({ onNavigate }) => {
   const [activeSection, setActiveSection] = useState('home');
@@ -79,7 +79,8 @@ const Navbar = ({ onNavigate }) => {
         >
           {currentTheme === 1 ? <FaReact className="text-xl text-blue-400" /> : 
            currentTheme === 2 ? <FaDotCircle className="text-xl text-purple-400" /> : 
-           <FaSun className="text-xl text-yellow-400" />}
+           currentTheme === 3 ? <FaSun className="text-xl text-yellow-400" /> :
+           <FaBolt className="text-xl text-cyan-400" />}
         </motion.button>
         
         {/* Hamburger Icon */}
