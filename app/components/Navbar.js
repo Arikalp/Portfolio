@@ -1,10 +1,13 @@
 import React, { useState } from 'react'
 import { motion } from 'framer-motion'
 import Image from 'next/image'
+import { useTheme } from '../contexts/ThemeContext'
+import { FaReact, FaDotCircle, FaSun } from 'react-icons/fa'
 
 const Navbar = ({ onNavigate }) => {
   const [activeSection, setActiveSection] = useState('home');
   const [menuOpen, setMenuOpen] = useState(false);
+  const { currentTheme, switchTheme } = useTheme();
 
   const handleNavigation = (section) => {
     setActiveSection(section);
@@ -30,17 +33,6 @@ const Navbar = ({ onNavigate }) => {
             className='sm:w-[100px] sm:h-[100px] md:w-[120px] md:h-[120px] h-auto' 
           />
         </div>
-        
-        {/* Hamburger Icon */}
-        <button
-          className="md:hidden flex flex-col justify-center items-center w-12 h-12 focus:outline-none touch-manipulation"
-          onClick={() => setMenuOpen(!menuOpen)}
-          aria-label="Toggle menu"
-        >
-          <span className={`block w-7 h-0.5 bg-white transition-all duration-300 ${menuOpen ? 'rotate-45 translate-y-1.5' : ''}`}></span>
-          <span className={`block w-7 h-0.5 bg-white my-1 transition-all duration-300 ${menuOpen ? 'opacity-0' : ''}`}></span>
-          <span className={`block w-7 h-0.5 bg-white transition-all duration-300 ${menuOpen ? '-rotate-45 -translate-y-1.5' : ''}`}></span>
-        </button>
         
         {/* Desktop Menu */}
         <ul className='hidden md:flex flex-row space-x-8 lg:space-x-10'>
@@ -77,6 +69,29 @@ const Navbar = ({ onNavigate }) => {
             Contact
           </motion.li>
         </ul>
+        
+        {/* Theme Switcher */}
+        <motion.button
+          whileHover={{ scale: 1.1, rotate: 180 }}
+          whileTap={{ scale: 0.9 }}
+          onClick={switchTheme}
+          className="hidden md:flex items-center justify-center w-10 h-10 rounded-full bg-white/10 backdrop-blur-sm border border-white/20 text-white hover:bg-white/20 transition-all duration-300"
+        >
+          {currentTheme === 1 ? <FaReact className="text-xl text-blue-400" /> : 
+           currentTheme === 2 ? <FaDotCircle className="text-xl text-purple-400" /> : 
+           <FaSun className="text-xl text-yellow-400" />}
+        </motion.button>
+        
+        {/* Hamburger Icon */}
+        <button
+          className="md:hidden flex flex-col justify-center items-center w-12 h-12 focus:outline-none touch-manipulation"
+          onClick={() => setMenuOpen(!menuOpen)}
+          aria-label="Toggle menu"
+        >
+          <span className={`block w-7 h-0.5 bg-white transition-all duration-300 ${menuOpen ? 'rotate-45 translate-y-1.5' : ''}`}></span>
+          <span className={`block w-7 h-0.5 bg-white my-1 transition-all duration-300 ${menuOpen ? 'opacity-0' : ''}`}></span>
+          <span className={`block w-7 h-0.5 bg-white transition-all duration-300 ${menuOpen ? '-rotate-45 -translate-y-1.5' : ''}`}></span>
+        </button>
       </div>
       
       {/* Mobile Menu */}

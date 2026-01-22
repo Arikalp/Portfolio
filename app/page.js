@@ -11,9 +11,13 @@ import About from "./components/About"
 import MoreProjects from './components/MoreProjects'
 import Contact from './components/Contact'
 import { BackgroundGradientAnimation } from '@/components/ui/background-gradient-animation'
+import { DottedGlowBackground } from '@/components/ui/dotted-glow-background'
+import { AuroraBackground } from '@/components/ui/aurora-background'
+import { ThemeProvider, useTheme } from './contexts/ThemeContext'
 import "locomotive-scroll/dist/locomotive-scroll.css";
 
-export default function Page() {
+function PageContent() {
+  const { currentTheme } = useTheme();
   const scrollRef = useRef(null);
   const [currentSection, setCurrentSection] = useState('home');
   const [scrollInstance, setScrollInstance] = useState(null);
@@ -91,11 +95,32 @@ export default function Page() {
 
   return (
     <>
-      <BackgroundGradientAnimation containerClassName="fixed inset-0 z-0 blur-md" />
+      {/* Theme 1: Gradient Animation Background */}
+      {currentTheme === 1 && (
+        <BackgroundGradientAnimation containerClassName="fixed inset-0 z-0 blur-md" />
+      )}
+      
+      {/* Theme 2: Dotted Glow Background */}
+      {currentTheme === 2 && (
+        <DottedGlowBackground className="fixed inset-0 z-0" />
+      )}
+      
+      {/* Theme 3: Aurora Background */}
+      {currentTheme === 3 && (
+        <AuroraBackground 
+          className="fixed inset-0 z-0 bg-transparent" 
+          showRadialGradient={false}
+        >
+          <div></div>
+        </AuroraBackground>
+      )}
+      
       <div ref={scrollRef} data-scroll-container className="container-every relative min-h-screen z-10 pointer-events-none">
-        <div className="absolute inset-0 z-0">
-          <ParticlesBackground />
-        </div>
+        {currentTheme === 1 && (
+          <div className="absolute inset-0 z-0">
+            <ParticlesBackground />
+          </div>
+        )}
         <div className="relative z-10 pointer-events-auto">
           <Navbar onNavigate={handleNavigation} />
           {currentSection === 'home' && (
@@ -112,5 +137,13 @@ export default function Page() {
         </div>
       </div>
     </>
+  )
+}
+
+export default function Page() {
+  return (
+    <ThemeProvider>
+      <PageContent />
+    </ThemeProvider>
   )
 }
