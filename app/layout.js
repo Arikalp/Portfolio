@@ -2,6 +2,7 @@ import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
 import { BackgroundLines } from "@/components/ui/background-lines";
 import ClientLoader from "@/app/components/ClientLoader";
+import { Analytics } from "@vercel/analytics/next";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -87,6 +88,7 @@ export default function RootLayout({ children }) {
         {/* Global aceternity background lines (front) */}
         <BackgroundLines className="fixed inset-0 h-screen w-full bg-transparent pointer-events-none z-10" svgOptions={{ duration: 12 }} />
         {children}
+        <Analytics />
       </body>
     </html>
   );
