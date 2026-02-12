@@ -11,7 +11,6 @@ import About from "./components/About"
 import MoreProjects from './components/MoreProjects'
 import Contact from './components/Contact'
 import { BackgroundGradientAnimation } from '@/components/ui/background-gradient-animation'
-import { DottedGlowBackground } from '@/components/ui/dotted-glow-background'
 import { AuroraBackground } from '@/components/ui/aurora-background'
 import WebcamPixelGridWrapper from './components/WebcamPixelGridWrapper'
 import { ThemeProvider, useTheme } from './contexts/ThemeContext'
@@ -99,11 +98,6 @@ function PageContent() {
       {/* Theme 1: Gradient Animation Background */}
       {currentTheme === 1 && (
         <BackgroundGradientAnimation containerClassName="fixed inset-0 z-0 blur-md" />
-      )}
-      
-      {/* Theme 2: Dotted Glow Background */}
-      {currentTheme === 2 && (
-        <DottedGlowBackground className="fixed inset-0 z-0" />
       )}
       
       {/* Theme 3: Aurora Background */}
