@@ -1,8 +1,10 @@
 import React from 'react';
 import { motion } from 'framer-motion';
-import ParticlesBackground from './ParticlesBackground';
+import Image from 'next/image';
+import ParticlesBackground from './ParticlesBackground'
 
 const About = () => {
+
   return (
     <div className="min-h-screen py-10 sm:py-16 md:py-20 px-4 sm:px-8 md:px-20 relative overflow-hidden">
       <div className="absolute inset-0 z-0">
@@ -22,14 +24,45 @@ const About = () => {
             className="flex-shrink-0"
           >
             <div className="relative">
-              <motion.img
-                src="/assets/Profile_Photo.jpg"
-                alt="Sankalp Saini"
-                className="w-32 h-32 sm:w-40 sm:h-40 md:w-48 md:h-48 rounded-full object-cover object-top border-4 border-white/20 shadow-2xl"
-                whileHover={{ scale: 1.05 }}
-                transition={{ duration: 0.3 }}
-              />
-              <div className="absolute inset-0 rounded-full bg-gradient-to-tr from-blue-500/20 to-purple-500/20 opacity-0 hover:opacity-100 transition-opacity duration-300" />
+              <motion.div
+                initial="rest"
+                whileHover="hover"
+                animate="rest"
+                className="relative w-32 h-32 sm:w-40 sm:h-40 md:w-48 md:h-48"
+              >
+                <motion.div
+                  variants={{
+                    rest: { scale: 1 },
+                    hover: { scale: 1.05 }
+                  }}
+                  transition={{ duration: 0.3 }}
+                  className="w-full h-full"
+                >
+                  <Image
+                    src="/assets/Profile_Photo.jpg"
+                    alt="Sankalp Saini"
+                    width={192}
+                    height={192}
+                    sizes="(min-width: 768px) 12rem, (min-width: 640px) 10rem, 8rem"
+                    className="w-full h-full rounded-full object-cover object-top border-4 border-white/20 shadow-2xl"
+                    priority
+                  />
+                </motion.div>
+                <motion.div
+                  variants={{
+                    rest: { opacity: 0, rotate: 0 },
+                    hover: {
+                      opacity: 1,
+                      rotate: 360,
+                      transition: {
+                        opacity: { duration: 0.2 },
+                        rotate: { duration: 2, ease: 'linear', repeat: Infinity }
+                      }
+                    }
+                  }}
+                  className="pointer-events-none absolute inset-0 rounded-full border-2 border-cyan-300/80 border-dashed"
+                />
+              </motion.div>
             </div>
           </motion.div>
           
