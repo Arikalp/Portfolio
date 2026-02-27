@@ -88,11 +88,11 @@ const Projects = ({ onNavigate }) => {
         className="w-full max-w-md lg:max-w-none"
       >
         <Projectemp
-          video="/assets/POSTIFY.mp4"
-          liveLink="https://postify-cefj.onrender.com"
-          title="Postify - A posting Platform"
-          details="Postify is a posting platform that allows users to share and discover content in a clean and modern interface."
-          tech={["EJS","Tailwind CSS", "Node.js", "Express", "MongoDB"]}
+          video="/assets/SaachiRaah.mp4"
+          liveLink="https://sacchiraah.vercel.app/"
+          title="SacchiRaah - A NGO Website"
+          details="SacchiRaah is a non-profit organization website built to raise awareness and support for social causes, featuring a clean design and user-friendly interface."
+          tech={["Next.js", "Tailwind CSS", "Framer Motion", "MongoDB"]}
         />
       </motion.div>
     
