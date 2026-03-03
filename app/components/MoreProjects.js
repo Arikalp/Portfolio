@@ -11,12 +11,11 @@ const moreProjects = [
     tech: ["HTML", "GSAP", "CSS", "Tailwind CSS", "JavaScript", "API"],
   },
   {
-    video: "/assets/Smart-Tutor.mp4",
-    liveLink: "https://smart-tutor-theta.vercel.app/",
-    title: "AI Smart-Tutor - Uses LLM to Teach Students",
-    details:
-      " An AI-powered tutor that leverages advanced LLM technology to provide personalized learning experiences, helping students grasp complex concepts with ease and efficiency.",
-    tech: ["React.js", "Firebase", "LLM Integraion"],
+    video:"/assets/OCHI.mp4",
+    liveLink:"https://ochi-murex.vercel.app/",
+    title:"OCHI - A Modern Web Experience",
+    details:"OCHI is a modern web experience designed to showcase clean design and interactive elements using advanced frontend techniques.",
+    tech:["React", "Framer Motion", "Tailwind CSS", "Locomotive Scroll"]
   },
   {
     video: "/assets/POSTIFY.mp4",
