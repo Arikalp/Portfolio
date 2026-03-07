@@ -27,11 +27,11 @@ const moreProjects = [
   },
   {
     video: "/assets/SMARTREPORT.mp4",
-    liveLink: "https://smart-tutor-theta.vercel.app/",
+    liveLink: "https://medical-report-generator-six.vercel.app/",
     title: "AI Report Analyzer - Uses LLM to generate report for X-Rays etc",
     details:
       " It uses advanced LLM technology to analyze X-rays and generate accurate, detailed medical reports instantly, helping doctors save time and improve diagnostic efficiency.",
-    tech: ["Streamlit", "Python", "LLM Integraion"],
+    tech: ["Next.js", "Tailwind CSS", "OpenAI API", "LLM Integraion"],
   },
   {
     video: "/assets/FILE_CONVERTER.mp4",
