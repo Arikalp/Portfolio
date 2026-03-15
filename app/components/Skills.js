@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useEffect, useState } from 'react'
 import { motion } from 'framer-motion'
 
 const techs = [
@@ -7,6 +7,22 @@ const techs = [
 ]
 
 const Skills = () => {
+  const [isMobile, setIsMobile] = useState(false);
+
+  useEffect(() => {
+    const checkMobile = () => {
+      setIsMobile(window.innerWidth < 768);
+    };
+
+    checkMobile();
+    window.addEventListener('resize', checkMobile);
+
+    return () => window.removeEventListener('resize', checkMobile);
+  }, []);
+
+  const shouldAnimateMarquee = !isMobile;
+  const visibleTechs = shouldAnimateMarquee ? [...techs, ...techs] : techs;
+
   return (
     <>
       <div className="py-10 sm:py-16 md:py-20 px-4 sm:px-8 md:px-20">
@@ -24,21 +40,21 @@ const Skills = () => {
 
       <div className='overflow-hidden w-full py-8 sm:py-12 md:py-15 flex justify-center items-center'>
         <motion.div
-          className='flex gap-6 sm:gap-8 md:gap-12 w-fit py-4 sm:py-6'
-          animate={{ x: ['0%', '-204.2%'] }}
-          transition={{
+          className={`py-4 sm:py-6 ${shouldAnimateMarquee ? 'flex gap-6 sm:gap-8 md:gap-12 w-fit' : 'flex flex-wrap justify-center gap-4 sm:gap-6 w-full'}`}
+          animate={shouldAnimateMarquee ? { x: ['0%', '-204.2%'] } : { x: 0 }}
+          transition={shouldAnimateMarquee ? {
             duration: 20,
             repeat: Infinity,
             ease: 'linear'
-          }}
+          } : { duration: 0 }}
         >
-          {[...techs, ...techs].map((tech, i) => (
+          {visibleTechs.map((tech, i) => (
             <motion.img
               key={`${tech}-${i}`}
               src={`/assets/${tech}.png`}
               alt={`Logo of ${tech}`}
               className="w-24 sm:w-32 md:w-40 object-contain rounded-md transition-transform duration-300"
-              whileHover={{ scale: 1.2 }}
+              whileHover={shouldAnimateMarquee ? { scale: 1.2 } : {}}
               whileTap={{ scale: 0.8 }}
             />
           ))}

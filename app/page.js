@@ -21,13 +21,38 @@ function PageContent() {
   const scrollRef = useRef(null);
   const [currentSection, setCurrentSection] = useState('home');
   const [scrollInstance, setScrollInstance] = useState(null);
+  const [isMobileDevice, setIsMobileDevice] = useState(null);
 
   const handleNavigation = (section) => {
     setCurrentSection(section);
   };
 
   useEffect(() => {
+    if (typeof window === 'undefined') return;
+
+    const checkMobileDevice = () => {
+      const isTouchMobile = window.matchMedia('(max-width: 767px)').matches;
+      const mobileUA = /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent);
+      setIsMobileDevice(isTouchMobile || mobileUA);
+    };
+
+    checkMobileDevice();
+    window.addEventListener('resize', checkMobileDevice);
+
+    return () => window.removeEventListener('resize', checkMobileDevice);
+  }, []);
+
+  useEffect(() => {
     let scroll;
+
+    if (isMobileDevice === null) {
+      return;
+    }
+
+    if (isMobileDevice) {
+      setScrollInstance(null);
+      return;
+    }
     
     // Only run on client and check if window exists
     if (typeof window !== 'undefined') {
@@ -78,39 +103,46 @@ function PageContent() {
         }
       }
     };
-  }, []);
+  }, [isMobileDevice]);
 
   // Update scroll when section changes
   useEffect(() => {
-    if (scrollInstance && typeof scrollInstance.update === 'function') {
-      setTimeout(() => {
-        try {
-          scrollInstance.update();
-          if (typeof scrollInstance.scrollTo === 'function') {
-            scrollInstance.scrollTo(0, {
-              duration: 500,
-              easing: [0.25, 0.0, 0.35, 1.0],
-              disableLerp: false,
-            });
-          } else if (typeof window !== 'undefined') {
-            window.scrollTo({ top: 0, behavior: 'smooth' });
-          }
-        } catch (error) {
-          console.error('Error updating Locomotive Scroll:', error);
-        }
-      }, 300); // slight delay to allow DOM update
+    if (!scrollInstance || typeof scrollInstance.update !== 'function') {
+      if (typeof window !== 'undefined') {
+        window.scrollTo({ top: 0, behavior: 'smooth' });
+      }
+      return;
     }
+
+    setTimeout(() => {
+      try {
+        scrollInstance.update();
+        if (typeof scrollInstance.scrollTo === 'function') {
+          scrollInstance.scrollTo(0, {
+            duration: 500,
+            easing: [0.25, 0.0, 0.35, 1.0],
+            disableLerp: false,
+          });
+        } else if (typeof window !== 'undefined') {
+          window.scrollTo({ top: 0, behavior: 'smooth' });
+        }
+      } catch (error) {
+        console.error('Error updating Locomotive Scroll:', error);
+      }
+    }, 300); // slight delay to allow DOM update
   }, [currentSection, scrollInstance]);
+
+  const shouldRenderHeavyBackgrounds = isMobileDevice === false;
 
   return (
     <>
       {/* Theme 1: Gradient Animation Background */}
-      {currentTheme === 1 && (
+      {shouldRenderHeavyBackgrounds && currentTheme === 1 && (
         <BackgroundGradientAnimation containerClassName="fixed inset-0 z-0 blur-md" />
       )}
       
       {/* Theme 3: Aurora Background */}
-      {currentTheme === 3 && (
+      {shouldRenderHeavyBackgrounds && currentTheme === 3 && (
         <AuroraBackground 
           className="fixed inset-0 z-0 bg-transparent" 
           showRadialGradient={false}
@@ -120,12 +152,12 @@ function PageContent() {
       )}
       
       {/* Theme 4: Webcam Pixel Grid */}
-      {currentTheme === 4 && (
+      {shouldRenderHeavyBackgrounds && currentTheme === 4 && (
         <WebcamPixelGridWrapper className="fixed inset-0 z-0" />
       )}
       
       <div ref={scrollRef} data-scroll-container className="container-every relative min-h-screen z-10 pointer-events-none">
-        {currentTheme === 1 && (
+        {shouldRenderHeavyBackgrounds && currentTheme === 1 && (
           <div className="absolute inset-0 z-0">
             <ParticlesBackground />
           </div>
