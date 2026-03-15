@@ -86,6 +86,15 @@ function PageContent() {
       setTimeout(() => {
         try {
           scrollInstance.update();
+          if (typeof scrollInstance.scrollTo === 'function') {
+            scrollInstance.scrollTo(0, {
+              duration: 500,
+              easing: [0.25, 0.0, 0.35, 1.0],
+              disableLerp: false,
+            });
+          } else if (typeof window !== 'undefined') {
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+          }
         } catch (error) {
           console.error('Error updating Locomotive Scroll:', error);
         }
