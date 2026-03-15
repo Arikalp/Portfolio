@@ -86,7 +86,7 @@ const Projectemp = ({ video, liveLink, title, details, tech }) => {
 
   return (
     <motion.div
-      className="relative bg-gradient-to-br from-white/[0.08] to-white/[0.02] backdrop-blur-xl border border-white/20 rounded-2xl shadow-2xl w-full max-w-sm sm:max-w-md md:max-w-xl min-h-[480px] sm:min-h-[500px] md:min-h-[520px] p-3 sm:p-4 md:p-6 lg:p-8 flex flex-col items-center justify-between"
+      className="relative bg-gradient-to-br from-white/[0.08] to-white/[0.02] backdrop-blur-xl border-2 border-slate-600/70 rounded-3xl shadow-2xl w-full max-w-sm sm:max-w-md md:max-w-xl min-h-[480px] sm:min-h-[500px] md:min-h-[520px] p-3 sm:p-4 md:p-6 lg:p-8 flex flex-col items-center justify-between"
       onMouseEnter={handleMouseEnter}
       onMouseLeave={handleMouseLeave}
       whileHover={isMobile ? {} : {
