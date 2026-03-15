@@ -11,6 +11,13 @@ const moreProjects = [
     tech: ["HTML", "GSAP", "CSS", "Tailwind CSS", "JavaScript", "API"],
   },
   {
+    video:"/assets/SatelliteTracker.mp4",
+    liveLink:"https://satellite-tracker-beta.vercel.app/",
+    title:"Satellite Tracker - A Satellite Tracking Application",
+    details:"Satellite Tracker is a real-time satellite tracking application that provides users with accurate information about satellite positions and orbits.",
+    tech:["Next.js","Satellite API", "React-Leaflet"]
+  },
+  {
     video:"/assets/OCHI.mp4",
     liveLink:"https://ochi-murex.vercel.app/",
     title:"OCHI - A Modern Web Experience",
