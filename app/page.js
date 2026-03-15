@@ -122,7 +122,7 @@ function PageContent() {
           </div>
         )}
         <div className="relative z-10 pointer-events-auto">
-          <Navbar onNavigate={handleNavigation} />
+          <Navbar onNavigate={handleNavigation} currentSection={currentSection} />
           {currentSection === 'home' && (
             <>
               <Hero onNavigate={handleNavigation} />

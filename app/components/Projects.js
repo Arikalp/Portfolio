@@ -1,7 +1,6 @@
 import React from "react";
 import { motion } from "framer-motion";
 import Projectemp from "./Projectemp";
-import MoreProjects from "./MoreProjects";
 
 const Projects = ({ onNavigate }) => {
   const containerVariants = {
