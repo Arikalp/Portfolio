@@ -1,6 +1,6 @@
 "use client"
 
-import { useCallback } from "react"
+import { useCallback, useEffect, useState } from "react"
 import dynamic from 'next/dynamic'
 
 const Particles = dynamic(() => import('@tsparticles/react').then(mod => mod.Particles), {
@@ -8,10 +8,20 @@ const Particles = dynamic(() => import('@tsparticles/react').then(mod => mod.Par
 })
 
 const ParticlesBackground = () => {
+  const [isMounted, setIsMounted] = useState(false);
+
+  useEffect(() => {
+    setIsMounted(true);
+  }, []);
+
   const particlesInit = useCallback(async (engine) => {
     const { loadSlim } = await import("@tsparticles/slim");
     await loadSlim(engine);
   }, []);
+
+  if (!isMounted) {
+    return null;
+  }
 
   return (
     <Particles

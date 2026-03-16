@@ -10,16 +10,17 @@ const Hero = ({ onNavigate }) => {
               initial={{ opacity: 0, x: -100 }}
               animate={{ opacity: 1, x: 0 }}
               transition={{ duration: 2 }}
-              className='text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-extrabold leading-tight'
             >
-              <GradientText
-                colors={["#5227FF", "#FF9FFC", "#B19EEF", "#ffffff", "#b63a3a", "#9308dd"]}
-                animationSpeed={15}
-                showBorder={false}
-                className='text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-extrabold leading-tight'
-              >
-                Welcome to my Portfolio
-              </GradientText>
+              <h1 className='text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-extrabold leading-tight'>
+                <GradientText
+                  colors={["#5227FF", "#FF9FFC", "#B19EEF", "#ffffff", "#b63a3a", "#9308dd"]}
+                  animationSpeed={15}
+                  showBorder={false}
+                  className='text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-extrabold leading-tight'
+                >
+                  Welcome to my Portfolio
+                </GradientText>
+              </h1>
             </motion.div>
             <motion.p 
             initial={{ opacity: 0, x: 100 }}
