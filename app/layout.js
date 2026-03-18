@@ -54,7 +54,13 @@ export const metadata = {
   creator: "Sankalp Saini",
   robots: { index: true, follow: true },
   alternates: { canonical: "/" },
-  icons: { icon: "/favicon.ico" },
+  icons: {
+    icon: [
+      { url: "/favicon-theme.svg", type: "image/svg+xml" }
+    ],
+    shortcut: "/favicon-theme.svg",
+    apple: "/favicon-theme.svg"
+  },
   openGraph: {
     type: "website",
     url: "/",
