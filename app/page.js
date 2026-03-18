@@ -132,11 +132,12 @@ function PageContent() {
   }, [currentSection, scrollInstance]);
 
   const shouldRenderHeavyBackgrounds = isMobileDevice === false;
+  const shouldRenderAntigravity = isMobileDevice !== null;
 
   return (
     <>
       {/* Theme 1: Antigravity Background */}
-      {shouldRenderHeavyBackgrounds && currentTheme === 1 && (
+      {shouldRenderAntigravity && currentTheme === 1 && (
         <div className="fixed inset-0 z-0 pointer-events-none">
           <div style={{ width: '100%', height: '100%', position: 'relative' }}>
             <Antigravity
