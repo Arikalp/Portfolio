@@ -11,6 +11,7 @@ export default function GradientText({
   colors = ['#5227FF', '#FF9FFC', '#B19EEF'],
   animationSpeed = 8,
   showBorder = false,
+  enableBlur = true,
   direction = 'horizontal',
   pauseOnHover = false,
   yoyo = true,
@@ -91,7 +92,7 @@ export default function GradientText({
 
   return (
     <motion.span
-      className={cn(styles.animatedGradientText, showBorder && styles.withBorder, className)}
+      className={cn(styles.animatedGradientText, enableBlur && styles.withBlur, showBorder && styles.withBorder, className)}
       onMouseEnter={handleMouseEnter}
       onMouseLeave={handleMouseLeave}
     >
