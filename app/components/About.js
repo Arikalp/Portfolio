@@ -16,7 +16,7 @@ const About = () => {
         transition={{ duration: 0.8 }}
         className="max-w-4xl mx-auto relative z-10"
       >
-        <div className="flex flex-col md:flex-row items-center md:items-start gap-6 sm:gap-8 mb-8 sm:mb-12">
+        <div className="flex flex-col md:flex-row items-center gap-6 sm:gap-8 mb-8 sm:mb-12">
           <motion.div
             initial={{ opacity: 0, scale: 0.8 }}
             animate={{ opacity: 1, scale: 1 }}
@@ -28,7 +28,7 @@ const About = () => {
                 initial="rest"
                 whileHover="hover"
                 animate="rest"
-                className="relative w-32 h-32 sm:w-40 sm:h-40 md:w-48 md:h-48"
+                className="relative w-40 h-40 sm:w-52 sm:h-52 md:w-64 md:h-64"
               >
                 <motion.div
                   variants={{
@@ -41,9 +41,9 @@ const About = () => {
                   <Image
                     src="/assets/Profile_Photo.jpg"
                     alt="Sankalp Saini"
-                    width={192}
-                    height={192}
-                    sizes="(min-width: 768px) 12rem, (min-width: 640px) 10rem, 8rem"
+                    width={256}
+                    height={256}
+                    sizes="(min-width: 768px) 16rem, (min-width: 640px) 13rem, 10rem"
                     className="w-full h-full rounded-full object-cover object-top border-4 border-white/20 shadow-2xl"
                     priority
                   />
@@ -66,7 +66,7 @@ const About = () => {
             </div>
           </motion.div>
           
-          <div className="flex-1 text-center md:text-left">
+          <div className="flex-1 flex flex-col justify-center text-center md:text-left">
             <motion.h1
               initial={{ opacity: 0, x: -100 }}
               animate={{ opacity: 1, x: 0 }}
@@ -133,7 +133,27 @@ const About = () => {
               >
                 <h3 className="text-lg sm:text-xl font-medium text-white mb-2">Backend Development</h3>
                 <p className="text-gray-400 text-sm sm:text-base">
-                  Building robust server-side applications with Node.js, Express, and various databases.
+                  Building robust server-side applications with Node.js, Express, Spring Boot, and various databases.
+                </p>
+              </motion.div>
+
+              <motion.div
+                whileHover={{ scale: 1.02 }}
+                className="bg-[rgba(255,255,255,0.03)] p-4 sm:p-6 rounded-lg border border-gray-700 backdrop-blur-sm"
+              >
+                <h3 className="text-lg sm:text-xl font-medium text-white mb-2">LLM Training, Finetuning & Security</h3>
+                <p className="text-gray-400 text-sm sm:text-base">
+                  Working on LLM training and finetuning workflows, with a strong focus on model safety, prompt security, and reliable AI behavior.
+                </p>
+              </motion.div>
+
+              <motion.div
+                whileHover={{ scale: 1.02 }}
+                className="bg-[rgba(255,255,255,0.03)] p-4 sm:p-6 rounded-lg border border-gray-700 backdrop-blur-sm"
+              >
+                <h3 className="text-lg sm:text-xl font-medium text-white mb-2">System Design</h3>
+                <p className="text-gray-400 text-sm sm:text-base">
+                  Designing scalable and maintainable system architectures, APIs, and data flows for high-performance web and AI-powered applications.
                 </p>
               </motion.div>
             </div>
