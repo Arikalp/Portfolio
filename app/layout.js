@@ -1,21 +1,27 @@
-import { Geist, Geist_Mono, Sora } from "next/font/google";
+import { Inter, Orbitron, Space_Grotesk } from "next/font/google";
 import "./globals.css";
 import ClientLoader from "@/app/components/ClientLoader";
 import { Analytics } from "@vercel/analytics/next";
 
-const geistSans = Geist({
-  variable: "--font-geist-sans",
+const inter = Inter({
+  variable: "--font-inter",
   subsets: ["latin"],
+  weight: ["400", "500", "600", "700"],
+  display: "swap",
 });
 
-const geistMono = Geist_Mono({
-  variable: "--font-geist-mono",
+const spaceGrotesk = Space_Grotesk({
+  variable: "--font-space-grotesk",
   subsets: ["latin"],
+  weight: ["400", "500", "600", "700"],
+  display: "swap",
 });
 
-const sora = Sora({
-  variable: "--font-sora",
+const orbitron = Orbitron({
+  variable: "--font-orbitron",
   subsets: ["latin"],
+  weight: ["500", "700"],
+  display: "swap",
 });
 
 export const metadata = {
@@ -86,7 +92,7 @@ export default function RootLayout({ children }) {
   return (
     <html lang="en">
       <body
-        className={`${geistSans.variable} ${geistMono.variable} ${sora.variable} antialiased`}
+        className={`${inter.variable} ${spaceGrotesk.variable} ${orbitron.variable} antialiased`}
       >
         <ClientLoader />
         {children}

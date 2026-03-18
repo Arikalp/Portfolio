@@ -12,19 +12,19 @@ const Hero = ({ onNavigate }) => {
           animate={{ opacity: 1, x: 0 }}
           transition={{ duration: 2 }}
         >
-          <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-extrabold leading-tight">
+          <h1 className="font-heading text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-extrabold leading-tight">
             <GradientText
               colors={["#619abd", "#79ecab", "#ffffff"]}
               animationSpeed={8}
               showBorder={false}
               enableBlur={false}
-              className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-extrabold leading-tight"
+              className="font-heading text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-extrabold leading-tight"
             >
               Welcome to my Portfolio
             </GradientText>
           </h1>
         </motion.div>
-        <p className="text-lg sm:text-xl md:text-2xl mt-4 sm:mt-6 text-gray-300">
+        <p className="font-body text-lg sm:text-xl md:text-2xl mt-4 sm:mt-6 text-gray-300 leading-relaxed">
           <VariableProximity
             text="I am a Full Stack Developer"
             radius={120}
@@ -36,7 +36,7 @@ const Hero = ({ onNavigate }) => {
         </p>
         <div className="button-container relative mt-6 sm:mt-8 md:mt-10">
           <button
-            className="gradient-btn text-sm sm:text-base md:text-lg px-6 sm:px-8 py-3 sm:py-4"
+            className="gradient-btn font-body text-sm sm:text-base md:text-lg px-6 sm:px-8 py-3 sm:py-4"
             onClick={() => onNavigate("contact")}
           >
             Contact Me

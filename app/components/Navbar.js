@@ -27,7 +27,7 @@ const Navbar = ({ onNavigate, currentSection = 'home' }) => {
         {/* Logo */}
         <div 
           onClick={() => handleNavigation('home')} 
-          className='cursor-pointer flex items-center h-[8vh] sm:h-[10vh] md:h-[12vh]'
+          className='cursor-pointer flex items-center gap-2 h-[8vh] sm:h-[10vh] md:h-[12vh]'
         >
           <Image 
             src='/assets/Sankalp.png' 

@@ -88,9 +88,11 @@ body {
   --animate-fifth: moveInCircle 20s ease infinite;
   --color-background: var(--background);
   --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-heading: var(--font-sora);
-  --font-mono: var(--font-geist-mono);
+  --font-sans: var(--font-inter);
+  --font-body: var(--font-inter);
+  --font-heading: var(--font-space-grotesk);
+  --font-logo: var(--font-orbitron);
+  --font-mono: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
   --color-sidebar-ring: var(--sidebar-ring);
   --color-sidebar-border: var(--sidebar-border);
   --color-sidebar-accent-foreground: var(--sidebar-accent-foreground);
@@ -128,7 +130,9 @@ body {
 
 body {
   color: var(--foreground);
-  font-family: var(--font-geist-sans), sans-serif;
+  font-family: var(--font-inter), sans-serif;
+  line-height: 1.65;
+  letter-spacing: 0.01em;
 }
 
 h1,
@@ -137,7 +141,9 @@ h3,
 h4,
 h5,
 h6 {
-  font-family: var(--font-sora), sans-serif;
+  font-family: var(--font-space-grotesk), sans-serif;
+  letter-spacing: -0.015em;
+  line-height: 1.2;
 }
 
 .hero h1 {
