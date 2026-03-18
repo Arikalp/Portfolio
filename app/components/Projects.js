@@ -80,7 +80,7 @@ const Projects = ({ onNavigate }) => {
           <Projectemp
             video="/assets/Smart-Tutor.mp4"
             liveLink="https://smartutor.vercel.app/"
-            title="AI Smart-Tutor - Uses LLM to Teach Students"
+            title="SmartTutor - Uses LLM to Teach Students"
             details=" An AI-powered tutor that leverages advanced LLM technology to provide personalized learning experiences, helping students grasp complex concepts with ease and efficiency."
             tech={["React.js", "Firebase", "LLM Integraion"]}
           />
