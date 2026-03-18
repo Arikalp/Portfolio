@@ -8,7 +8,7 @@ import styles from './gradient-text.module.css';
 export default function GradientText({
   children,
   className,
-  colors = ['#5227FF', '#FF9FFC', '#B19EEF'],
+  colors = ['#619abd', '#79ecab', '#ffffff'],
   animationSpeed = 8,
   showBorder = false,
   enableBlur = true,

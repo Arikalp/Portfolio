@@ -91,8 +91,8 @@ const Projectemp = ({ video, liveLink, title, details, tech }) => {
       onMouseLeave={handleMouseLeave}
       whileHover={isMobile ? {} : {
         y: -15,
-        boxShadow: "0 25px 50px rgba(0,0,0,0.4), 0 0 0 1px rgba(59, 130, 246, 0.3)",
-        borderColor: "rgba(59, 130, 246, 0.6)",
+        boxShadow: "0 25px 50px rgba(0,0,0,0.4), 0 0 0 1px rgba(97, 154, 189, 0.35)",
+        borderColor: "rgba(97, 154, 189, 0.65)",
         background: "linear-gradient(135deg, rgba(255,255,255,0.12) 0%, rgba(255,255,255,0.04) 100%)",
         transition: { duration: 0.4, ease: "easeOut" }
       }}
@@ -100,7 +100,7 @@ const Projectemp = ({ video, liveLink, title, details, tech }) => {
       animate={{ opacity: 1, y: 0 }}
       transition={hasAnimated ? { duration: 0 } : { duration: 0.6, ease: "easeOut" }}
     >
-      <div className="absolute inset-0 bg-gradient-to-br from-blue-500/5 to-purple-500/5 opacity-0 transition-opacity duration-500 hover:opacity-100" />
+      <div className="absolute inset-0 bg-gradient-to-br from-[#619abd]/10 to-[#79ecab]/10 opacity-0 transition-opacity duration-500 hover:opacity-100" />
       
       <div className="flex flex-col items-center flex-grow w-full">
       <motion.video
@@ -154,14 +154,14 @@ const Projectemp = ({ video, liveLink, title, details, tech }) => {
         {tech.map((t, i) => (
           <motion.span 
             key={i} 
-            className="bg-gradient-to-r from-blue-500/20 to-purple-500/20 text-blue-200 px-3 py-1.5 rounded-full text-xs sm:text-sm border border-blue-400/30 backdrop-blur-sm font-medium"
+            className="bg-gradient-to-r from-[#619abd]/25 to-[#79ecab]/25 text-[#d8f7e8] px-3 py-1.5 rounded-full text-xs sm:text-sm border border-[#619abd]/40 backdrop-blur-sm font-medium"
             initial={hasAnimated ? { opacity: 1, scale: 1 } : { opacity: 0, scale: 0 }}
             animate={{ opacity: 1, scale: 1 }}
             transition={hasAnimated ? { duration: 0 } : { duration: 0.3, delay: 0.5 + i * 0.1 }}
             whileHover={isMobile ? {} : { 
               scale: 1.1, 
-              background: "linear-gradient(135deg, rgba(59, 130, 246, 0.4) 0%, rgba(147, 51, 234, 0.4) 100%)",
-              borderColor: "rgba(59, 130, 246, 0.6)",
+              background: "linear-gradient(135deg, rgba(97, 154, 189, 0.45) 0%, rgba(121, 236, 171, 0.45) 100%)",
+              borderColor: "rgba(121, 236, 171, 0.6)",
               transition: { duration: 0.2 }
             }}
           >
@@ -175,19 +175,19 @@ const Projectemp = ({ video, liveLink, title, details, tech }) => {
         href={liveLink}
         target="_blank"
         rel="noopener noreferrer"
-        className="relative inline-block bg-gradient-to-r from-blue-600 to-purple-600 text-white px-4 sm:px-6 py-2.5 sm:py-3 rounded-full text-sm sm:text-base font-semibold overflow-hidden group"
+        className="relative inline-block bg-gradient-to-r from-[#619abd] via-[#79ecab] to-[#ffffff] text-slate-900 px-4 sm:px-6 py-2.5 sm:py-3 rounded-full text-sm sm:text-base font-semibold overflow-hidden group"
         initial={hasAnimated ? { opacity: 1, y: 0 } : { opacity: 0, y: 20 }}
         animate={{ opacity: 1, y: 0 }}
         transition={hasAnimated ? { duration: 0 } : { duration: 0.6, delay: 0.6 }}
         whileHover={isMobile ? {} : { 
           scale: 1.05,
-          boxShadow: "0 8px 25px rgba(59, 130, 246, 0.5)",
+          boxShadow: "0 8px 25px rgba(121, 236, 171, 0.45)",
           transition: { duration: 0.2 }
         }}
         whileTap={isMobile ? {} : { scale: 0.95 }}
       >
         <span className="relative z-10">Live View</span>
-        <div className="absolute inset-0 bg-gradient-to-r from-purple-600 to-blue-600 opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
+        <div className="absolute inset-0 bg-gradient-to-r from-[#79ecab] to-[#619abd] opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
       </motion.a>
     </motion.div>
   )

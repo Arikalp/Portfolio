@@ -21,7 +21,7 @@ export const AuroraBackground = ({
           style={
             {
               "--aurora":
-                "repeating-linear-gradient(100deg,#3b82f6_10%,#a5b4fc_15%,#93c5fd_20%,#ddd6fe_25%,#60a5fa_30%)",
+                "repeating-linear-gradient(100deg,#619abd_10%,#79ecab_15%,#ffffff_20%,#79ecab_25%,#619abd_30%)",
 
               "--dark-gradient":
                 "repeating-linear-gradient(100deg,#000_0%,#000_7%,transparent_10%,transparent_12%,#000_16%)",
@@ -29,11 +29,11 @@ export const AuroraBackground = ({
               "--white-gradient":
                 "repeating-linear-gradient(100deg,#fff_0%,#fff_7%,transparent_10%,transparent_12%,#fff_16%)",
 
-              "--blue-300": "#93c5fd",
-              "--blue-400": "#60a5fa",
-              "--blue-500": "#3b82f6",
-              "--indigo-300": "#a5b4fc",
-              "--violet-200": "#ddd6fe",
+              "--blue-300": "#ffffff",
+              "--blue-400": "#79ecab",
+              "--blue-500": "#619abd",
+              "--indigo-300": "#79ecab",
+              "--violet-200": "#ffffff",
               "--black": "#000",
               "--white": "#fff",
               "--transparent": "transparent"

@@ -99,21 +99,21 @@ export default function ContactForm() {
             name="name"
             placeholder="Your Name"
            
-            className="px-3 sm:px-4 py-2 sm:py-3 rounded bg-[rgba(255,255,255,0.1)] text-white border border-gray-600 focus:outline-none focus:ring-2 focus:ring-[#3a0ca3] transition text-sm sm:text-base"
+            className="px-3 sm:px-4 py-2 sm:py-3 rounded bg-[rgba(255,255,255,0.1)] text-white border border-gray-600 focus:outline-none focus:ring-2 focus:ring-[#79ecab] transition text-sm sm:text-base"
           />
           <input
             type="email"
             name="email"
             placeholder="Your Email"
           
-            className="px-3 sm:px-4 py-2 sm:py-3 rounded bg-[rgba(255,255,255,0.1)] text-white border border-gray-600 focus:outline-none focus:ring-2 focus:ring-[#3a0ca3] transition text-sm sm:text-base"
+            className="px-3 sm:px-4 py-2 sm:py-3 rounded bg-[rgba(255,255,255,0.1)] text-white border border-gray-600 focus:outline-none focus:ring-2 focus:ring-[#79ecab] transition text-sm sm:text-base"
           />
           <textarea
             name="message"
             placeholder="Your Message"
            
             rows={4}
-            className="px-3 sm:px-4 py-2 sm:py-3 rounded bg-[rgba(255,255,255,0.1)] text-white border border-gray-600 focus:outline-none focus:ring-2 focus:ring-[#3a0ca3] transition resize-none text-sm sm:text-base"
+            className="px-3 sm:px-4 py-2 sm:py-3 rounded bg-[rgba(255,255,255,0.1)] text-white border border-gray-600 focus:outline-none focus:ring-2 focus:ring-[#79ecab] transition resize-none text-sm sm:text-base"
           />
           <button
             type="submit"

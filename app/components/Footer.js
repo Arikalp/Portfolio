@@ -16,11 +16,11 @@ const Footer = () => {
             transition={{ duration: 0.6 }}
             className="text-center"
           >
-            <h3 className="text-2xl sm:text-3xl font-bold mb-2 bg-gradient-to-r from-blue-400 via-purple-400 to-cyan-400 bg-clip-text text-transparent">
+            <h3 className="text-2xl sm:text-3xl font-bold mb-2 bg-gradient-to-r from-[#619abd] via-[#79ecab] to-[#ffffff] bg-clip-text text-transparent">
               Sankalp Saini
             </h3>
             <p className="text-sm sm:text-base text-gray-400 flex items-center justify-center gap-2">
-              <FaCode className="text-cyan-400" />
+              <FaCode className="text-[#79ecab]" />
               Full Stack Developer
             </p>
           </motion.div>
@@ -38,7 +38,7 @@ const Footer = () => {
               rel="noopener noreferrer"
               whileHover={{ scale: 1.2, y: -5 }}
               whileTap={{ scale: 0.9 }}
-              className="w-12 h-12 flex items-center justify-center rounded-full bg-white/5 border border-white/10 hover:border-blue-400/50 hover:bg-blue-400/10 transition-all duration-300"
+              className="w-12 h-12 flex items-center justify-center rounded-full bg-white/5 border border-white/10 hover:border-[#619abd]/50 hover:bg-[#619abd]/10 transition-all duration-300"
             >
               <FaGithub className="text-xl" />
             </motion.a>
@@ -48,7 +48,7 @@ const Footer = () => {
               rel="noopener noreferrer"
               whileHover={{ scale: 1.2, y: -5 }}
               whileTap={{ scale: 0.9 }}
-              className="w-12 h-12 flex items-center justify-center rounded-full bg-white/5 border border-white/10 hover:border-blue-400/50 hover:bg-blue-400/10 transition-all duration-300"
+              className="w-12 h-12 flex items-center justify-center rounded-full bg-white/5 border border-white/10 hover:border-[#619abd]/50 hover:bg-[#619abd]/10 transition-all duration-300"
             >
               <FaLinkedin className="text-xl" />
             </motion.a>
@@ -58,7 +58,7 @@ const Footer = () => {
               rel="noopener noreferrer"
               whileHover={{ scale: 1.2, y: -5 }}
               whileTap={{ scale: 0.9 }}
-              className="w-12 h-12 flex items-center justify-center rounded-full bg-white/5 border border-white/10 hover:border-cyan-400/50 hover:bg-cyan-400/10 transition-all duration-300"
+              className="w-12 h-12 flex items-center justify-center rounded-full bg-white/5 border border-white/10 hover:border-[#79ecab]/50 hover:bg-[#79ecab]/10 transition-all duration-300"
             >
               <FaTwitter className="text-xl" />
             </motion.a>
@@ -68,7 +68,7 @@ const Footer = () => {
               rel="noopener noreferrer"
               whileHover={{ scale: 1.2, y: -5 }}
               whileTap={{ scale: 0.9 }}
-              className="w-12 h-12 flex items-center justify-center rounded-full bg-white/5 border border-white/10 hover:border-purple-400/50 hover:bg-purple-400/10 transition-all duration-300"
+              className="w-12 h-12 flex items-center justify-center rounded-full bg-white/5 border border-white/10 hover:border-[#79ecab]/50 hover:bg-[#79ecab]/10 transition-all duration-300"
             >
               <FaInstagram className="text-xl" />
             </motion.a>

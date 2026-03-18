@@ -147,7 +147,7 @@ function PageContent() {
               waveAmplitude={1}
               particleSize={1.5}
               lerpSpeed={0.05}
-              color="#29b8ff"
+              color="#619abd"
               autoAnimate
               particleVariance={1}
               rotationSpeed={0}

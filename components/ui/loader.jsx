@@ -100,7 +100,7 @@ export const LoaderThree = () => {
       strokeWidth="1"
       strokeLinecap="round"
       strokeLinejoin="round"
-      className="h-36 w-36 stroke-violet-500 [--fill-final:var(--color-violet-400)] [--fill-initial:var(--color-neutral-50)] dark:stroke-violet-300 dark:[--fill-final:var(--color-violet-600)] dark:[--fill-initial:var(--color-neutral-800)]">
+      className="h-36 w-36 stroke-[#619abd] [--fill-final:#79ecab] [--fill-initial:var(--color-neutral-50)] dark:stroke-[#79ecab] dark:[--fill-final:#619abd] dark:[--fill-initial:var(--color-neutral-800)]">
       <motion.path stroke="none" d="M0 0h24v24H0z" fill="none" />
       <motion.path
         initial={{ pathLength: 0, fill: "var(--fill-initial)" }}
@@ -155,7 +155,7 @@ export const LoaderFour = ({
         {text}
       </motion.span>
       <motion.span
-        className="absolute inset-0 text-[#8b00ff]/50 dark:text-[#8b00ff]"
+        className="absolute inset-0 text-[#619abd]/50 dark:text-[#619abd]"
         animate={{
           x: [0, 1, -1.5, 1.5, -1, 0],
           y: [0, -1, 1.5, -0.5, 0],
