@@ -3,15 +3,14 @@
 import { useEffect, useRef, useState } from 'react'
 import Hero from "./components/Hero"
 import Navbar from "./components/Navbar"
-import ParticlesBackground from "./components/ParticlesBackground"
 import Skills from "./components/Skills"
 import Projects from "./components/Projects"
 import Footer from "./components/Footer"
 import About from "./components/About"
 import MoreProjects from './components/MoreProjects'
 import Contact from './components/Contact'
-import { BackgroundGradientAnimation } from '@/components/ui/background-gradient-animation'
 import { AuroraBackground } from '@/components/ui/aurora-background'
+import Antigravity from '@/components/Antigravity'
 import WebcamPixelGridWrapper from './components/WebcamPixelGridWrapper'
 import { ThemeProvider, useTheme } from './contexts/ThemeContext'
 import "locomotive-scroll/dist/locomotive-scroll.css";
@@ -136,11 +135,31 @@ function PageContent() {
 
   return (
     <>
-      {/* Theme 1: Gradient Animation Background */}
+      {/* Theme 1: Antigravity Background */}
       {shouldRenderHeavyBackgrounds && currentTheme === 1 && (
-        <BackgroundGradientAnimation containerClassName="fixed inset-0 z-0 blur-md" />
+        <div className="fixed inset-0 z-0 pointer-events-none">
+          <div style={{ width: '100%', height: '100%', position: 'relative' }}>
+            <Antigravity
+              count={300}
+              magnetRadius={6}
+              ringRadius={7}
+              waveSpeed={0.4}
+              waveAmplitude={1}
+              particleSize={1.5}
+              lerpSpeed={0.05}
+              color="#29b8ff"
+              autoAnimate
+              particleVariance={1}
+              rotationSpeed={0}
+              depthFactor={1}
+              pulseSpeed={3}
+              particleShape="capsule"
+              fieldStrength={10}
+            />
+          </div>
+        </div>
       )}
-      
+
       {/* Theme 3: Aurora Background */}
       {shouldRenderHeavyBackgrounds && currentTheme === 3 && (
         <AuroraBackground 
@@ -157,11 +176,6 @@ function PageContent() {
       )}
       
       <div ref={scrollRef} data-scroll-container className="container-every relative min-h-screen z-10 pointer-events-none">
-        {shouldRenderHeavyBackgrounds && currentTheme === 1 && (
-          <div className="absolute inset-0 z-0">
-            <ParticlesBackground />
-          </div>
-        )}
         <div className="relative z-10 pointer-events-auto">
           <Navbar onNavigate={handleNavigation} currentSection={currentSection} />
           {currentSection === 'home' && (
