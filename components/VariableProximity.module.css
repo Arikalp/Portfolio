@@ -1,0 +1,11 @@
+.container {
+  display: inline-flex;
+  flex-wrap: wrap;
+  line-height: 1.2;
+}
+
+.char {
+  display: inline-block;
+  transition: font-variation-settings 120ms linear, color 160ms ease, transform 160ms ease;
+  will-change: font-variation-settings, color, transform;
+}

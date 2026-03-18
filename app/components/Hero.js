@@ -1,6 +1,7 @@
 import React from "react";
 import { motion } from "framer-motion";
 import GradientText from "@/components/ui/gradient-text";
+import VariableProximity from "@/components/VariableProximity";
 
 const Hero = ({ onNavigate }) => {
   return (
@@ -23,14 +24,16 @@ const Hero = ({ onNavigate }) => {
             </GradientText>
           </h1>
         </motion.div>
-        <motion.p
-          initial={{ opacity: 0, x: 100 }}
-          animate={{ opacity: 1, x: 0 }}
-          transition={{ duration: 2 }}
-          className="text-lg sm:text-xl md:text-2xl mt-4 sm:mt-6 text-gray-300"
-        >
-          I am a Full Stack Developer
-        </motion.p>
+        <p className="text-lg sm:text-xl md:text-2xl mt-4 sm:mt-6 text-gray-300">
+          <VariableProximity
+            text="I am a Full Stack Developer"
+            radius={120}
+            fromWeight={380}
+            toWeight={760}
+            color="#ffffff"
+            activeColor="#79ecab"
+          />
+        </p>
         <div className="button-container relative mt-6 sm:mt-8 md:mt-10">
           <button
             className="gradient-btn text-sm sm:text-base md:text-lg px-6 sm:px-8 py-3 sm:py-4"
