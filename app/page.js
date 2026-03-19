@@ -132,7 +132,7 @@ function PageContent() {
   }, [currentSection, scrollInstance]);
 
   const shouldRenderHeavyBackgrounds = isMobileDevice === false;
-  const shouldRenderAntigravity = isMobileDevice !== null;
+  const shouldRenderAntigravity = isMobileDevice === false;
 
   return (
     <>
