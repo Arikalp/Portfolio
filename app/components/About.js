@@ -2,6 +2,7 @@ import React from 'react';
 import { motion } from 'framer-motion';
 import Image from 'next/image';
 import ParticlesBackground from './ParticlesBackground'
+import ExperienceTimeline from './ExperienceTimeline';
 
 const About = () => {
 
@@ -113,6 +114,8 @@ const About = () => {
               <p className="text-gray-500 text-sm sm:text-base">2023 - 2027</p>
             </motion.div>
           </div>
+
+          <ExperienceTimeline />
 
           <div className="mt-6 sm:mt-8">
             <h2 className="text-xl sm:text-2xl font-semibold mb-3 sm:mb-4 hero">What I Do</h2>
