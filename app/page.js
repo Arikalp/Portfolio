@@ -18,6 +18,7 @@ import "locomotive-scroll/dist/locomotive-scroll.css";
 function PageContent() {
   const { currentTheme } = useTheme();
   const scrollRef = useRef(null);
+  const sectionScrollTimeoutRef = useRef(null);
   const [currentSection, setCurrentSection] = useState('home');
   const [scrollInstance, setScrollInstance] = useState(null);
   const [isMobileDevice, setIsMobileDevice] = useState(null);
@@ -43,6 +44,7 @@ function PageContent() {
 
   useEffect(() => {
     let scroll;
+    let isCancelled = false;
 
     if (isMobileDevice === null) {
       return;
@@ -65,6 +67,8 @@ function PageContent() {
 
       import('locomotive-scroll').then((LocomotiveScroll) => {
         try {
+          if (isCancelled || !scrollRef.current) return;
+
           const isLowEnd = isLowEndDevice();
           scroll = new LocomotiveScroll.default({
             el: scrollRef.current,
@@ -84,6 +88,14 @@ function PageContent() {
             touchMultiplier: isLowEnd ? 1.5 : 2,
             firefoxMultiplier: isLowEnd ? 50 : 100
           });
+
+          if (isCancelled) {
+            if (typeof scroll.destroy === 'function') {
+              scroll.destroy();
+            }
+            return;
+          }
+
           setScrollInstance(scroll);
         } catch (error) {
           console.error('Error initializing Locomotive Scroll:', error);
@@ -94,6 +106,9 @@ function PageContent() {
     }
     
     return () => {
+      isCancelled = true;
+      setScrollInstance(null);
+
       if (scroll && typeof scroll.destroy === 'function') {
         try {
           scroll.destroy();
@@ -106,6 +121,11 @@ function PageContent() {
 
   // Update scroll when section changes
   useEffect(() => {
+    if (sectionScrollTimeoutRef.current) {
+      clearTimeout(sectionScrollTimeoutRef.current);
+      sectionScrollTimeoutRef.current = null;
+    }
+
     if (!scrollInstance || typeof scrollInstance.update !== 'function') {
       if (typeof window !== 'undefined') {
         window.scrollTo({ top: 0, behavior: 'smooth' });
@@ -113,8 +133,12 @@ function PageContent() {
       return;
     }
 
-    setTimeout(() => {
+    sectionScrollTimeoutRef.current = setTimeout(() => {
       try {
+        if (!scrollInstance || typeof scrollInstance.update !== 'function') {
+          return;
+        }
+
         scrollInstance.update();
         if (typeof scrollInstance.scrollTo === 'function') {
           scrollInstance.scrollTo(0, {
@@ -129,6 +153,13 @@ function PageContent() {
         console.error('Error updating Locomotive Scroll:', error);
       }
     }, 300); // slight delay to allow DOM update
+
+    return () => {
+      if (sectionScrollTimeoutRef.current) {
+        clearTimeout(sectionScrollTimeoutRef.current);
+        sectionScrollTimeoutRef.current = null;
+      }
+    };
   }, [currentSection, scrollInstance]);
 
   const shouldRenderHeavyBackgrounds = isMobileDevice === false;
@@ -175,10 +206,11 @@ function PageContent() {
       {shouldRenderHeavyBackgrounds && currentTheme === 4 && (
         <WebcamPixelGridWrapper className="fixed inset-0 z-0" />
       )}
+
+      <Navbar onNavigate={handleNavigation} currentSection={currentSection} />
       
-      <div ref={scrollRef} data-scroll-container className="container-every relative min-h-screen z-10 pointer-events-none">
+      <div ref={scrollRef} data-scroll-container className="container-every relative min-h-screen z-10 pointer-events-none pt-[10vh] sm:pt-[12vh] md:pt-[15vh]">
         <div className="relative z-10 pointer-events-auto">
-          <Navbar onNavigate={handleNavigation} currentSection={currentSection} />
           {currentSection === 'home' && (
             <>
               <Hero onNavigate={handleNavigation} />

@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React, { useEffect, useRef, useState } from 'react'
 import { motion } from 'framer-motion'
 import Image from 'next/image'
 import { useTheme } from '../contexts/ThemeContext'
@@ -7,7 +7,40 @@ import { FaBolt } from 'react-icons/fa'
 const Navbar = ({ onNavigate, currentSection = 'home' }) => {
   const [menuOpen, setMenuOpen] = useState(false);
   const [rotationCount, setRotationCount] = useState(0);
+  const [isVisible, setIsVisible] = useState(true);
+  const lastScrollY = useRef(0);
   const { currentTheme, switchTheme } = useTheme();
+
+  useEffect(() => {
+    lastScrollY.current = window.scrollY;
+
+    const handleScroll = () => {
+      const currentScrollY = window.scrollY;
+      const delta = currentScrollY - lastScrollY.current;
+
+      // Ignore tiny movement to avoid jitter.
+      if (Math.abs(delta) < 10) {
+        return;
+      }
+
+      if (currentScrollY <= 10) {
+        setIsVisible(true);
+      } else if (delta > 0) {
+        setIsVisible(false);
+        setMenuOpen(false);
+      } else {
+        setIsVisible(true);
+      }
+
+      lastScrollY.current = currentScrollY;
+    };
+
+    window.addEventListener('scroll', handleScroll, { passive: true });
+
+    return () => {
+      window.removeEventListener('scroll', handleScroll);
+    };
+  }, []);
 
   const handleThemeSwitch = () => {
     setRotationCount(prev => prev + 120);
@@ -22,7 +55,9 @@ const Navbar = ({ onNavigate, currentSection = 'home' }) => {
   };
 
   return (
-    <nav className='sticky top-0 z-50 bg-[rgba(0,0,0,0.3)] backdrop-blur-md text-white px-4 sm:px-6 md:px-20 h-[10vh] sm:h-[12vh] md:h-[15vh] flex items-center'>
+    <nav
+      className={`fixed top-0 left-0 right-0 z-50 bg-[rgba(0,0,0,0.3)] backdrop-blur-md text-white px-4 sm:px-6 md:px-20 h-[10vh] sm:h-[12vh] md:h-[15vh] flex items-center transform transition-transform duration-300 ${isVisible ? 'translate-y-0' : '-translate-y-full'}`}
+    >
       <div className='flex justify-between items-center w-full'>
         {/* Logo */}
         <div 
