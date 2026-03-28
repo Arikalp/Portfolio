@@ -56,53 +56,54 @@ const Navbar = ({ onNavigate, currentSection = 'home' }) => {
 
   return (
     <nav
-      className={`fixed top-0 left-0 right-0 z-50 bg-[rgba(0,0,0,0.3)] backdrop-blur-md text-white px-4 sm:px-6 md:px-20 h-[10vh] sm:h-[12vh] md:h-[15vh] flex items-center transform transition-transform duration-300 ${isVisible ? 'translate-y-0' : '-translate-y-full'}`}
+      className={`fixed top-0 left-0 right-0 z-50 bg-gradient-to-b from-black/40 to-transparent backdrop-blur-xl border-b border-white/10 text-white px-4 sm:px-6 md:px-20 h-auto py-4 sm:py-5 flex items-center transform transition-transform duration-300 ${isVisible ? 'translate-y-0' : '-translate-y-full'}`}
     >
       <div className='flex justify-between items-center w-full'>
         {/* Logo */}
-        <div 
+        <motion.div 
           onClick={() => handleNavigation('home')} 
-          className='cursor-pointer flex items-center gap-2 h-[8vh] sm:h-[10vh] md:h-[12vh]'
+          className='cursor-pointer flex items-center gap-2 h-auto transition-transform duration-300 hover:scale-105'
+          whileHover={{ scale: 1.05 }}
         >
           <Image 
             src='/assets/Sankalp.png' 
             alt='logo' 
-            width={100} 
-            height={100} 
-            className='sm:w-[100px] sm:h-[100px] md:w-[120px] md:h-[120px] h-auto' 
+            width={80} 
+            height={80} 
+            className='w-16 sm:w-20 md:w-24 h-auto' 
           />
-        </div>
+        </motion.div>
         
         {/* Desktop Menu */}
-        <ul className='hidden md:flex flex-row space-x-8 lg:space-x-10'>
+        <ul className='hidden md:flex flex-row space-x-8 lg:space-x-12'>
           <motion.li
-            whileHover={{ scale: 1.1 }}
+            whileHover={{ scale: 1.1, color: '#06b6d4' }}
             whileTap={{ scale: 0.95 }}
-            className={`cursor-pointer text-sm lg:text-base ${currentSection === 'home' ? 'text-blue-400' : ''}`}
+            className={`cursor-pointer text-sm lg:text-base font-medium transition-colors duration-300 ${currentSection === 'home' ? 'text-cyan-400' : 'text-gray-300 hover:text-cyan-300'}`}
             onClick={() => handleNavigation('home')}
           >
             Home
           </motion.li>
           <motion.li
-            whileHover={{ scale: 1.1 }}
+            whileHover={{ scale: 1.1, color: '#06b6d4' }}
             whileTap={{ scale: 0.95 }}
-            className={`cursor-pointer text-sm lg:text-base ${currentSection === 'about' ? 'text-blue-400' : ''}`}
+            className={`cursor-pointer text-sm lg:text-base font-medium transition-colors duration-300 ${currentSection === 'about' ? 'text-cyan-400' : 'text-gray-300 hover:text-cyan-300'}`}
             onClick={() => handleNavigation('about')}
           >
             About
           </motion.li>
           <motion.li
-            whileHover={{ scale: 1.1 }}
+            whileHover={{ scale: 1.1, color: '#06b6d4' }}
             whileTap={{ scale: 0.95 }}
-            className={`cursor-pointer text-sm lg:text-base ${currentSection === 'projects' ? 'text-blue-400' : ''}`}
+            className={`cursor-pointer text-sm lg:text-base font-medium transition-colors duration-300 ${currentSection === 'projects' ? 'text-cyan-400' : 'text-gray-300 hover:text-cyan-300'}`}
             onClick={() => handleNavigation('projects')}
           >
             Projects
           </motion.li>
           <motion.li
-            whileHover={{ scale: 1.1 }}
+            whileHover={{ scale: 1.1, color: '#06b6d4' }}
             whileTap={{ scale: 0.95 }}
-            className={`cursor-pointer text-sm lg:text-base ${currentSection === 'contact' ? 'text-blue-400' : ''}`}
+            className={`cursor-pointer text-sm lg:text-base font-medium transition-colors duration-300 ${currentSection === 'contact' ? 'text-cyan-400' : 'text-gray-300 hover:text-cyan-300'}`}
             onClick={() => handleNavigation('contact')}
           >
             Contact
@@ -111,14 +112,14 @@ const Navbar = ({ onNavigate, currentSection = 'home' }) => {
         
         {/* Theme Switcher */}
         <motion.button
-          whileHover={{ scale: 1.1 }}
+          whileHover={{ scale: 1.15 }}
           whileTap={{ scale: 0.9 }}
           onClick={handleThemeSwitch}
-          className="hidden md:flex items-center justify-center w-10 h-10 rounded-full bg-white/10 backdrop-blur-sm border border-white/20 text-white hover:bg-white/20 transition-all duration-300"
+          className="hidden md:flex items-center justify-center w-11 h-11 rounded-full bg-gradient-to-r from-cyan-500/20 to-purple-500/20 backdrop-blur-sm border border-cyan-400/30 text-cyan-300 hover:border-cyan-400/60 transition-all duration-300 shadow-lg hover:shadow-cyan-500/20"
           animate={{ rotate: rotationCount }}
-          transition={{ duration: 0.3 }}
+          transition={{ duration: 0.3, ease: "easeOut" }}
         >
-          <FaBolt className="text-xl text-cyan-400" />
+          <FaBolt className="text-lg" />
         </motion.button>
         
         {/* Hamburger Icon */}
@@ -127,9 +128,9 @@ const Navbar = ({ onNavigate, currentSection = 'home' }) => {
           onClick={() => setMenuOpen(!menuOpen)}
           aria-label="Toggle menu"
         >
-          <span className={`block w-7 h-0.5 bg-white transition-all duration-300 ${menuOpen ? 'rotate-45 translate-y-1.5' : ''}`}></span>
-          <span className={`block w-7 h-0.5 bg-white my-1 transition-all duration-300 ${menuOpen ? 'opacity-0' : ''}`}></span>
-          <span className={`block w-7 h-0.5 bg-white transition-all duration-300 ${menuOpen ? '-rotate-45 -translate-y-1.5' : ''}`}></span>
+          <span className={`block w-6 h-0.5 bg-cyan-400 transition-all duration-300 ${menuOpen ? 'rotate-45 translate-y-1.5' : ''}`}></span>
+          <span className={`block w-6 h-0.5 bg-cyan-400 my-1.5 transition-all duration-300 ${menuOpen ? 'opacity-0' : ''}`}></span>
+          <span className={`block w-6 h-0.5 bg-cyan-400 transition-all duration-300 ${menuOpen ? '-rotate-45 -translate-y-1.5' : ''}`}></span>
         </button>
       </div>
       
@@ -140,13 +141,13 @@ const Navbar = ({ onNavigate, currentSection = 'home' }) => {
           animate={{ opacity: 1, y: 0 }}
           exit={{ opacity: 0, y: -20 }}
           transition={{ duration: 0.3 }}
-          className="absolute top-full left-0 w-full bg-[rgba(0,0,0,0.95)] backdrop-blur-md md:hidden z-50"
+          className="absolute top-full left-0 w-full glass-card rounded-none py-6 px-4 md:hidden z-50 border-t"
         >
-          <ul className="flex flex-col items-center space-y-4 py-6 px-4">
+          <ul className="flex flex-col items-center space-y-4">
             <motion.li
               whileHover={{ scale: 1.05 }}
               whileTap={{ scale: 0.95 }}
-              className={`cursor-pointer text-lg font-medium py-3 px-6 rounded-lg transition-colors duration-200 ${currentSection === 'home' ? 'text-blue-400 bg-blue-400/10' : 'hover:bg-white/10'}`}
+              className={`cursor-pointer text-lg font-medium py-3 px-6 rounded-lg transition-all duration-200 ${currentSection === 'home' ? 'text-cyan-300 bg-cyan-500/10 border border-cyan-400/30' : 'text-gray-300 hover:bg-white/10'}`}
               onClick={() => handleNavigation('home')}
             >
               Home
@@ -154,7 +155,7 @@ const Navbar = ({ onNavigate, currentSection = 'home' }) => {
             <motion.li
               whileHover={{ scale: 1.05 }}
               whileTap={{ scale: 0.95 }}
-              className={`cursor-pointer text-lg font-medium py-3 px-6 rounded-lg transition-colors duration-200 ${currentSection === 'about' ? 'text-blue-400 bg-blue-400/10' : 'hover:bg-white/10'}`}
+              className={`cursor-pointer text-lg font-medium py-3 px-6 rounded-lg transition-all duration-200 ${currentSection === 'about' ? 'text-cyan-300 bg-cyan-500/10 border border-cyan-400/30' : 'text-gray-300 hover:bg-white/10'}`}
               onClick={() => handleNavigation('about')}
             >
               About
@@ -162,7 +163,7 @@ const Navbar = ({ onNavigate, currentSection = 'home' }) => {
             <motion.li
               whileHover={{ scale: 1.05 }}
               whileTap={{ scale: 0.95 }}
-              className={`cursor-pointer text-lg font-medium py-3 px-6 rounded-lg transition-colors duration-200 ${currentSection === 'projects' ? 'text-blue-400 bg-blue-400/10' : 'hover:bg-white/10'}`}
+              className={`cursor-pointer text-lg font-medium py-3 px-6 rounded-lg transition-all duration-200 ${currentSection === 'projects' ? 'text-cyan-300 bg-cyan-500/10 border border-cyan-400/30' : 'text-gray-300 hover:bg-white/10'}`}
               onClick={() => handleNavigation('projects')}
             >
               Projects
@@ -170,7 +171,7 @@ const Navbar = ({ onNavigate, currentSection = 'home' }) => {
             <motion.li
               whileHover={{ scale: 1.05 }}
               whileTap={{ scale: 0.95 }}
-              className={`cursor-pointer text-lg font-medium py-3 px-6 rounded-lg transition-colors duration-200 ${currentSection === 'contact' ? 'text-blue-400 bg-blue-400/10' : 'hover:bg-white/10'}`}
+              className={`cursor-pointer text-lg font-medium py-3 px-6 rounded-lg transition-all duration-200 ${currentSection === 'contact' ? 'text-cyan-300 bg-cyan-500/10 border border-cyan-400/30' : 'text-gray-300 hover:bg-white/10'}`}
               onClick={() => handleNavigation('contact')}
             >
               Contact

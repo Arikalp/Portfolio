@@ -41,13 +41,13 @@ const Projects = ({ onNavigate }) => {
         initial={{ opacity: 0, y: -50 }}
         whileInView={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.8, ease: "easeOut" }}
-        className="projects flex flex-col justify-center py-[5vh] sm:py-[6vh] md:py-[7vh] items-start text-white px-4 sm:px-8 md:px-20"
+        className="projects flex flex-col justify-center py-16 sm:py-20 md:py-24 items-start text-white px-4 sm:px-8 md:px-20"
       >
         <motion.h1
           initial={{ opacity: 0, x: -100, rotateY: -45 }}
           whileInView={{ opacity: 1, x: 0, rotateY: 0 }}
           transition={{ duration: 1, ease: "easeOut", delay: 0.2 }}
-          className="projects text-2xl sm:text-3xl md:text-4xl font-bold"
+          className="projects text-3xl sm:text-4xl md:text-5xl font-bold bg-gradient-to-r from-cyan-400 via-purple-400 to-blue-400 bg-clip-text text-transparent"
         >
           My Projects
         </motion.h1>
@@ -55,7 +55,7 @@ const Projects = ({ onNavigate }) => {
           initial={{ opacity: 0, x: 100, rotateY: 45 }}
           whileInView={{ opacity: 1, x: 0, rotateY: 0 }}
           transition={{ duration: 1, ease: "easeOut", delay: 0.4 }}
-          className="project-del text-gray-500 mt-2 text-sm sm:text-base"
+          className="project-del text-gray-400 mt-4 text-base sm:text-lg"
         >
           Here are some of the projects I&apos;ve worked on:
         </motion.p>
@@ -66,7 +66,7 @@ const Projects = ({ onNavigate }) => {
         initial="hidden"
         whileInView="visible"
         viewport={{ once: true, amount: 0.2 }}
-        className="grid grid-cols-1 lg:grid-cols-2 gap-6 sm:gap-20 md:gap-30 lg:gap-45 justify-items-center px-4 sm:px-6 md:px-20"
+        className="grid grid-cols-1 lg:grid-cols-2 gap-10 sm:gap-12 md:gap-16 justify-items-center px-4 sm:px-8 md:px-20 py-8 sm:py-12 md:py-16"
       >
         <motion.div
           variants={itemVariants}
@@ -150,7 +150,7 @@ const Projects = ({ onNavigate }) => {
         initial={{ opacity: 0, scale: 0.8 }}
         whileInView={{ opacity: 1, scale: 1 }}
         transition={{ duration: 0.8, delay: 0.5, ease: "easeOut" }}
-        className="flex justify-center items-center py-8 sm:py-10"
+        className="flex justify-center items-center py-12 sm:py-16 md:py-20"
       >
         <motion.button
           initial={{ opacity: 0, y: 50, rotateX: -30 }}
@@ -163,7 +163,7 @@ const Projects = ({ onNavigate }) => {
           }}
           whileTap={{ scale: 0.95 }}
           transition={{ duration: 0.8, delay: 0.7, ease: "easeOut" }}
-          className="gradient-btn text-white py-2 sm:py-3 px-4 sm:px-6 rounded hover:bg-blue-600 transition text-sm sm:text-base"
+          className="gradient-btn text-white py-3 sm:py-4 px-6 sm:px-8 rounded-xl font-semibold text-base sm:text-lg"
           onClick={() => onNavigate && onNavigate("projects")}
         >
           View More Projects

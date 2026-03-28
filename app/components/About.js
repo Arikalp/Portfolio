@@ -7,7 +7,7 @@ import ExperienceTimeline from './ExperienceTimeline';
 const About = () => {
 
   return (
-    <div className="min-h-screen py-10 sm:py-16 md:py-20 px-4 sm:px-8 md:px-20 relative overflow-hidden">
+    <div className="min-h-screen py-16 sm:py-20 md:py-24 px-4 sm:px-8 md:px-20 relative overflow-hidden">
       <div className="absolute inset-0 z-0">
         <ParticlesBackground />
       </div>
@@ -15,75 +15,77 @@ const About = () => {
         initial={{ opacity: 0, y: 20 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.8 }}
-        className="max-w-4xl mx-auto relative z-10"
+        className="max-w-5xl mx-auto relative z-10"
       >
-        <div className="flex flex-col md:flex-row items-center gap-6 sm:gap-8 mb-8 sm:mb-12">
-          <motion.div
-            initial={{ opacity: 0, scale: 0.8 }}
-            animate={{ opacity: 1, scale: 1 }}
-            transition={{ duration: 0.8 }}
-            className="flex-shrink-0"
-          >
-            <div className="relative">
-              <motion.div
-                initial="rest"
-                whileHover="hover"
-                animate="rest"
-                className="relative w-40 h-40 sm:w-52 sm:h-52 md:w-64 md:h-64"
-              >
+        <div className="glass-card rounded-3xl p-8 sm:p-10 md:p-12 mb-12 sm:mb-14 md:mb-16">
+          <div className="flex flex-col md:flex-row items-center gap-8 sm:gap-10 md:gap-12">
+            <motion.div
+              initial={{ opacity: 0, scale: 0.8 }}
+              animate={{ opacity: 1, scale: 1 }}
+              transition={{ duration: 0.8 }}
+              className="flex-shrink-0"
+            >
+              <div className="relative">
                 <motion.div
-                  variants={{
-                    rest: { scale: 1 },
-                    hover: { scale: 1.05 }
-                  }}
-                  transition={{ duration: 0.3 }}
-                  className="w-full h-full"
+                  initial="rest"
+                  whileHover="hover"
+                  animate="rest"
+                  className="relative w-48 h-48 sm:w-56 sm:h-56 md:w-72 md:h-72"
                 >
-                  <Image
-                    src="/assets/Profile_Photo.jpg"
-                    alt="Sankalp Saini"
-                    width={256}
-                    height={256}
-                    sizes="(min-width: 768px) 16rem, (min-width: 640px) 13rem, 10rem"
-                    className="w-full h-full rounded-full object-cover object-top border-4 border-white/20 shadow-2xl"
-                    priority
+                  <motion.div
+                    variants={{
+                      rest: { scale: 1 },
+                      hover: { scale: 1.05 }
+                    }}
+                    transition={{ duration: 0.3 }}
+                    className="w-full h-full"
+                  >
+                    <Image
+                      src="/assets/Profile_Photo.jpg"
+                      alt="Sankalp Saini"
+                      width={256}
+                      height={256}
+                      sizes="(min-width: 768px) 18rem, (min-width: 640px) 14rem, 12rem"
+                      className="w-full h-full rounded-full object-cover object-top border-4 border-cyan-400/30 shadow-2xl shadow-cyan-500/20"
+                      priority
+                    />
+                  </motion.div>
+                  <motion.div
+                    variants={{
+                      rest: { opacity: 0, rotate: 0 },
+                      hover: {
+                        opacity: 1,
+                        rotate: 360,
+                        transition: {
+                          opacity: { duration: 0.2 },
+                          rotate: { duration: 2, ease: 'linear', repeat: Infinity }
+                        }
+                      }
+                    }}
+                    className="pointer-events-none absolute inset-0 rounded-full border-2 border-cyan-300/50 border-dashed"
                   />
                 </motion.div>
-                <motion.div
-                  variants={{
-                    rest: { opacity: 0, rotate: 0 },
-                    hover: {
-                      opacity: 1,
-                      rotate: 360,
-                      transition: {
-                        opacity: { duration: 0.2 },
-                        rotate: { duration: 2, ease: 'linear', repeat: Infinity }
-                      }
-                    }
-                  }}
-                  className="pointer-events-none absolute inset-0 rounded-full border-2 border-cyan-300/80 border-dashed"
-                />
-              </motion.div>
+              </div>
+            </motion.div>
+            
+            <div className="flex-1 flex flex-col justify-center text-center md:text-left">
+              <motion.h1
+                initial={{ opacity: 0, x: -100 }}
+                animate={{ opacity: 1, x: 0 }}
+                transition={{ duration: 0.8 }}
+                className="text-3xl sm:text-4xl md:text-5xl font-bold mb-4 sm:mb-6 bg-gradient-to-r from-cyan-400 via-purple-400 to-blue-400 bg-clip-text text-transparent"
+              >
+                About Me
+              </motion.h1>
+              <motion.p
+                initial={{ opacity: 0, x: -50 }}
+                animate={{ opacity: 1, x: 0 }}
+                transition={{ duration: 0.8, delay: 0.2 }}
+                className="text-lg sm:text-xl md:text-2xl text-cyan-300/90 font-medium"
+              >
+                Full Stack Developer
+              </motion.p>
             </div>
-          </motion.div>
-          
-          <div className="flex-1 flex flex-col justify-center text-center md:text-left">
-            <motion.h1
-              initial={{ opacity: 0, x: -100 }}
-              animate={{ opacity: 1, x: 0 }}
-              transition={{ duration: 0.8 }}
-              className="text-2xl sm:text-3xl md:text-4xl font-bold mb-3 sm:mb-4 hero text-gray-300"
-            >
-              About Me
-            </motion.h1>
-            <motion.p
-              initial={{ opacity: 0, x: -50 }}
-              animate={{ opacity: 1, x: 0 }}
-              transition={{ duration: 0.8, delay: 0.2 }}
-              className="text-lg sm:text-xl text-blue-400 font-medium"
-            >
-              Full Stack Developer
-            </motion.p>
           </div>
         </div>
 
@@ -91,9 +93,9 @@ const About = () => {
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, delay: 0.2 }}
-          className="space-y-4 sm:space-y-6 text-gray-300"
+          className="glass-card rounded-3xl p-8 sm:p-10 md:p-12 space-y-6 sm:space-y-8 text-gray-200"
         >
-          <p className="text-base sm:text-lg leading-relaxed hero">
+          <p className="text-base sm:text-lg md:text-xl leading-relaxed">
             Hello! I&apos;m Sankalp, a passionate Full Stack Developer with a keen interest in creating
             innovative and user-friendly web applications. My journey in web development has equipped
             me with a strong foundation in both frontend and backend technologies.

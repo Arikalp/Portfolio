@@ -1,48 +1,71 @@
 @import "tailwindcss/preflight";
 @import "tailwindcss/utilities";
 
+/* Web3/NFT Dark Theme Variables */
 :root {
   --foreground-rgb: 255, 255, 255;
-  --background-start-rgb: 0, 0, 0;
-  --background-end-rgb: 0, 0, 0;
+  --background-start-rgb: 5, 7, 13;
+  --background-end-rgb: 10, 15, 30;
   --radius: 0.625rem;
-  --background: oklch(1 0 0);
-  --foreground: oklch(0.145 0 0);
-  --card: oklch(1 0 0);
-  --card-foreground: oklch(0.145 0 0);
-  --popover: oklch(1 0 0);
-  --popover-foreground: oklch(0.145 0 0);
-  --primary: oklch(0.205 0 0);
-  --primary-foreground: oklch(0.985 0 0);
-  --secondary: oklch(0.97 0 0);
-  --secondary-foreground: oklch(0.205 0 0);
-  --muted: oklch(0.97 0 0);
-  --muted-foreground: oklch(0.556 0 0);
-  --accent: oklch(0.97 0 0);
-  --accent-foreground: oklch(0.205 0 0);
-  --destructive: oklch(0.577 0.245 27.325);
-  --border: oklch(0.922 0 0);
-  --input: oklch(0.922 0 0);
-  --ring: oklch(0.708 0 0);
-  --chart-1: oklch(0.646 0.222 41.116);
-  --chart-2: oklch(0.6 0.118 184.704);
-  --chart-3: oklch(0.398 0.07 227.392);
-  --chart-4: oklch(0.828 0.189 84.429);
-  --chart-5: oklch(0.769 0.188 70.08);
-  --sidebar: oklch(0.985 0 0);
-  --sidebar-foreground: oklch(0.145 0 0);
-  --sidebar-primary: oklch(0.205 0 0);
-  --sidebar-primary-foreground: oklch(0.985 0 0);
-  --sidebar-accent: oklch(0.97 0 0);
-  --sidebar-accent-foreground: oklch(0.205 0 0);
-  --sidebar-border: oklch(0.922 0 0);
-  --sidebar-ring: oklch(0.708 0 0);
+  --background: oklch(0.08 0 0);
+  --foreground: oklch(0.95 0 0);
+  --card: oklch(0.12 0 0);
+  --card-foreground: oklch(0.95 0 0);
+  --popover: oklch(0.12 0 0);
+  --popover-foreground: oklch(0.95 0 0);
+  --primary: oklch(0.45 0.3 270);
+  --primary-foreground: oklch(0.95 0 0);
+  --secondary: oklch(0.5 0.3 200);
+  --secondary-foreground: oklch(0.95 0 0);
+  --muted: oklch(0.3 0.05 0);
+  --muted-foreground: oklch(0.7 0 0);
+  --accent: oklch(0.55 0.35 190);
+  --accent-foreground: oklch(0.95 0 0);
+  --destructive: oklch(0.55 0.3 25);
+  --border: oklch(0.2 0 0);
+  --input: oklch(0.15 0 0);
+  --ring: oklch(0.5 0.3 190);
+}
+
+/* Dark mode forced */
+html {
+  color-scheme: dark;
 }
 
 body {
-  background-color: rgb(var(--background-start-rgb));
+  background: linear-gradient(135deg, #05070d 0%, #0a0f1e 50%, #15082f 100%);
+  background-attachment: fixed;
+  color: rgb(var(--foreground-rgb));
   min-height: 100vh;
   overflow-x: hidden;
+  position: relative;
+}
+
+/* Glowing background effects */
+body::before {
+  content: '';
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: radial-gradient(
+    circle at 20% 50%,
+    rgba(6, 182, 212, 0.15) 0%,
+    transparent 50%
+  ),
+  radial-gradient(
+    circle at 80% 80%,
+    rgba(168, 85, 247, 0.1) 0%,
+    transparent 50%
+  ),
+  radial-gradient(
+    circle at 40% 20%,
+    rgba(59, 130, 246, 0.08) 0%,
+    transparent 50%
+  );
+  pointer-events: none;
+  z-index: 0;
 }
 
 #tsparticles {
@@ -67,17 +90,106 @@ body {
   position: relative;
   width: 100%;
   min-height: 100vh;
+  z-index: 1;
+}
+
+/* Glassmorphism utility classes */
+.glass-effect {
+  background: rgba(255, 255, 255, 0.05);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 1.5rem;
+}
+
+.glass-card {
+  background: rgba(255, 255, 255, 0.04);
+  backdrop-filter: blur(15px);
+  -webkit-backdrop-filter: blur(15px);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.37),
+              inset 1px 1px 0px 0px rgba(255, 255, 255, 0.1);
+  transition: all 0.3s ease;
+}
+
+.glass-card:hover {
+  background: rgba(255, 255, 255, 0.06);
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  box-shadow: 0 12px 40px 0 rgba(34, 211, 238, 0.15),
+              inset 1px 1px 0px 0px rgba(255, 255, 255, 0.15);
+}
+
+/* Gradient text */
+.gradient-text {
+  background: linear-gradient(135deg, #06b6d4 0%, #a855f7 50%, #3b82f6 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  animation: gradient-shift 6s ease infinite;
+}
+
+@keyframes gradient-shift {
+  0%, 100% {
+    background: linear-gradient(135deg, #06b6d4 0%, #a855f7 50%, #3b82f6 100%);
+  }
+  50% {
+    background: linear-gradient(135deg, #3b82f6 0%, #06b6d4 50%, #a855f7 100%);
+  }
+}
+
+/* Glow text effect */
+.glow-text {
+  text-shadow: 0 0 10px rgba(34, 211, 238, 0.5),
+               0 0 20px rgba(168, 85, 247, 0.3);
+}
+
+/* Smooth transitions */
+* {
+  transition: background-color 0.3s ease, border-color 0.3s ease, color 0.3s ease;
+}
+
+button, 
+a,
+.transition-smooth {
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+/* Button styling */
+.gradient-btn {
+  background: linear-gradient(135deg, #06b6d4 0%, #a855f7 100%);
+  color: white;
+  border: none;
+  border-radius: 0.875rem;
+  font-weight: 600;
+  cursor: pointer;
+  box-shadow: 0 0 20px rgba(34, 211, 238, 0.3),
+              0 0 40px rgba(168, 85, 247, 0.2);
+  transition: all 0.3s ease;
+}
+
+.gradient-btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 0 30px rgba(34, 211, 238, 0.5),
+              0 0 60px rgba(168, 85, 247, 0.3);
+}
+
+.gradient-btn:active {
+  transform: translateY(0px);
+}
+
+/* Section spacing */
+section {
+  transition: all 0.3s ease;
 }
 
 @import "tailwindcss";
-
 @import "tw-animate-css";
 
 @custom-variant dark (&:is(.dark *));
 
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
+  --background: #05070d;
+  --foreground: #ffffff;
 }
 
 @theme inline {
