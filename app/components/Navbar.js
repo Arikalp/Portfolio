@@ -56,7 +56,7 @@ const Navbar = ({ onNavigate, currentSection = 'home' }) => {
 
   return (
     <nav
-      className={`fixed top-0 left-0 right-0 z-50 bg-gradient-to-b from-black/40 to-transparent backdrop-blur-xl border-b border-white/10 text-white px-4 sm:px-6 md:px-20 h-auto py-4 sm:py-5 flex items-center transform transition-transform duration-300 ${isVisible ? 'translate-y-0' : '-translate-y-full'}`}
+      className={`fixed top-0 left-0 right-0 z-50 border-b border-white/10 bg-gradient-to-b from-black/50 to-transparent px-4 py-4 text-white backdrop-blur-xl transition-transform duration-300 sm:px-8 sm:py-5 md:px-20 ${isVisible ? 'translate-y-0' : '-translate-y-full'}`}
     >
       <div className='flex justify-between items-center w-full'>
         {/* Logo */}
@@ -75,7 +75,7 @@ const Navbar = ({ onNavigate, currentSection = 'home' }) => {
         </motion.div>
         
         {/* Desktop Menu */}
-        <ul className='hidden md:flex flex-row space-x-8 lg:space-x-12'>
+        <ul className='hidden md:flex flex-row space-x-8 lg:space-x-10'>
           <motion.li
             whileHover={{ scale: 1.1, color: '#06b6d4' }}
             whileTap={{ scale: 0.95 }}

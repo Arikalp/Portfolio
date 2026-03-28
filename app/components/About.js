@@ -137,7 +137,7 @@ const About = () => {
           >
             {/* Intro Text */}
             <motion.div
-              className="mb-8"
+              className="mb-8 sm:mb-10"
               variants={itemVariants}
             >
               <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold text-white mb-4">
@@ -146,7 +146,7 @@ const About = () => {
               <p className="text-lg sm:text-xl text-cyan-300/90 font-semibold mb-4">
                 Full Stack Developer
               </p>
-              <p className="text-gray-300 text-base sm:text-lg leading-relaxed">
+              <p className="text-gray-200/95 text-base sm:text-lg leading-relaxed">
                 A passionate developer crafting innovative web solutions with modern technologies. 
                 I specialize in building scalable applications, solving complex problems, and staying 
                 ahead of tech trends.
@@ -155,7 +155,7 @@ const About = () => {
 
             {/* Stat Cards */}
             <motion.div
-              className="grid grid-cols-3 gap-3 sm:gap-4 mb-8 sm:mb-12"
+              className="grid grid-cols-1 sm:grid-cols-3 gap-3 sm:gap-4 mb-8 sm:mb-12"
               variants={containerVariants}
               initial="hidden"
               whileInView="visible"
@@ -204,7 +204,7 @@ const About = () => {
                         <p className="text-2xl sm:text-3xl font-bold text-white mb-1">
                           {stat.value}
                         </p>
-                        <p className="text-xs sm:text-sm text-gray-400 font-medium">
+                        <p className="text-xs sm:text-sm text-gray-300/90 font-medium">
                           {stat.label}
                         </p>
                       </div>
@@ -463,87 +463,6 @@ const About = () => {
             </span>
           </motion.a>
         </motion.div>
-      </motion.div>
-    </div>
-  );
-};
-
-export default About;
-                  Working on LLM training and finetuning workflows, with a strong focus on model safety, prompt security, and reliable AI behavior.
-                </p>
-              </motion.div>
-
-              <motion.div
-                whileHover={{ scale: 1.02 }}
-                className="bg-[rgba(255,255,255,0.03)] p-4 sm:p-6 rounded-lg border border-gray-700 backdrop-blur-sm"
-              >
-                <h3 className="text-lg sm:text-xl font-medium text-white mb-2">System Design</h3>
-                <p className="text-gray-400 text-sm sm:text-base">
-                  Designing scalable and maintainable system architectures, APIs, and data flows for high-performance web and AI-powered applications.
-                </p>
-              </motion.div>
-            </div>
-          </div>
-
-          <div className="mt-6 sm:mt-8">
-            <h2 className="text-xl sm:text-2xl font-semibold mb-3 sm:mb-4 hero">Certifications & Achievements</h2>
-            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-3 sm:gap-4">
-              {[
-                { name: "AWS Cloud Practitioner", file: "/assets/Certificates/AWS/AWS Certificate.pdf", category: "Cloud" },
-                { name: "AWS EC2 Certification", file: "/assets/Certificates/AWS/AWS EC2.pdf", category: "Cloud" },
-                { name: "AWS VPC Certification", file: "/assets/Certificates/AWS/AWS VPC.pdf", category: "Cloud" },
-                { name: "AI Hackathon Winner", file: "/assets/Certificates/AI Hackathon certificate. .pdf", category: "AI/ML" },
-                { name: "AI Workshop", file: "/assets/Certificates/AI workshop.pdf", category: "AI/ML" },
-                { name: "Gen AI Certification", file: "/assets/Certificates/Gen AI.pdf", category: "AI/ML" },
-                { name: "DSA Certification", file: "/assets/Certificates/DSA certificate.pdf", category: "Programming" },
-                { name: "JavaScript Certification", file: "/assets/Certificates/Javascript_certificate.pdf", category: "Programming" },
-                { name: "MongoDB Certification", file: "/assets/Certificates/MongoDB.pdf", category: "Database" },
-                { name: "Data Engineering", file: "/assets/Certificates/Data Engineering_ Real-time Data_Processing for AIML.pdf", category: "Data" },
-                { name: "Internship Certificate", file: "/assets/Certificates/Cyberelevant_Internship_Completion_Certificate_Sankalp_Saini_Secured.pdf", category: "Security" }
-              ].map((cert, idx) => (
-                <motion.a
-                  key={idx}
-                  href={cert.file}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  whileHover={{ scale: 1.05, y: -5 }}
-                  whileTap={{ scale: 0.95 }}
-                  className="bg-gradient-to-br from-white/[0.08] to-white/[0.02] backdrop-blur-xl border border-white/20 rounded-lg p-3 sm:p-4 hover:border-blue-400/50 transition-all duration-300 group cursor-pointer"
-                >
-                  <div className="flex flex-col h-full">
-                    <span className="text-xs text-blue-400 mb-1 font-medium">{cert.category}</span>
-                    <h3 className="text-sm sm:text-base font-medium text-white mb-2 group-hover:text-blue-300 transition-colors">
-                      {cert.name}
-                    </h3>
-                    <div className="mt-auto flex items-center text-xs text-gray-400 group-hover:text-blue-400 transition-colors">
-                      <svg className="w-3 h-3 mr-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 10v6m0 0l-3-3m3 3l3-3m2 8H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z" />
-                      </svg>
-                      View Certificate
-                    </div>
-                  </div>
-                </motion.a>
-              ))}
-            </div>
-          </div>
-
-          <div className="mt-6 sm:mt-8">
-            <h2 className="text-xl sm:text-2xl font-semibold mb-3 sm:mb-4 hero">Personal Interests</h2>
-            <p className="text-base sm:text-lg leading-relaxed hero">
-              When I&apos;m not coding, you can find me exploring new technologies, contributing to open-source
-              projects, or learning about the latest trends in web development. I believe in continuous
-              learning and staying updated with the ever-evolving tech landscape.
-            </p>
-          </div>
-        </motion.div>
-        <div className='flex justify-center items-center mt-6 sm:mt-8'>
-           <button className="flex">
-          <a href="/assets/Sankalp_Saini_Resume.pdf" download className="inline-block bg-blue-500 text-white px-4 sm:px-6 py-2 sm:py-3 rounded hover:bg-blue-600 transition gradient-btn text-sm sm:text-base">
-            Download Resume
-          </a>
-        </button>
-        </div>
-       
       </motion.div>
     </div>
   );

@@ -144,9 +144,9 @@ body::before {
                0 0 20px rgba(168, 85, 247, 0.3);
 }
 
-/* Smooth transitions */
-* {
-  transition: background-color 0.3s ease, border-color 0.3s ease, color 0.3s ease;
+/* Smooth transitions on interactive elements only for better paint performance */
+:where(a, button, input, textarea, .glass-card, .gradient-btn) {
+  transition: background-color 0.28s ease, border-color 0.28s ease, color 0.28s ease, box-shadow 0.28s ease, transform 0.28s ease;
 }
 
 button, 
@@ -432,6 +432,10 @@ body, .container-every, .image-container, * {
 <svg xmlns='http://www.w3.org/2000/svg' width='36' height='36' viewBox='0 0 36 36'>\
   <polygon points='0,0 0,20 5,15 10,30 13,29 8,14 15,14' fill='%23619abd'/>\
 </svg>") 0 0, auto !important;
+}
+
+section {
+  scroll-margin-top: 6rem;
 }
 
 .dark {

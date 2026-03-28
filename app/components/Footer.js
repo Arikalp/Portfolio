@@ -4,12 +4,12 @@ import { motion } from 'framer-motion';
 
 const Footer = () => {
   return (
-    <footer className="relative bg-gradient-to-t from-black/40 to-transparent backdrop-blur-lg text-white py-12 sm:py-16 border-t border-white/10">
+    <footer className="relative border-t border-white/10 bg-gradient-to-t from-black/40 to-transparent py-12 text-white backdrop-blur-lg sm:py-16">
       <div className="absolute inset-0 pointer-events-none">
         <div className="absolute bottom-0 left-1/2 -translate-x-1/2 h-40 w-96 bg-cyan-500/10 blur-3xl rounded-full" />
       </div>
       
-      <div className="container mx-auto px-4 sm:px-6 md:px-20 relative z-10">
+      <div className="container relative z-10 mx-auto px-4 sm:px-8 md:px-20">
         <div className="flex flex-col items-center space-y-8">
           
           {/* Brand Section */}
@@ -22,7 +22,7 @@ const Footer = () => {
             <h3 className="text-2xl sm:text-3xl font-bold mb-2 bg-gradient-to-r from-cyan-400 via-purple-400 to-blue-400 bg-clip-text text-transparent">
               Sankalp Saini
             </h3>
-            <p className="text-sm sm:text-base text-gray-400 flex items-center justify-center gap-2">
+            <p className="flex items-center justify-center gap-2 text-sm text-gray-300/90 sm:text-base">
               <FaCode className="text-cyan-400" />
               Full Stack Developer
             </p>
@@ -87,7 +87,7 @@ const Footer = () => {
             transition={{ duration: 0.6, delay: 0.4 }}
             className="text-center space-y-2"
           >
-            <p className="text-sm text-gray-400 flex items-center justify-center gap-2">
+            <p className="flex items-center justify-center gap-2 text-sm text-gray-300/90">
               Made with <FaHeart className="text-cyan-400 animate-pulse" /> by Sankalp
             </p>
             <p className="text-xs text-gray-500">

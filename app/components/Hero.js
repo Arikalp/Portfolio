@@ -90,11 +90,11 @@ const Hero = ({ onNavigate }) => {
         />
       </div>
 
-      <div className="hero relative flex flex-col lg:flex-row justify-between items-center py-8 sm:py-12 md:py-16 h-auto lg:h-[90vh] gap-8 sm:gap-12 md:gap-16 text-white px-4 sm:px-8 md:px-20">
+      <div className="hero relative mx-auto flex w-full max-w-7xl flex-col items-center justify-between gap-8 px-4 py-8 text-white sm:gap-12 sm:px-8 sm:py-12 md:gap-16 md:px-20 md:py-16 lg:h-[90vh] lg:flex-row">
         
         {/* Left Column - Text Content */}
         <motion.div
-          className="flex-1 flex flex-col justify-center space-y-6 sm:space-y-8 md:space-y-10 z-10"
+          className="z-10 flex flex-1 flex-col justify-center space-y-6 sm:space-y-8 md:space-y-10"
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
           transition={{ duration: 0.8 }}
@@ -117,7 +117,7 @@ const Hero = ({ onNavigate }) => {
               </GradientText>
             </h1>
             <motion.p
-              className="text-lg sm:text-xl md:text-2xl text-gray-300 mt-3 sm:mt-4"
+              className="mt-3 text-lg text-gray-200/95 sm:mt-4 sm:text-xl md:text-2xl"
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}
               transition={{ delay: 0.3, duration: 0.8 }}
@@ -132,7 +132,7 @@ const Hero = ({ onNavigate }) => {
             animate={{ opacity: 1, x: 0 }}
             transition={{ duration: 0.8, delay: 0.2 }}
           >
-            <p className="font-body text-lg sm:text-xl md:text-2xl text-cyan-200/80 leading-relaxed">
+            <p className="font-body text-lg leading-relaxed text-cyan-200/95 sm:text-xl md:text-2xl">
               <VariableProximity
                 text="I am a Full Stack Developer"
                 radius={120}
@@ -151,7 +151,7 @@ const Hero = ({ onNavigate }) => {
             transition={{ delay: 0.4, duration: 0.8 }}
             className="max-w-xl"
           >
-            <p className="text-sm sm:text-base text-gray-400 leading-relaxed">
+            <p className="text-sm leading-relaxed text-gray-300/90 sm:text-base">
               Specializing in React, Next.js, and modern web technologies. Turning ideas into beautiful, functional applications.
             </p>
           </motion.div>
@@ -191,7 +191,7 @@ const Hero = ({ onNavigate }) => {
 
         {/* Right Column - Floating Cards */}
         <motion.div
-          className="flex-1 relative h-80 sm:h-96 md:h-[500px] lg:h-full w-full flex items-center justify-center lg:justify-end z-10"
+          className="relative z-10 flex h-80 w-full flex-1 items-center justify-center sm:h-96 md:h-[500px] lg:h-full lg:justify-end"
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
           transition={{ duration: 0.8, delay: 0.2 }}

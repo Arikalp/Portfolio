@@ -41,7 +41,7 @@ const Projects = ({ onNavigate }) => {
         initial={{ opacity: 0, y: -50 }}
         whileInView={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.8, ease: "easeOut" }}
-        className="projects flex flex-col justify-center py-16 sm:py-20 md:py-24 items-start text-white px-4 sm:px-8 md:px-20"
+        className="projects mx-auto flex w-full max-w-7xl flex-col items-start justify-center px-4 py-16 text-white sm:px-8 sm:py-20 md:px-20 md:py-24"
       >
         <motion.h1
           initial={{ opacity: 0, x: -100, rotateY: -45 }}
@@ -55,7 +55,7 @@ const Projects = ({ onNavigate }) => {
           initial={{ opacity: 0, x: 100, rotateY: 45 }}
           whileInView={{ opacity: 1, x: 0, rotateY: 0 }}
           transition={{ duration: 1, ease: "easeOut", delay: 0.4 }}
-          className="project-del text-gray-400 mt-4 text-base sm:text-lg"
+          className="project-del mt-4 text-base text-gray-300/90 sm:text-lg"
         >
           Here are some of the projects I&apos;ve worked on:
         </motion.p>
@@ -66,7 +66,7 @@ const Projects = ({ onNavigate }) => {
         initial="hidden"
         whileInView="visible"
         viewport={{ once: true, amount: 0.2 }}
-        className="grid grid-cols-1 lg:grid-cols-2 gap-10 sm:gap-12 md:gap-16 justify-items-center px-4 sm:px-8 md:px-20 py-8 sm:py-12 md:py-16"
+        className="mx-auto grid w-full max-w-7xl grid-cols-1 justify-items-center gap-10 px-4 py-8 sm:gap-12 sm:px-8 sm:py-12 md:gap-16 md:px-20 md:py-16 lg:grid-cols-2"
       >
         <motion.div
           variants={itemVariants}
