@@ -1,6 +1,6 @@
 import React, { useState } from 'react'
 import { motion } from 'framer-motion'
-import { Code2, Database, Zap, Gitlab } from 'lucide-react'
+import { Code2, Database, Zap } from 'lucide-react'
 
 const skillCategories = [
   {
@@ -81,14 +81,15 @@ const Skills = () => {
         whileInView="visible"
         viewport={{ once: true, margin: '-100px' }}
       >
-        {skillCategories.map((category) => {
+        {skillCategories.map((category, idx) => {
           const IconComponent = category.icon
           const isHovered = hoveredId === category.id
 
           return (
             <motion.div
               key={category.id}
-              className="relative group"
+              className="float-subtle relative group"
+              style={{ animationDelay: `${idx * 0.6}s` }}
               variants={cardVariants}
               onMouseEnter={() => setHoveredId(category.id)}
               onMouseLeave={() => setHoveredId(null)}

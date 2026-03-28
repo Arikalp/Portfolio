@@ -64,7 +64,7 @@ export default function ContactForm() {
           {notification.message}
         </div>
 
-        <div className="relative w-full max-w-xl group">
+        <div className="float-subtle relative w-full max-w-xl group">
           <div className="pointer-events-none absolute -inset-[1px] rounded-3xl bg-gradient-to-r from-cyan-400/45 via-purple-400/45 to-blue-400/45 opacity-70 blur-[1px] transition duration-500 group-hover:opacity-100" />
           <div className="pointer-events-none absolute -inset-4 rounded-[2rem] bg-gradient-to-r from-cyan-400/20 via-purple-400/20 to-blue-400/20 opacity-60 blur-2xl transition duration-500 group-hover:opacity-90" />
           <div className="glass-card relative w-full rounded-3xl border-white/20 bg-white/[0.05] p-8 sm:p-10 md:p-12 backdrop-blur-2xl shadow-[0_0_0_1px_rgba(255,255,255,0.08),0_20px_40px_rgba(2,8,23,0.7)]">

@@ -1,5 +1,5 @@
 import React, { useRef, useState, useEffect } from 'react'
-import { motion } from 'framer-motion'
+import { motion, useMotionValue } from 'framer-motion'
 
 // Global cache to store loaded video URLs and animated components
 const videoCache = new Set();
@@ -7,11 +7,14 @@ const animationCache = new Set();
 
 const Projectemp = ({ video, liveLink, title, details, tech }) => {
   const videoRef = useRef(null);
+  const cardRef = useRef(null);
   const [isHovered, setIsHovered] = useState(false);
   const [isLoaded, setIsLoaded] = useState(videoCache.has(video));
   const [hasAnimated, setHasAnimated] = useState(animationCache.has(video));
   const [isMobile, setIsMobile] = useState(false);
   const playPromiseRef = useRef(null);
+  const rotateX = useMotionValue(0);
+  const rotateY = useMotionValue(0);
 
   useEffect(() => {
     const checkMobile = () => {
@@ -69,6 +72,8 @@ const Projectemp = ({ video, liveLink, title, details, tech }) => {
 
   const handleMouseLeave = () => {
     setIsHovered(false);
+    rotateX.set(0);
+    rotateY.set(0);
     if (videoRef.current) {
       if (playPromiseRef.current !== undefined) {
         playPromiseRef.current.then(() => {
@@ -84,18 +89,33 @@ const Projectemp = ({ video, liveLink, title, details, tech }) => {
     }
   };
 
+  const handleMouseMove = (event) => {
+    if (isMobile || !cardRef.current) return;
+
+    const rect = cardRef.current.getBoundingClientRect();
+    const px = (event.clientX - rect.left) / rect.width;
+    const py = (event.clientY - rect.top) / rect.height;
+    const tiltY = (px - 0.5) * 10;
+    const tiltX = (0.5 - py) * 8;
+
+    rotateX.set(tiltX);
+    rotateY.set(tiltY);
+  };
+
   return (
     <motion.div
-      className="relative w-full max-w-sm sm:max-w-md md:max-w-xl min-h-[500px] sm:min-h-[530px] md:min-h-[560px] rounded-3xl overflow-hidden group"
+      ref={cardRef}
+      className="float-slow relative w-full max-w-sm sm:max-w-md md:max-w-xl min-h-[500px] sm:min-h-[530px] md:min-h-[560px] rounded-3xl overflow-hidden group [transform-style:preserve-3d]"
       onMouseEnter={handleMouseEnter}
       onMouseLeave={handleMouseLeave}
+      onMouseMove={handleMouseMove}
+      style={{ rotateX, rotateY, transformPerspective: 1000, willChange: 'transform' }}
       initial={hasAnimated ? { opacity: 1, y: 0 } : { opacity: 0, y: 20 }}
-      animate={{ opacity: 1, y: 0 }}
+      whileInView={{ opacity: 1, y: 0 }}
       transition={hasAnimated ? { duration: 0 } : { duration: 0.6, ease: "easeOut" }}
+      viewport={{ once: true, amount: 0.2 }}
       whileHover={isMobile ? {} : {
         y: -12,
-        rotateY: 5,
-        rotateX: 3,
         transition: { duration: 0.4, ease: "easeOut" }
       }}
     >
@@ -275,7 +295,7 @@ const Projectemp = ({ video, liveLink, title, details, tech }) => {
           {/* Shine Effect */}
           <motion.div
             className="absolute inset-0 rounded-xl bg-gradient-to-r from-transparent via-white to-transparent opacity-0 group-hover/btn:opacity-20"
-            animate={isHovered ? { x: ['−100%', '100%'] } : {}}
+            animate={isHovered ? { x: ['-100%', '100%'] } : {}}
             transition={{ duration: 0.6, repeat: isHovered ? Infinity : 0 }}
           />
 

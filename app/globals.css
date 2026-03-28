@@ -30,6 +30,7 @@
 /* Dark mode forced */
 html {
   color-scheme: dark;
+  scroll-behavior: smooth;
 }
 
 body {
@@ -96,16 +97,16 @@ body::before {
 /* Glassmorphism utility classes */
 .glass-effect {
   background: rgba(255, 255, 255, 0.05);
-  backdrop-filter: blur(20px);
   -webkit-backdrop-filter: blur(20px);
+  backdrop-filter: blur(20px);
   border: 1px solid rgba(255, 255, 255, 0.1);
   border-radius: 1.5rem;
 }
 
 .glass-card {
   background: rgba(255, 255, 255, 0.04);
-  backdrop-filter: blur(15px);
   -webkit-backdrop-filter: blur(15px);
+  backdrop-filter: blur(15px);
   border: 1px solid rgba(255, 255, 255, 0.08);
   box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.37),
               inset 1px 1px 0px 0px rgba(255, 255, 255, 0.1);
@@ -175,6 +176,47 @@ a,
 
 .gradient-btn:active {
   transform: translateY(0px);
+}
+
+@keyframes float-slow {
+  0%,
+  100% {
+    transform: translate3d(0, 0, 0);
+  }
+  50% {
+    transform: translate3d(0, -8px, 0);
+  }
+}
+
+@keyframes float-subtle {
+  0%,
+  100% {
+    transform: translate3d(0, 0, 0);
+  }
+  50% {
+    transform: translate3d(0, -4px, 0);
+  }
+}
+
+.float-slow {
+  animation: float-slow 7s ease-in-out infinite;
+  will-change: transform;
+}
+
+.float-subtle {
+  animation: float-subtle 8s ease-in-out infinite;
+  will-change: transform;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+
+  .float-slow,
+  .float-subtle {
+    animation: none !important;
+  }
 }
 
 /* Section spacing */

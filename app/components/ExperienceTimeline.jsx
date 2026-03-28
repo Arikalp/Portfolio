@@ -161,7 +161,8 @@ const ExperienceTimeline = () => {
               key={`${item.company}-${item.title}-${index}`}
               variants={itemVariants}
               whileHover={{ y: -6 }}
-              className="relative grid grid-cols-1 md:grid-cols-[2.5rem_1fr] gap-4 md:gap-7"
+              className="float-subtle relative grid grid-cols-1 md:grid-cols-[2.5rem_1fr] gap-4 md:gap-7"
+              style={{ animationDelay: `${index * 0.45}s` }}
             >
               <div className="hidden md:flex items-start justify-center pt-6">
                 <span className="relative block h-3.5 w-3.5 rounded-full bg-cyan-200 shadow-[0_0_0_5px_rgba(34,211,238,0.16),0_0_20px_rgba(34,211,238,0.95)]">
