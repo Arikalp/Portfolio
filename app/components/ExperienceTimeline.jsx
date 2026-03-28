@@ -84,6 +84,22 @@ const itemVariants = {
   },
 };
 
+const dotPulseVariants = {
+  idle: {
+    scale: 1,
+    opacity: 0.7,
+  },
+  pulse: {
+    scale: [1, 1.55, 1],
+    opacity: [0.65, 0, 0.65],
+    transition: {
+      duration: 2,
+      repeat: Infinity,
+      ease: "easeInOut",
+    },
+  },
+};
+
 const containerVariants = {
   hidden: {},
   show: {
@@ -121,8 +137,8 @@ const ExperienceTimeline = () => {
   }, []);
 
   return (
-    <section className="mt-8 sm:mt-10">
-      <h2 className="text-2xl sm:text-3xl font-semibold mb-6 sm:mb-8 text-white">Experience</h2>
+    <section className="mt-10 sm:mt-12">
+      <h2 className="text-2xl sm:text-3xl font-semibold mb-7 sm:mb-10 text-white tracking-tight">Experience</h2>
 
       <motion.div
         ref={timelineRef}
@@ -132,46 +148,59 @@ const ExperienceTimeline = () => {
         viewport={{ once: true, amount: 0.18 }}
         className="relative mx-auto max-w-5xl"
       >
-        <div className="pointer-events-none absolute inset-y-4 left-1/2 w-px -translate-x-1/2 md:left-5 md:translate-x-0 bg-gradient-to-b from-cyan-300/60 via-cyan-300/30 to-transparent" />
+        <div className="pointer-events-none absolute inset-y-3 left-1/2 w-[2px] -translate-x-1/2 md:left-5 md:translate-x-0 bg-gradient-to-b from-cyan-200/80 via-cyan-300/40 to-transparent" />
+        <div className="pointer-events-none absolute inset-y-3 left-1/2 w-[10px] -translate-x-1/2 md:left-5 md:translate-x-[-4px] blur-md bg-gradient-to-b from-cyan-300/40 via-cyan-400/20 to-transparent" />
         <motion.div
           style={{ scaleY: lineFill, transformOrigin: "top" }}
-          className="pointer-events-none absolute inset-y-4 left-1/2 w-px -translate-x-1/2 md:left-5 md:translate-x-0 bg-gradient-to-b from-cyan-200 via-cyan-400/90 to-cyan-500/10 shadow-[0_0_18px_rgba(34,211,238,0.65)]"
+          className="pointer-events-none absolute inset-y-3 left-1/2 w-[2px] -translate-x-1/2 md:left-5 md:translate-x-0 bg-gradient-to-b from-cyan-100 via-cyan-300 to-cyan-500/10 shadow-[0_0_22px_rgba(34,211,238,0.95)]"
         />
 
-        <div className="space-y-5 sm:space-y-6">
+        <div className="space-y-6 sm:space-y-8">
           {sortedExperiences.map((item, index) => (
             <motion.article
               key={`${item.company}-${item.title}-${index}`}
               variants={itemVariants}
-              whileHover={{ scale: 1.015 }}
-              className="relative grid grid-cols-1 md:grid-cols-[2.5rem_1fr] gap-4 md:gap-6"
+              whileHover={{ y: -6 }}
+              className="relative grid grid-cols-1 md:grid-cols-[2.5rem_1fr] gap-4 md:gap-7"
             >
               <div className="hidden md:flex items-start justify-center pt-6">
-                <span className="relative block h-3.5 w-3.5 rounded-full bg-cyan-300 shadow-[0_0_0_4px_rgba(34,211,238,0.2),0_0_18px_rgba(34,211,238,0.95)]">
+                <span className="relative block h-3.5 w-3.5 rounded-full bg-cyan-200 shadow-[0_0_0_5px_rgba(34,211,238,0.16),0_0_20px_rgba(34,211,238,0.95)]">
+                  <motion.span
+                    variants={dotPulseVariants}
+                    initial="idle"
+                    animate="pulse"
+                    className="absolute inset-0 rounded-full bg-cyan-300/55"
+                  />
                   <span className="absolute -inset-2 rounded-full bg-cyan-300/35 blur-sm" />
                 </span>
               </div>
 
-              <span className="md:hidden absolute left-1/2 top-3 -translate-x-1/2 block h-3.5 w-3.5 rounded-full bg-cyan-300 shadow-[0_0_0_4px_rgba(34,211,238,0.2),0_0_16px_rgba(34,211,238,0.9)]">
+              <span className="md:hidden absolute left-1/2 top-3 -translate-x-1/2 block h-3.5 w-3.5 rounded-full bg-cyan-200 shadow-[0_0_0_5px_rgba(34,211,238,0.16),0_0_18px_rgba(34,211,238,0.95)]">
+                <motion.span
+                  variants={dotPulseVariants}
+                  initial="idle"
+                  animate="pulse"
+                  className="absolute inset-0 rounded-full bg-cyan-300/55"
+                />
                 <span className="absolute -inset-2 rounded-full bg-cyan-300/35 blur-sm" />
               </span>
 
-              <div className="mx-auto md:mx-0 mt-7 md:mt-0 w-full rounded-2xl border border-cyan-300/20 bg-[#0d1117]/90 backdrop-blur-md p-5 sm:p-6 shadow-[0_0_0_1px_rgba(34,211,238,0.08),0_14px_32px_rgba(2,8,23,0.6)] transition-all duration-300 hover:border-cyan-300/45 hover:shadow-[0_0_0_1px_rgba(34,211,238,0.25),0_0_26px_rgba(34,211,238,0.14),0_16px_34px_rgba(2,8,23,0.75)]">
-                <div className="flex flex-wrap items-center gap-x-3 gap-y-2 mb-3">
-                  <h3 className="text-lg sm:text-xl font-bold text-white">{item.title}</h3>
+              <div className="mx-auto md:mx-0 mt-7 md:mt-0 w-full rounded-2xl border border-cyan-200/20 bg-gradient-to-br from-white/[0.08] to-white/[0.02] backdrop-blur-xl p-6 sm:p-7 shadow-[0_0_0_1px_rgba(34,211,238,0.10),0_14px_34px_rgba(2,8,23,0.62)] transition-all duration-300 hover:-translate-y-1 hover:border-cyan-200/45 hover:shadow-[0_0_0_1px_rgba(34,211,238,0.28),0_0_30px_rgba(34,211,238,0.16),0_18px_38px_rgba(2,8,23,0.8)]">
+                <div className="flex flex-wrap items-center gap-x-3 gap-y-2 mb-3.5">
+                  <h3 className="text-lg sm:text-xl font-bold text-white tracking-tight">{item.title}</h3>
                   <span className="text-xs sm:text-sm px-2.5 py-1 rounded-full border border-cyan-300/30 text-cyan-200 bg-cyan-300/10">
                     {item.type}
                   </span>
                 </div>
 
-                <p className="text-sm sm:text-base text-cyan-100/90">
+                <p className="text-sm sm:text-base text-cyan-100/95 font-medium leading-relaxed">
                   {item.company}
                   {item.location ? <span className="text-slate-400"> • {item.location}</span> : null}
                 </p>
 
-                <p className="text-xs sm:text-sm text-slate-500 mt-1.5">{item.duration}</p>
+                <p className="text-xs sm:text-sm text-slate-400 mt-2">{item.duration}</p>
 
-                <p className="text-sm sm:text-base text-slate-300 leading-relaxed mt-4">
+                <p className="text-sm sm:text-base text-slate-300/95 leading-7 mt-4.5">
                   {item.description}
                 </p>
               </div>
