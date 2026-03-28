@@ -70,12 +70,7 @@ const Projects = ({ onNavigate }) => {
       >
         <motion.div
           variants={itemVariants}
-          whileHover={{
-            scale: 1.02,
-            rotateY: 5,
-            transition: { duration: 0.3 },
-          }}
-          className="w-full max-w-md lg:max-w-none"
+          className="w-full"
         >
           <Projectemp
             video="/assets/Smart-Tutor.mp4"
@@ -87,12 +82,7 @@ const Projects = ({ onNavigate }) => {
         </motion.div>
         <motion.div
           variants={itemVariants}
-          whileHover={{
-            scale: 1.02,
-            rotateY: -5,
-            transition: { duration: 0.3 },
-          }}
-          className="w-full max-w-md lg:max-w-none"
+          className="w-full"
         >
           <Projectemp
             video="/assets/SaachiRaah.mp4"
@@ -105,12 +95,7 @@ const Projects = ({ onNavigate }) => {
 
         <motion.div
           variants={itemVariants}
-          whileHover={{
-            scale: 1.02,
-            rotateY: 5,
-            transition: { duration: 0.3 },
-          }}
-          className="w-full max-w-md lg:max-w-none"
+          className="w-full"
         >
           <Projectemp
             video="/assets/TYPESTO_FULL.mp4"
@@ -123,12 +108,7 @@ const Projects = ({ onNavigate }) => {
 
         <motion.div
           variants={itemVariants}
-          whileHover={{
-            scale: 1.02,
-            rotateY: -5,
-            transition: { duration: 0.3 },
-          }}
-          className="w-full max-w-md lg:max-w-none"
+          className="w-full"
         >
           <Projectemp
             video="/assets/Chesso.mp4"

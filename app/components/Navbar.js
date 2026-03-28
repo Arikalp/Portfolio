@@ -56,9 +56,9 @@ const Navbar = ({ onNavigate, currentSection = 'home' }) => {
 
   return (
     <nav
-      className={`fixed top-0 left-0 right-0 z-50 border-b border-white/10 bg-gradient-to-b from-black/50 to-transparent px-4 py-4 text-white backdrop-blur-xl transition-transform duration-300 sm:px-8 sm:py-5 md:px-20 ${isVisible ? 'translate-y-0' : '-translate-y-full'}`}
+      className={`fixed top-0 left-0 right-0 z-50 h-20 border-b border-white/10 bg-gradient-to-b from-black/50 to-transparent px-4 text-white backdrop-blur-xl transition-transform duration-300 sm:h-24 sm:px-8 md:px-20 ${isVisible ? 'translate-y-0' : '-translate-y-full'}`}
     >
-      <div className='flex justify-between items-center w-full'>
+      <div className='mx-auto flex h-full w-full max-w-7xl items-center justify-between'>
         {/* Logo */}
         <motion.div 
           onClick={() => handleNavigation('home')} 
@@ -70,7 +70,7 @@ const Navbar = ({ onNavigate, currentSection = 'home' }) => {
             alt='logo' 
             width={80} 
             height={80} 
-            className='w-16 sm:w-20 md:w-24 h-auto' 
+            className='h-12 w-auto sm:h-14 md:h-16' 
           />
         </motion.div>
         

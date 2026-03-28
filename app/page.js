@@ -209,7 +209,7 @@ function PageContent() {
 
       <Navbar onNavigate={handleNavigation} currentSection={currentSection} />
       
-      <div ref={scrollRef} data-scroll-container className="container-every relative z-10 min-h-screen pointer-events-none pt-24 sm:pt-28 md:pt-32">
+      <div ref={scrollRef} data-scroll-container className="container-every relative z-10 min-h-screen pointer-events-none pt-24 sm:pt-28 md:pt-28">
         <div className="relative z-10 pointer-events-auto">
           {currentSection === 'home' && (
             <>

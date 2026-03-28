@@ -90,7 +90,7 @@ const Hero = ({ onNavigate }) => {
         />
       </div>
 
-      <div className="hero relative mx-auto flex w-full max-w-7xl flex-col items-center justify-between gap-8 px-4 py-8 text-white sm:gap-12 sm:px-8 sm:py-12 md:gap-16 md:px-20 md:py-16 lg:h-[90vh] lg:flex-row">
+      <div className="hero relative mx-auto flex w-full max-w-7xl flex-col items-center justify-between gap-8 px-4 pt-6 pb-8 text-white sm:gap-12 sm:px-8 sm:pt-8 sm:pb-12 md:gap-16 md:px-20 md:pt-10 md:pb-16 lg:min-h-[calc(100vh-6rem)] lg:flex-row lg:pt-0">
         
         {/* Left Column - Text Content */}
         <motion.div
@@ -191,16 +191,16 @@ const Hero = ({ onNavigate }) => {
 
         {/* Right Column - Floating Cards */}
         <motion.div
-          className="relative z-10 flex h-80 w-full flex-1 items-center justify-center sm:h-96 md:h-[500px] lg:h-full lg:justify-end"
+          className="relative z-10 flex w-full flex-1 items-center justify-center lg:justify-end min-h-[26rem] sm:min-h-[30rem] md:h-[500px] lg:h-full"
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
           transition={{ duration: 0.8, delay: 0.2 }}
         >
           {/* Floating Project Cards */}
-          <div className="relative w-full h-full max-w-sm md:max-w-md lg:max-w-none">
+          <div className="relative h-full w-full max-w-sm md:max-w-md lg:max-w-none flex flex-col items-center md:block">
             {/* Card 1 */}
             <motion.div
-              className="absolute top-0 left-0 w-64 sm:w-72 md:w-80 glass-card rounded-2xl p-5 sm:p-6 shadow-2xl overflow-hidden"
+              className="relative md:absolute md:top-0 md:left-0 w-full max-w-[18rem] sm:max-w-[20rem] md:max-w-none md:w-80 glass-card rounded-2xl p-5 sm:p-6 shadow-2xl overflow-hidden"
               variants={floatingCardVariants(0)}
               initial="hidden"
               animate={["visible", "animate"]}
@@ -232,7 +232,7 @@ const Hero = ({ onNavigate }) => {
 
             {/* Card 2 */}
             <motion.div
-              className="absolute bottom-0 right-0 w-64 sm:w-72 md:w-80 glass-card rounded-2xl p-5 sm:p-6 shadow-2xl overflow-hidden"
+              className="relative md:absolute md:bottom-0 md:right-0 mt-4 md:mt-0 w-full max-w-[18rem] sm:max-w-[20rem] md:max-w-none md:w-80 glass-card rounded-2xl p-5 sm:p-6 shadow-2xl overflow-hidden"
               variants={floatingCardVariants(1)}
               initial="hidden"
               animate={["visible", "animate"]}
@@ -265,7 +265,7 @@ const Hero = ({ onNavigate }) => {
 
           {/* Floating Elements Accent */}
           <motion.div
-            className="absolute top-1/2 right-1/2 w-32 h-32 rounded-full bg-gradient-to-r from-cyan-400/10 to-purple-400/10 blur-2xl pointer-events-none"
+            className="hidden md:block absolute top-1/2 right-1/2 w-32 h-32 rounded-full bg-gradient-to-r from-cyan-400/10 to-purple-400/10 blur-2xl pointer-events-none"
             animate={{
               scale: [1, 1.3, 1],
               opacity: [0.3, 0.6, 0.3],
