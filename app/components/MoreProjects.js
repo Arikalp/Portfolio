@@ -11,6 +11,19 @@ const moreProjects = [
     tech: ["HTML", "GSAP", "CSS", "Tailwind CSS", "JavaScript", "API"],
   },
   {
+    video:"/assets/Chesso.mp4",
+    liveLink:"https://chesso-lake.vercel.app/",
+    title:"Chesso - Chess Game",
+    details:"Chesso is an interactive chess game built with modern web technologies, featuring real-time gameplay and a clean interface.",
+    tech:[
+      "HTML",
+      "Tailwind CSS",
+      "JavaScript",
+      "Express.js",
+      "FireBase",
+    ]
+  },
+  {
     video:"/assets/SatelliteTracker.mp4",
     liveLink:"https://satellite-tracker-beta.vercel.app/",
     title:"Satellite Tracker - A Satellite Tracking Application",

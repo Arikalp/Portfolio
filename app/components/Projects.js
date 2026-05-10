@@ -68,6 +68,31 @@ const Projects = ({ onNavigate }) => {
         viewport={{ once: true, amount: 0.2 }}
         className="grid grid-cols-1 lg:grid-cols-2 gap-6 sm:gap-20 md:gap-30 lg:gap-45 justify-items-center px-4 sm:px-6 md:px-20"
       >
+
+          <motion.div
+          variants={itemVariants}
+          whileHover={{
+            scale: 1.02,
+            rotateY: -5,
+            transition: { duration: 0.3 },
+          }}
+          className="w-full max-w-md lg:max-w-none"
+        >
+          <Projectemp
+            video="/assets/INTERVO.mp4"
+            liveLink="https://intervoo.vercel.app/"
+            title="Intervo - A Agentic Interviewer"
+            details="Intervo is an AI-powered interview preparation platform that helps users practice and improve their interview skills with personalized feedback and real-time simulations."
+            tech={[
+              "Next.js",
+              "GROQ API",
+              "Wishper",
+              "Clerk",
+              "MongoDB",
+            ]}
+          />
+        </motion.div>
+        
         <motion.div
           variants={itemVariants}
           whileHover={{
@@ -121,29 +146,6 @@ const Projects = ({ onNavigate }) => {
           />
         </motion.div>
 
-        <motion.div
-          variants={itemVariants}
-          whileHover={{
-            scale: 1.02,
-            rotateY: -5,
-            transition: { duration: 0.3 },
-          }}
-          className="w-full max-w-md lg:max-w-none"
-        >
-          <Projectemp
-            video="/assets/Chesso.mp4"
-            liveLink="https://chesso-lake.vercel.app/"
-            title="Chesso - Chess Game"
-            details="Chesso is an interactive chess game built with modern web technologies, featuring real-time gameplay and a clean interface."
-            tech={[
-              "HTML",
-              "Tailwind CSS",
-              "JavaScript",
-              "Express.js",
-              "FireBase",
-            ]}
-          />
-        </motion.div>
       </motion.div>
 
       <motion.div
