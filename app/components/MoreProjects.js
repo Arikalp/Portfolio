@@ -24,6 +24,18 @@ const moreProjects = [
     ]
   },
   {
+    video:"/assets/MECALE.mp4",
+    liveLink:"https://mecale.vercel.app/",
+    title:"Mecale - Makes Maths Calculation Easy",
+    details:"Mecale Helps to speed up your mathematical calculations with an intuitive interface and powerful features, making complex math problems easier to solve.",
+    tech:[
+      "Next.js",
+      "Groq LLM",
+      "Framer-motion",
+      "FireBase",
+    ]
+  },
+  {
     video:"/assets/SatelliteTracker.mp4",
     liveLink:"https://satellite-tracker-beta.vercel.app/",
     title:"Satellite Tracker - A Satellite Tracking Application",
