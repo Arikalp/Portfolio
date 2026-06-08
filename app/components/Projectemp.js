@@ -34,23 +34,23 @@ const Projectemp = ({ video, liveLink, title, details, tech }) => {
   }, [video, hasAnimated]);
 
   useEffect(() => {
-    if (videoRef.current) {
+    const videoElement = videoRef.current;
+
+    if (videoElement) {
       if (!isLoaded) {
         const handleLoadedData = () => {
           videoCache.add(video);
           setIsLoaded(true);
         };
         
-        videoRef.current.addEventListener('loadeddata', handleLoadedData);
+        videoElement.addEventListener('loadeddata', handleLoadedData);
         
         return () => {
-          if (videoRef.current) {
-            videoRef.current.removeEventListener('loadeddata', handleLoadedData);
-          }
+          videoElement.removeEventListener('loadeddata', handleLoadedData);
         };
       } else {
         // If video is cached, load it immediately
-        videoRef.current.load();
+        videoElement.load();
       }
     }
   }, [video, isLoaded]);
@@ -106,6 +106,7 @@ const Projectemp = ({ video, liveLink, title, details, tech }) => {
       <motion.video
         ref={videoRef}
         className="w-full h-32 sm:h-40 md:h-48 lg:h-60 object-cover rounded-md mb-3 sm:mb-4"
+        src={video}
         muted
         loop
         preload={isLoaded ? "none" : (isMobile ? "none" : "metadata")}
@@ -121,7 +122,6 @@ const Projectemp = ({ video, liveLink, title, details, tech }) => {
           zIndex: isHovered ? 10 : 1
         }}
       >
-        <source src={video} type="video/mp4" />
         Your browser does not support the video tag.
       </motion.video>
 

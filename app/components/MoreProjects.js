@@ -3,7 +3,7 @@ import Projectemp from "./Projectemp";
 
 const moreProjects = [
   {
-    video: "/assets/GLANCER.mp4",
+    video: "https://ik.imagekit.io/arikalp/GLANCER.mp4",
     liveLink: "https://glancer-omega.vercel.app/",
     title: "Glancer - A Social Media Dashboard",
     details:
@@ -11,7 +11,7 @@ const moreProjects = [
     tech: ["HTML", "GSAP", "CSS", "Tailwind CSS", "JavaScript", "API"],
   },
   {
-    video:"/assets/Chesso.mp4",
+    video:"https://ik.imagekit.io/arikalp/Chesso.mp4",
     liveLink:"https://chesso-lake.vercel.app/",
     title:"Chesso - Chess Game",
     details:"Chesso is an interactive chess game built with modern web technologies, featuring real-time gameplay and a clean interface.",
@@ -24,7 +24,7 @@ const moreProjects = [
     ]
   },
   {
-    video:"/assets/MECALE.mp4",
+    video:"https://ik.imagekit.io/arikalp/MECALE.mp4",
     liveLink:"https://mecale.vercel.app/",
     title:"Mecale - Makes Maths Calculation Easy",
     details:"Mecale Helps to speed up your mathematical calculations with an intuitive interface and powerful features, making complex math problems easier to solve.",
@@ -36,21 +36,21 @@ const moreProjects = [
     ]
   },
   {
-    video:"/assets/SatelliteTracker.mp4",
+    video:"https://ik.imagekit.io/arikalp/SatelliteTracker.mp4",
     liveLink:"https://satellite-tracker-beta.vercel.app/",
     title:"Satellite Tracker - A Satellite Tracking Application",
     details:"Satellite Tracker is a real-time satellite tracking application that provides users with accurate information about satellite positions and orbits.",
     tech:["Next.js","Satellite API", "React-Leaflet"]
   },
   {
-    video:"/assets/OCHI.mp4",
+    video:"https://ik.imagekit.io/arikalp/OCHI.mp4",
     liveLink:"https://ochi-murex.vercel.app/",
     title:"OCHI - A Modern Web Experience",
     details:"OCHI is a modern web experience designed to showcase clean design and interactive elements using advanced frontend techniques.",
     tech:["React", "Framer Motion", "Tailwind CSS", "Locomotive Scroll"]
   },
   {
-    video: "/assets/POSTIFY.mp4",
+    video: "https://ik.imagekit.io/arikalp/POSTIFY.mp4",
     liveLink: "https://postify-cefj.onrender.com",
     title: "Postify - A posting Platform",
     details:
@@ -58,7 +58,7 @@ const moreProjects = [
     tech: ["EJS", "Tailwind CSS", "Node.js", "Express", "MongoDB"],
   },
   {
-    video: "/assets/SMARTREPORT.mp4",
+    video: "https://ik.imagekit.io/arikalp/SMARTREPORT.mp4",
     liveLink: "https://medical-report-generator-six.vercel.app/",
     title: "AI Report Analyzer - Uses LLM to generate report for X-Rays etc",
     details:
@@ -66,7 +66,7 @@ const moreProjects = [
     tech: ["Next.js", "Tailwind CSS", "OpenAI API", "LLM Integraion"],
   },
   {
-    video: "/assets/FILE_CONVERTER.mp4",
+    video: "https://ik.imagekit.io/arikalp/FILE_CONVERTER.mp4",
     liveLink: "https://file-converter-psi-gold.vercel.app/",
     title: "File Converter - Convert files to different formats",
     details:
@@ -75,7 +75,7 @@ const moreProjects = [
   },
 
   {
-    video: "/assets/TYPESTO.mp4",
+    video: "https://ik.imagekit.io/arikalp/TYPESTO.mp4",
     liveLink: "https://typesto.vercel.app/",
     title: "Typesto-Beta - A Typing Game",
     details:
@@ -83,7 +83,7 @@ const moreProjects = [
     tech: ["HTML", "CSS", "JS"],
   },
   {
-    video: "/assets/WIZARDX.mp4",
+    video: "https://ik.imagekit.io/arikalp/WIZARDX.mp4",
     liveLink: "https://wizard-x-gsap.vercel.app/",
     title: "WizardX - A Wizarding World Experience",
     details:
@@ -91,7 +91,7 @@ const moreProjects = [
     tech: ["HTML", "CSS", "JS", "GSAP", "LOCOMOTIVE.js"],
   },
   {
-    video: "/assets/AUTHENTIC.mp4",
+    video: "https://ik.imagekit.io/arikalp/AUTHENTIC.mp4",
     liveLink: "https://project3.live",
     title: "Authentic - A Modern Authentication System",
     details:
@@ -99,7 +99,7 @@ const moreProjects = [
     tech: ["REACT", "Node.js", "Express", "MongoDB", "JWT"],
   },
   {
-    video: "/assets/NETFLIX.mp4",
+    video: "https://ik.imagekit.io/arikalp/NETFLIX.mp4",
     liveLink: "https://netflix-clone-six-lilac-47.vercel.app/",
     title: "Netflix - A Netflix Clone",
     details:
@@ -107,7 +107,7 @@ const moreProjects = [
     tech: ["HTML", "CSS", "JS"],
   },
   {
-    video: "/assets/CHITCHAT.mp4",
+    video: "https://ik.imagekit.io/arikalp/CHITCHAT.mp4",
     liveLink: "https://chitchat-sepia.vercel.app/",
     title: "ChitChat - A Chat Application",
     details:

@@ -79,7 +79,7 @@ const Projects = ({ onNavigate }) => {
           className="w-full max-w-md lg:max-w-none"
         >
           <Projectemp
-            video="/assets/INTERVO.mp4"
+            video="https://ik.imagekit.io/arikalp/INTERVO.mp4"
             liveLink="https://intervoo.vercel.app/"
             title="Intervo - A Agentic Interviewer"
             details="Intervo is an AI-powered interview preparation platform that helps users practice and improve their interview skills with personalized feedback and real-time simulations."
@@ -103,7 +103,7 @@ const Projects = ({ onNavigate }) => {
           className="w-full max-w-md lg:max-w-none"
         >
           <Projectemp
-            video="/assets/Smart-Tutor.mp4"
+            video="https://ik.imagekit.io/arikalp/Smart-Tutor.mp4"
             liveLink="https://smartutor.vercel.app/"
             title="SmartTutor - Uses LLM to Teach Students"
             details=" An AI-powered tutor that leverages advanced LLM technology to provide personalized learning experiences, helping students grasp complex concepts with ease and efficiency."
@@ -120,7 +120,7 @@ const Projects = ({ onNavigate }) => {
           className="w-full max-w-md lg:max-w-none"
         >
           <Projectemp
-            video="/assets/SaachiRaah.mp4"
+            video="https://ik.imagekit.io/arikalp/SaachiRaah.mp4"
             liveLink="https://sacchiraah.vercel.app/"
             title="SacchiRaah - A NGO Website"
             details="SacchiRaah is a non-profit organization website built to raise awareness and support for social causes, featuring a clean design and user-friendly interface."
@@ -138,7 +138,7 @@ const Projects = ({ onNavigate }) => {
           className="w-full max-w-md lg:max-w-none"
         >
           <Projectemp
-            video="/assets/TYPESTO_FULL.mp4"
+            video="https://ik.imagekit.io/arikalp/TYPESTO_FULL.mp4"
             liveLink="https://typesto-full.vercel.app/"
             title="Typesto - A LLM based Typing game"
             details="Typesto is a typing game that helps users improve their typing skills in a fun and engaging way with the help of LLM."
