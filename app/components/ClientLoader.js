@@ -11,12 +11,25 @@ export default function ClientLoader() {
   useEffect(() => {
     // Mark window loaded
     const markLoaded = () => setWindowLoaded(true);
+    const registerServiceWorker = async () => {
+      if (!('serviceWorker' in navigator)) {
+        return;
+      }
+
+      try {
+        await navigator.serviceWorker.register('/sw.js', { scope: '/' });
+      } catch {
+        // Ignore registration failures in unsupported or transient states.
+      }
+    };
 
     if (typeof window !== "undefined") {
       if (document.readyState === "complete") {
         setWindowLoaded(true);
+        registerServiceWorker();
       } else {
         window.addEventListener("load", markLoaded);
+        window.addEventListener("load", registerServiceWorker, { once: true });
       }
     }
 
@@ -30,6 +43,7 @@ export default function ClientLoader() {
     return () => {
       if (typeof window !== "undefined") {
         window.removeEventListener("load", markLoaded);
+        window.removeEventListener("load", registerServiceWorker);
       }
       clearTimeout(animTimer);
       clearTimeout(safetyTimer);

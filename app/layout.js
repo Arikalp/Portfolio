@@ -61,6 +61,7 @@ export const metadata = {
     shortcut: "/favicon-theme.svg",
     apple: "/favicon-theme.svg"
   },
+  manifest: "/manifest.webmanifest",
   openGraph: {
     type: "website",
     url: "/",
