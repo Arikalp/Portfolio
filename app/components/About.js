@@ -61,7 +61,7 @@ const About = () => {
                       }
                     }
                   }}
-                  className="pointer-events-none absolute inset-0 rounded-full border-2 border-cyan-300/80 border-dashed"
+                  className="pointer-events-none absolute inset-0 rounded-full border-2 border-[#4edea3]/80 border-dashed"
                 />
               </motion.div>
             </div>
@@ -80,7 +80,7 @@ const About = () => {
               initial={{ opacity: 0, x: -50 }}
               animate={{ opacity: 1, x: 0 }}
               transition={{ duration: 0.8, delay: 0.2 }}
-              className="text-lg sm:text-xl text-blue-400 font-medium"
+              className="text-lg sm:text-xl text-[#4edea3] font-medium"
             >
               Full Stack Developer
             </motion.p>
@@ -185,14 +185,14 @@ const About = () => {
                   rel="noopener noreferrer"
                   whileHover={{ scale: 1.05, y: -5 }}
                   whileTap={{ scale: 0.95 }}
-                  className="bg-gradient-to-br from-white/[0.08] to-white/[0.02] backdrop-blur-xl border border-white/20 rounded-lg p-3 sm:p-4 hover:border-blue-400/50 transition-all duration-300 group cursor-pointer"
+                  className="bg-gradient-to-br from-white/[0.08] to-white/[0.02] backdrop-blur-xl border border-white/20 rounded-lg p-3 sm:p-4 hover:border-[#4edea3]/50 transition-all duration-300 group cursor-pointer"
                 >
                   <div className="flex flex-col h-full">
-                    <span className="text-xs text-blue-400 mb-1 font-medium">{cert.category}</span>
-                    <h3 className="text-sm sm:text-base font-medium text-white mb-2 group-hover:text-blue-300 transition-colors">
+                    <span className="text-xs text-[#4edea3] mb-1 font-medium">{cert.category}</span>
+                    <h3 className="text-sm sm:text-base font-medium text-white mb-2 group-hover:text-[#4edea3] transition-colors">
                       {cert.name}
                     </h3>
-                    <div className="mt-auto flex items-center text-xs text-gray-400 group-hover:text-blue-400 transition-colors">
+                    <div className="mt-auto flex items-center text-xs text-gray-400 group-hover:text-[#4edea3] transition-colors">
                       <svg className="w-3 h-3 mr-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                         <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 10v6m0 0l-3-3m3 3l3-3m2 8H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z" />
                       </svg>
@@ -215,7 +215,7 @@ const About = () => {
         </motion.div>
         <div className='flex justify-center items-center mt-6 sm:mt-8'>
            <button className="flex">
-          <a href="/assets/Sankalp_Saini_Resume.pdf" download className="inline-block bg-blue-500 text-white px-4 sm:px-6 py-2 sm:py-3 rounded hover:bg-blue-600 transition gradient-btn text-sm sm:text-base">
+          <a href="/assets/Sankalp_Saini_Resume.pdf" download className="inline-block bg-[#4edea3] text-[#003739] px-4 sm:px-6 py-2 sm:py-3 rounded hover:bg-[#00f5ff] transition gradient-btn text-sm sm:text-base">
             Download Resume
           </a>
         </button>

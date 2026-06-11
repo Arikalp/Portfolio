@@ -78,7 +78,7 @@ const Navbar = ({ onNavigate, currentSection = 'home' }) => {
           <motion.li
             whileHover={{ scale: 1.1 }}
             whileTap={{ scale: 0.95 }}
-            className={`cursor-pointer text-sm lg:text-base ${currentSection === 'home' ? 'text-blue-400' : ''}`}
+            className={`cursor-pointer text-sm lg:text-base ${currentSection === 'home' ? 'text-[#4edea3]' : ''}`}
             onClick={() => handleNavigation('home')}
           >
             Home
@@ -86,7 +86,7 @@ const Navbar = ({ onNavigate, currentSection = 'home' }) => {
           <motion.li
             whileHover={{ scale: 1.1 }}
             whileTap={{ scale: 0.95 }}
-            className={`cursor-pointer text-sm lg:text-base ${currentSection === 'about' ? 'text-blue-400' : ''}`}
+            className={`cursor-pointer text-sm lg:text-base ${currentSection === 'about' ? 'text-[#4edea3]' : ''}`}
             onClick={() => handleNavigation('about')}
           >
             About
@@ -94,7 +94,7 @@ const Navbar = ({ onNavigate, currentSection = 'home' }) => {
           <motion.li
             whileHover={{ scale: 1.1 }}
             whileTap={{ scale: 0.95 }}
-            className={`cursor-pointer text-sm lg:text-base ${currentSection === 'projects' ? 'text-blue-400' : ''}`}
+            className={`cursor-pointer text-sm lg:text-base ${currentSection === 'projects' ? 'text-[#4edea3]' : ''}`}
             onClick={() => handleNavigation('projects')}
           >
             Projects
@@ -102,7 +102,7 @@ const Navbar = ({ onNavigate, currentSection = 'home' }) => {
           <motion.li
             whileHover={{ scale: 1.1 }}
             whileTap={{ scale: 0.95 }}
-            className={`cursor-pointer text-sm lg:text-base ${currentSection === 'contact' ? 'text-blue-400' : ''}`}
+            className={`cursor-pointer text-sm lg:text-base ${currentSection === 'contact' ? 'text-[#4edea3]' : ''}`}
             onClick={() => handleNavigation('contact')}
           >
             Contact
@@ -146,7 +146,7 @@ const Navbar = ({ onNavigate, currentSection = 'home' }) => {
             <motion.li
               whileHover={{ scale: 1.05 }}
               whileTap={{ scale: 0.95 }}
-              className={`cursor-pointer text-lg font-medium py-3 px-6 rounded-lg transition-colors duration-200 ${currentSection === 'home' ? 'text-blue-400 bg-blue-400/10' : 'hover:bg-white/10'}`}
+              className={`cursor-pointer text-lg font-medium py-3 px-6 rounded-lg transition-colors duration-200 ${currentSection === 'home' ? 'text-[#4edea3] bg-[#4edea3]/10' : 'hover:bg-white/10'}`}
               onClick={() => handleNavigation('home')}
             >
               Home
@@ -154,7 +154,7 @@ const Navbar = ({ onNavigate, currentSection = 'home' }) => {
             <motion.li
               whileHover={{ scale: 1.05 }}
               whileTap={{ scale: 0.95 }}
-              className={`cursor-pointer text-lg font-medium py-3 px-6 rounded-lg transition-colors duration-200 ${currentSection === 'about' ? 'text-blue-400 bg-blue-400/10' : 'hover:bg-white/10'}`}
+              className={`cursor-pointer text-lg font-medium py-3 px-6 rounded-lg transition-colors duration-200 ${currentSection === 'about' ? 'text-[#4edea3] bg-[#4edea3]/10' : 'hover:bg-white/10'}`}
               onClick={() => handleNavigation('about')}
             >
               About
@@ -162,7 +162,7 @@ const Navbar = ({ onNavigate, currentSection = 'home' }) => {
             <motion.li
               whileHover={{ scale: 1.05 }}
               whileTap={{ scale: 0.95 }}
-              className={`cursor-pointer text-lg font-medium py-3 px-6 rounded-lg transition-colors duration-200 ${currentSection === 'projects' ? 'text-blue-400 bg-blue-400/10' : 'hover:bg-white/10'}`}
+              className={`cursor-pointer text-lg font-medium py-3 px-6 rounded-lg transition-colors duration-200 ${currentSection === 'projects' ? 'text-[#4edea3] bg-[#4edea3]/10' : 'hover:bg-white/10'}`}
               onClick={() => handleNavigation('projects')}
             >
               Projects
@@ -170,7 +170,7 @@ const Navbar = ({ onNavigate, currentSection = 'home' }) => {
             <motion.li
               whileHover={{ scale: 1.05 }}
               whileTap={{ scale: 0.95 }}
-              className={`cursor-pointer text-lg font-medium py-3 px-6 rounded-lg transition-colors duration-200 ${currentSection === 'contact' ? 'text-blue-400 bg-blue-400/10' : 'hover:bg-white/10'}`}
+              className={`cursor-pointer text-lg font-medium py-3 px-6 rounded-lg transition-colors duration-200 ${currentSection === 'contact' ? 'text-[#4edea3] bg-[#4edea3]/10' : 'hover:bg-white/10'}`}
               onClick={() => handleNavigation('contact')}
             >
               Contact

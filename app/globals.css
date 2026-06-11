@@ -499,7 +499,7 @@ h6 {
 
 @media (max-width: 768px) {
   .hero-redesign {
-    padding-top: 2rem;
+    padding-top: 6rem;
     padding-bottom: 5rem;
     min-height: auto;
   }
@@ -523,7 +523,7 @@ h6 {
   }
 
   .hero-redesign__scroll {
-    bottom: 1.5rem;
+    display: none;
   }
 }
 

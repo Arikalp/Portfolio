@@ -25,7 +25,7 @@ const Skills = () => {
 
   return (
     <>
-      <div className="py-10 sm:py-16 md:py-20 px-4 sm:px-8 md:px-20">
+      <div className="pt-10 sm:pt-16 md:pt-20 pb-2 sm:pb-3 md:pb-4 px-4 sm:px-8 md:px-20">
         <motion.h1
           initial={{ opacity: 0, x: -100 }}
           whileInView={{ opacity: 1, x: 0 }}
@@ -38,7 +38,7 @@ const Skills = () => {
           className='tech-stack text-gray-500 mt-2 text-sm sm:text-base'>These are the technologies I have worked with:</motion.p>
       </div>
 
-      <div className='overflow-hidden w-full py-8 sm:py-12 md:py-15 flex justify-center items-center'>
+      <div className='overflow-hidden w-full py-2 sm:py-4 md:py-6 flex justify-center items-center'>
         <motion.div
           className={`py-4 sm:py-6 ${shouldAnimateMarquee ? 'flex gap-6 sm:gap-8 md:gap-12 w-fit' : 'flex flex-wrap justify-center gap-4 sm:gap-6 w-full'}`}
           animate={shouldAnimateMarquee ? { x: ['0%', '-204.2%'] } : { x: 0 }}

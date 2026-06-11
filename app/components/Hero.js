@@ -157,6 +157,14 @@ const TerminalWindow = () => {
 const Hero = ({ onNavigate }) => {
   const scrollRef = useRef(null);
   const [scrollOpacity, setScrollOpacity] = useState(1);
+  const [isMobile, setIsMobile] = useState(false);
+
+  useEffect(() => {
+    const checkMobile = () => setIsMobile(window.innerWidth < 768);
+    checkMobile();
+    window.addEventListener("resize", checkMobile);
+    return () => window.removeEventListener("resize", checkMobile);
+  }, []);
 
   useEffect(() => {
     const handleScroll = () => {
@@ -242,10 +250,12 @@ const Hero = ({ onNavigate }) => {
           </motion.div>
         </div>
 
-        {/* Right column — Terminal */}
-        <div className="hero-redesign__right">
-          <TerminalWindow />
-        </div>
+        {/* Right column — Terminal (hidden on mobile) */}
+        {!isMobile && (
+          <div className="hero-redesign__right">
+            <TerminalWindow />
+          </div>
+        )}
       </div>
 
       {/* Scroll indicator */}
