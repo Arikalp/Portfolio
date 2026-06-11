@@ -1,4 +1,4 @@
-import { Inter, Orbitron, Space_Grotesk } from "next/font/google";
+import { Inter, Orbitron, Space_Grotesk, JetBrains_Mono } from "next/font/google";
 import "./globals.css";
 import ClientLoader from "@/app/components/ClientLoader";
 import { Analytics } from "@vercel/analytics/next";
@@ -21,6 +21,13 @@ const orbitron = Orbitron({
   variable: "--font-orbitron",
   subsets: ["latin"],
   weight: ["500", "700"],
+  display: "swap",
+});
+
+const jetbrainsMono = JetBrains_Mono({
+  variable: "--font-jetbrains-mono",
+  subsets: ["latin"],
+  weight: ["400", "500", "700"],
   display: "swap",
 });
 
@@ -99,7 +106,7 @@ export default function RootLayout({ children }) {
   return (
     <html lang="en">
       <body
-        className={`${inter.variable} ${spaceGrotesk.variable} ${orbitron.variable} antialiased`}
+        className={`${inter.variable} ${spaceGrotesk.variable} ${orbitron.variable} ${jetbrainsMono.variable} antialiased`}
       >
         <ClientLoader />
         {children}
