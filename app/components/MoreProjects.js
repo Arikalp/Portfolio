@@ -1,11 +1,17 @@
 import React from "react";
 import Projectemp from "./Projectemp";
 
-const moreProjects = [
+const moreProjects = [  
+  { video: "../assets/Project/eduagent.mp4",
+    liveLink: "https://eduagentt.vercel.app/",
+    title: "The AI co-pilot built for live classrooms",
+    details:
+      "EduAgent turns a teacher's spoken lecture into structured learning — transcribing speech in real time, generating quiz questions on the fly, and producing AI-assisted session notes automatically. All while the class is still in session.",
+    tech: ["Next.js", "Llama 3.3 70B","WebRTC", "LiveKit", "Framer-motion", "Firebase"],},
   {
     video: "https://ik.imagekit.io/arikalp/GLANCER.mp4",
     liveLink: "https://glancer-omega.vercel.app/",
-    title: "Glancer - A Social Media Dashboard",
+    title: "Glancer - A Content Discovery Platform",
     details:
       "Glancer is a content discovery platform that lets people explore trending articles, news, and insights all in one place — without searching for them one by one on Google",
     tech: ["HTML", "GSAP", "CSS", "Tailwind CSS", "JavaScript", "API"],
