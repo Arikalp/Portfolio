@@ -1,13 +1,15 @@
 import React from "react";
 import Projectemp from "./Projectemp";
 
-const moreProjects = [  
-  { video: "../assets/Project/eduagent.mp4",
-    liveLink: "https://eduagentt.vercel.app/",
-    title: "The AI co-pilot built for live classrooms",
+const moreProjects = [
+  {
+    video: "https://ik.imagekit.io/arikalp/SaachiRaah.mp4",
+    liveLink: "https://sacchiraah.vercel.app/",
+    title: "SacchiRaah - A NGO Website",
     details:
-      "EduAgent turns a teacher's spoken lecture into structured learning — transcribing speech in real time, generating quiz questions on the fly, and producing AI-assisted session notes automatically. All while the class is still in session.",
-    tech: ["Next.js", "Llama 3.3 70B","WebRTC", "LiveKit", "Framer-motion", "Firebase"],},
+      "SacchiRaah is a non-profit organization website built to raise awareness and support for social causes, featuring a clean design and user-friendly interface.",
+    tech: ["Next.js", "Tailwind CSS", "Framer Motion", "MongoDB"],
+  },
   {
     video: "https://ik.imagekit.io/arikalp/GLANCER.mp4",
     liveLink: "https://glancer-omega.vercel.app/",
@@ -17,43 +19,36 @@ const moreProjects = [
     tech: ["HTML", "GSAP", "CSS", "Tailwind CSS", "JavaScript", "API"],
   },
   {
-    video:"https://ik.imagekit.io/arikalp/Chesso.mp4",
-    liveLink:"https://chesso-lake.vercel.app/",
-    title:"Chesso - Chess Game",
-    details:"Chesso is an interactive chess game built with modern web technologies, featuring real-time gameplay and a clean interface.",
-    tech:[
-      "HTML",
-      "Tailwind CSS",
-      "JavaScript",
-      "Express.js",
-      "FireBase",
-    ]
+    video: "https://ik.imagekit.io/arikalp/Chesso.mp4",
+    liveLink: "https://chesso-lake.vercel.app/",
+    title: "Chesso - Chess Game",
+    details:
+      "Chesso is an interactive chess game built with modern web technologies, featuring real-time gameplay and a clean interface.",
+    tech: ["HTML", "Tailwind CSS", "JavaScript", "Express.js", "FireBase"],
   },
   {
-    video:"https://ik.imagekit.io/arikalp/MECALE.mp4",
-    liveLink:"https://mecale.vercel.app/",
-    title:"Mecale - Makes Maths Calculation Easy",
-    details:"Mecale Helps to speed up your mathematical calculations with an intuitive interface and powerful features, making complex math problems easier to solve.",
-    tech:[
-      "Next.js",
-      "Groq LLM",
-      "Framer-motion",
-      "FireBase",
-    ]
+    video: "https://ik.imagekit.io/arikalp/MECALE.mp4",
+    liveLink: "https://mecale.vercel.app/",
+    title: "Mecale - Makes Maths Calculation Easy",
+    details:
+      "Mecale Helps to speed up your mathematical calculations with an intuitive interface and powerful features, making complex math problems easier to solve.",
+    tech: ["Next.js", "Groq LLM", "Framer-motion", "FireBase"],
   },
   {
-    video:"https://ik.imagekit.io/arikalp/SatelliteTracker.mp4",
-    liveLink:"https://satellite-tracker-beta.vercel.app/",
-    title:"Satellite Tracker - A Satellite Tracking Application",
-    details:"Satellite Tracker is a real-time satellite tracking application that provides users with accurate information about satellite positions and orbits.",
-    tech:["Next.js","Satellite API", "React-Leaflet"]
+    video: "https://ik.imagekit.io/arikalp/SatelliteTracker.mp4",
+    liveLink: "https://satellite-tracker-beta.vercel.app/",
+    title: "Satellite Tracker - A Satellite Tracking Application",
+    details:
+      "Satellite Tracker is a real-time satellite tracking application that provides users with accurate information about satellite positions and orbits.",
+    tech: ["Next.js", "Satellite API", "React-Leaflet"],
   },
   {
-    video:"https://ik.imagekit.io/arikalp/OCHI.mp4",
-    liveLink:"https://ochi-murex.vercel.app/",
-    title:"OCHI - A Modern Web Experience",
-    details:"OCHI is a modern web experience designed to showcase clean design and interactive elements using advanced frontend techniques.",
-    tech:["React", "Framer Motion", "Tailwind CSS", "Locomotive Scroll"]
+    video: "https://ik.imagekit.io/arikalp/OCHI.mp4",
+    liveLink: "https://ochi-murex.vercel.app/",
+    title: "OCHI - A Modern Web Experience",
+    details:
+      "OCHI is a modern web experience designed to showcase clean design and interactive elements using advanced frontend techniques.",
+    tech: ["React", "Framer Motion", "Tailwind CSS", "Locomotive Scroll"],
   },
   {
     video: "https://ik.imagekit.io/arikalp/POSTIFY.mp4",

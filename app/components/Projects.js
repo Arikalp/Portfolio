@@ -68,8 +68,7 @@ const Projects = ({ onNavigate }) => {
         viewport={{ once: true, amount: 0.2 }}
         className="grid grid-cols-1 lg:grid-cols-2 gap-6 sm:gap-20 md:gap-30 lg:gap-45 justify-items-center px-4 sm:px-6 md:px-20"
       >
-
-          <motion.div
+        <motion.div
           variants={itemVariants}
           whileHover={{
             scale: 1.02,
@@ -83,48 +82,7 @@ const Projects = ({ onNavigate }) => {
             liveLink="https://intervoo.vercel.app/"
             title="Intervo - A Agentic Interviewer"
             details="Intervo is an AI-powered interview preparation platform that helps users practice and improve their interview skills with personalized feedback and real-time simulations."
-            tech={[
-              "Next.js",
-              "Llama 3.3 70B",
-              "Wishper",
-              "Clerk",
-              "MongoDB",
-            ]}
-          />
-        </motion.div>
-        
-        <motion.div
-          variants={itemVariants}
-          whileHover={{
-            scale: 1.02,
-            rotateY: 5,
-            transition: { duration: 0.3 },
-          }}
-          className="w-full max-w-md lg:max-w-none"
-        >
-          <Projectemp
-            video="https://ik.imagekit.io/arikalp/Smart-Tutor.mp4"
-            liveLink="https://smartutor.vercel.app/"
-            title="SmartTutor - Uses LLM to Teach Students"
-            details=" An AI-powered tutor that leverages advanced LLM technology to provide personalized learning experiences, helping students grasp complex concepts with ease and efficiency."
-            tech={["React.js", "Firebase", "LLM Integraion"]}
-          />
-        </motion.div>
-        <motion.div
-          variants={itemVariants}
-          whileHover={{
-            scale: 1.02,
-            rotateY: -5,
-            transition: { duration: 0.3 },
-          }}
-          className="w-full max-w-md lg:max-w-none"
-        >
-          <Projectemp
-            video="https://ik.imagekit.io/arikalp/SaachiRaah.mp4"
-            liveLink="https://sacchiraah.vercel.app/"
-            title="SacchiRaah - A NGO Website"
-            details="SacchiRaah is a non-profit organization website built to raise awareness and support for social causes, featuring a clean design and user-friendly interface."
-            tech={["Next.js", "Tailwind CSS", "Framer Motion", "MongoDB"]}
+            tech={["Next.js", "Llama 3.3 70B", "Wishper", "Clerk", "MongoDB"]}
           />
         </motion.div>
 
@@ -142,10 +100,50 @@ const Projects = ({ onNavigate }) => {
             liveLink="https://typesto-full.vercel.app/"
             title="Typesto - A LLM based Typing game"
             details="Typesto is a typing game that helps users improve their typing skills in a fun and engaging way with the help of LLM."
-            tech={["Tailwind CSS", "Next.js", "Express.js", "MongoDB", "Llama 3.3 70B"]}
+            tech={[
+              "Tailwind CSS",
+              "Next.js",
+              "Express.js",
+              "MongoDB",
+              "Llama 3.3 70B",
+            ]}
+          />
+        </motion.div>
+        <motion.div
+          variants={itemVariants}
+          whileHover={{
+            scale: 1.02,
+            rotateY: -5,
+            transition: { duration: 0.3 },
+          }}
+          className="w-full max-w-md lg:max-w-none"
+        >
+          <Projectemp
+            video="../assets/Project/eduagent.mp4"
+            liveLink="The AI co-pilot built for live classrooms"
+            title="EduAgent - An AI Co-Pilot for Live Classrooms"
+            details="EduAgent turns a teacher's spoken lecture into structured learning — transcribing speech in real time, generating quiz questions on the fly, and producing AI-assisted session notes automatically. All while the class is still in session." 
+            tech={["Next.js", "Llama 3.3 70B","WebRTC", "LiveKit", "Framer-motion", "Firebase"]}
+          />
+
+          <Projectemp
+            video="https://ik.imagekit.io/arikalp/Smart-Tutor.mp4"
+            liveLink="https://smartutor.vercel.app/"
+            title="SmartTutor - Uses LLM to Teach Students"
+            details=" An AI-powered tutor that leverages advanced LLM technology to provide personalized learning experiences, helping students grasp complex concepts with ease and efficiency."
+            tech={["React.js", "Firebase", "LLM Integraion"]}
           />
         </motion.div>
 
+        <motion.div
+          variants={itemVariants}
+          whileHover={{
+            scale: 1.02,
+            rotateY: 5,
+            transition: { duration: 0.3 },
+          }}
+          className="w-full max-w-md lg:max-w-none"
+        ></motion.div>
       </motion.div>
 
       <motion.div
