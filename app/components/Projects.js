@@ -80,9 +80,9 @@ const Projects = ({ onNavigate }) => {
           <Projectemp
             video="https://ik.imagekit.io/arikalp/INTERVO.mp4"
             liveLink="https://intervoo.vercel.app/"
-            title="Intervo - A Agentic Interviewer"
-            details="Intervo is an AI-powered interview preparation platform that helps users practice and improve their interview skills with personalized feedback and real-time simulations."
-            tech={["Next.js", "Llama 3.3 70B", "Wishper", "Clerk", "MongoDB"]}
+            title="Intervo - Agentic AI Interview Platform"
+            details="It generates resume-tailored interview questions, conducts realistic voice+video interview sessions, evaluates answers in real time, and now features a full RAG (Retrieval-Augmented Generation) pipeline that makes the AI interviewer remember your resume and past answers."
+            tech={["Next.js","RAG" ,"Fastembed","Emotion detection", "Llama 3.3 70B", "Wishper", "Clerk", "MongoDB"]}
           />
         </motion.div>
 
@@ -99,7 +99,7 @@ const Projects = ({ onNavigate }) => {
             video="https://ik.imagekit.io/arikalp/TYPESTO_FULL.mp4"
             liveLink="https://typesto-full.vercel.app/"
             title="Typesto - A LLM based Typing game"
-            details="Typesto is a typing game that helps users improve their typing skills in a fun and engaging way with the help of LLM."
+            details="A typing game that uses LLM to generate sentences based on the user's typing speed and accuracy. It also provides real-time feedback and suggestions to improve typing skills."
             tech={[
               "Tailwind CSS",
               "Next.js",
@@ -126,13 +126,7 @@ const Projects = ({ onNavigate }) => {
             tech={["Next.js", "Llama 3.3 70B","WebRTC", "LiveKit", "Framer-motion", "Firebase"]}
           />
 
-          <Projectemp
-            video="https://ik.imagekit.io/arikalp/Smart-Tutor.mp4"
-            liveLink="https://smartutor.vercel.app/"
-            title="SmartTutor - Uses LLM to Teach Students"
-            details=" An AI-powered tutor that leverages advanced LLM technology to provide personalized learning experiences, helping students grasp complex concepts with ease and efficiency."
-            tech={["React.js", "Firebase", "LLM Integraion"]}
-          />
+          
         </motion.div>
 
         <motion.div
@@ -143,7 +137,15 @@ const Projects = ({ onNavigate }) => {
             transition: { duration: 0.3 },
           }}
           className="w-full max-w-md lg:max-w-none"
-        ></motion.div>
+        >
+          <Projectemp
+            video="https://ik.imagekit.io/arikalp/Smart-Tutor.mp4"
+            liveLink="https://smartutor.vercel.app/"
+            title="SmartTutor - Uses LLM to Teach Students"
+            details=" An AI-powered tutor that leverages advanced LLM technology to provide personalized learning experiences, helping students grasp complex concepts with ease and efficiency."
+            tech={["React.js", "Firebase", "LLM Integraion" , "Tailwind CSS", "Framer-motion"]}
+          />
+        </motion.div>
       </motion.div>
 
       <motion.div
