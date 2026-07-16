@@ -9,6 +9,7 @@ import Footer from "./components/Footer"
 import About from "./components/About"
 import MoreProjects from './components/MoreProjects'
 import Contact from './components/Contact'
+import Hackathons from './components/Hackathons'
 import { AuroraBackground } from '@/components/ui/aurora-background'
 import Antigravity from '@/components/Antigravity'
 import WebcamPixelGridWrapper from './components/WebcamPixelGridWrapper'
@@ -216,10 +217,12 @@ function PageContent() {
               <Hero onNavigate={handleNavigation} />
               <Skills />
               <Projects onNavigate={handleNavigation} />
+              <Hackathons view="section" onNavigate={handleNavigation} />
             </>
           )}
           {currentSection === 'about' && <About />}
           {currentSection === 'projects' && <MoreProjects />}
+          {currentSection === 'hackathons' && <Hackathons view="page" onNavigate={handleNavigation} />}
           {currentSection === 'contact' && <Contact />}
           <Footer />
         </div>

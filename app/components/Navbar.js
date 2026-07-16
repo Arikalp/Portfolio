@@ -102,6 +102,14 @@ const Navbar = ({ onNavigate, currentSection = 'home' }) => {
           <motion.li
             whileHover={{ scale: 1.1 }}
             whileTap={{ scale: 0.95 }}
+            className={`cursor-pointer text-sm lg:text-base ${currentSection === 'hackathons' ? 'text-[#4edea3]' : ''}`}
+            onClick={() => handleNavigation('hackathons')}
+          >
+            Hackathons
+          </motion.li>
+          <motion.li
+            whileHover={{ scale: 1.1 }}
+            whileTap={{ scale: 0.95 }}
             className={`cursor-pointer text-sm lg:text-base ${currentSection === 'contact' ? 'text-[#4edea3]' : ''}`}
             onClick={() => handleNavigation('contact')}
           >
@@ -166,6 +174,14 @@ const Navbar = ({ onNavigate, currentSection = 'home' }) => {
               onClick={() => handleNavigation('projects')}
             >
               Projects
+            </motion.li>
+            <motion.li
+              whileHover={{ scale: 1.05 }}
+              whileTap={{ scale: 0.95 }}
+              className={`cursor-pointer text-lg font-medium py-3 px-6 rounded-lg transition-colors duration-200 ${currentSection === 'hackathons' ? 'text-[#4edea3] bg-[#4edea3]/10' : 'hover:bg-white/10'}`}
+              onClick={() => handleNavigation('hackathons')}
+            >
+              Hackathons
             </motion.li>
             <motion.li
               whileHover={{ scale: 1.05 }}
