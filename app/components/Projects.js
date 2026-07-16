@@ -85,7 +85,7 @@ const Projects = ({ onNavigate }) => {
             details="Intervo is an AI-powered interview preparation platform that helps users practice and improve their interview skills with personalized feedback and real-time simulations."
             tech={[
               "Next.js",
-              "GROQ API",
+              "Llama 3.3 70B",
               "Wishper",
               "Clerk",
               "MongoDB",
@@ -142,7 +142,7 @@ const Projects = ({ onNavigate }) => {
             liveLink="https://typesto-full.vercel.app/"
             title="Typesto - A LLM based Typing game"
             details="Typesto is a typing game that helps users improve their typing skills in a fun and engaging way with the help of LLM."
-            tech={["Tailwind CSS", "Next.js", "Express.js", "MongoDB", "LLM"]}
+            tech={["Tailwind CSS", "Next.js", "Express.js", "MongoDB", "Llama 3.3 70B"]}
           />
         </motion.div>
 
